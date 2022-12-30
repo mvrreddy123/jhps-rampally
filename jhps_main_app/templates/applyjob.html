@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form_box">
+    <h1>ADMINISTRATION PERSONAL DATA SHEET </h1>
+    <div class="form_box_inn">
+        {% if submitted %}
+        <h1>We Received your details.....</h1>
+        {% else %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form_box_inn2">
+
+                <p>{{ form.Post_Applying_For }}</p>
+                <p>{{ form.Name_of_the_Candidate }}</p>
+                <p>{{ form.Residential_Address }}</p>
+                <p>{{ form.Own_house_rented }}</p>
+                <p>{{ form.Mother_Tongue }}</p>
+                <p>{{ form.date_of_birth }}</p>
+                <p>Caste Category /Religion : {{ form.Caste_Category_Religion }}</p>
+                <p>{{ form.Email_ID }}</p>
+                <p>{{ form.Telephone_No }}</p>
+                <p>{{ form.Qualifications }}</p>
+                <p>{{ form.Last_Worked }}</p>
+                <p>{{ form.Reasons }}</p>
+                <p>{{ form.Any_friends }}</p>
+                <p>{{ form.Have_you_worked }}</p>
+                <p>{{ form.Present_Salary }}</p>
+                <p>{{ form.Expected_Salary }}</p>
+            </div>
+            <div class="form_box2">
+                <h1>EDUCATIONAL & PROFESSIONAL QUALIFICATIONS – (10th Grade to Final Certification)</h1>
+                <div class="form_box_inn3">
+                    <table>
+                        <tr>
+                            <th>SlNo</th>
+                            <th>Course</th>
+                            <th>Name of the School / College</th>
+                            <th>University / Board</th>
+                            <th>Place of Study</th>
+                            <th>Year of Passing</th>
+                            <th>Medium</th>
+                            <th>Regular
+                                / Correspondence
+                            </th>
+                            <th>% Secured</th>
+                        </tr>
+                        <tr>
+                            <td class="sln">1</td>
+                            <td>{{ form.c1 }}</td>
+                            <td>{{ form.nsc1 }}</td>
+                            <td>{{ form.u1 }}</td>
+                            <td>{{ form.pos1 }}</td>
+                            <td>{{ form.yp1 }}</td>
+                            <td>{{ form.m1 }}</td>
+                            <td>{{ form.rc1 }}</td>
+                            <td>{{ form.sec1 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">2</td>
+                            <td>{{ form.c2 }}</td>
+                            <td>{{ form.nsc2 }}</td>
+                            <td>{{ form.u2 }}</td>
+                            <td>{{ form.pos2 }}</td>
+                            <td>{{ form.yp2 }}</td>
+                            <td>{{ form.m2 }}</td>
+                            <td>{{ form.rc2 }}</td>
+                            <td>{{ form.sec2 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">3</td>
+                            <td>{{ form.c3 }}</td>
+                            <td>{{ form.nsc3 }}</td>
+                            <td>{{ form.u3 }}</td>
+                            <td>{{ form.pos3 }}</td>
+                            <td>{{ form.yp3 }}</td>
+                            <td>{{ form.m3 }}</td>
+                            <td>{{ form.rc3 }}</td>
+                            <td>{{ form.sec3 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">4</td>
+                            <td>{{ form.c4 }}</td>
+                            <td>{{ form.nsc4 }}</td>
+                            <td>{{ form.u4 }}</td>
+                            <td>{{ form.pos4 }}</td>
+                            <td>{{ form.yp4 }}</td>
+                            <td>{{ form.m4 }}</td>
+                            <td>{{ form.rc4 }}</td>
+                            <td>{{ form.sec4 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">5</td>
+                            <td>{{ form.c5 }}</td>
+                            <td>{{ form.nsc5 }}</td>
+                            <td>{{ form.u5 }}</td>
+                            <td>{{ form.pos5 }}</td>
+                            <td>{{ form.yp5 }}</td>
+                            <td>{{ form.m5 }}</td>
+                            <td>{{ form.rc5 }}</td>
+                            <td>{{ form.sec5 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">6</td>
+                            <td>{{ form.c6 }}</td>
+                            <td>{{ form.nsc6 }}</td>
+                            <td>{{ form.u6 }}</td>
+                            <td>{{ form.pos6 }}</td>
+                            <td>{{ form.yp6 }}</td>
+                            <td>{{ form.m6 }}</td>
+                            <td>{{ form.rc6 }}</td>
+                            <td>{{ form.sec6 }}</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="form_box2">
+                <h1>WORK EXPERIENCE </h1>
+                <div class="form_box_inn3">
+                    <table>
+                        <tr>
+                            <th>SlNo</th>
+                            <th>Name of the organization</th>
+                            <th>Designation</th>
+                            <th>Years of work</th>
+                            <th>Last Salary Drawn</th>
+                        </tr>
+                        <tr>
+                            <td class="sln">1</td>
+                            <td>{{ form.no1 }}</td>
+                            <td>{{ form.deg1 }}</td>
+                            <td>{{ form.yow1 }}</td>
+                            <td>{{ form.sal1 }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sln">2</td>
+                            <td>{{ form.no2 }}</td>
+                            <td>{{ form.deg2 }}</td>
+                            <td>{{ form.yow2 }}</td>
+                            <td>{{ form.sal2 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">3</td>
+                            <td>{{ form.no3 }}</td>
+                            <td>{{ form.deg3 }}</td>
+                            <td>{{ form.yow3 }}</td>
+                            <td>{{ form.sal3 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">4</td>
+                            <td>{{ form.no4 }}</td>
+                            <td>{{ form.deg4 }}</td>
+                            <td>{{ form.yow4 }}</td>
+                            <td>{{ form.sal4 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">5</td>
+                            <td>{{ form.no5 }}</td>
+                            <td>{{ form.deg5 }}</td>
+                            <td>{{ form.yow5 }}</td>
+                            <td>{{ form.sal5 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">6</td>
+                            <td>{{ form.no6 }}</td>
+                            <td>{{ form.deg6 }}</td>
+                            <td>{{ form.yow6 }}</td>
+                            <td>{{ form.sal6 }}</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="form_box2">
+                <h1>SPECIAL SKILLS, IF ANY </h1>
+                <div class="form_box_inn3">
+                    <table>
+                        <tr>
+                            <td class="sln">1</td>
+                            <td>{{ form.skill1 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="sln">2</td>
+                            <td>{{ form.skill2 }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form_box2">
+                <h1>FAMILY DATA</h1>
+                <div class="form_box_inn3">
+                    <table>
+                        <tr>
+                            <th>Family Members</th>
+                            <th>Name</th>
+                            <th>Date of Birth</th>
+                            <th>Highest / Special Qualification</th>
+                            <th>Occupation &
+                                Company Name
+                                </th>
+                            <th>Designation</th>
+                            <th>Annual income</th>
+                        </tr>
+                        <tr>
+                            <td>Spouse</td>
+                            <td>{{ form.Sp_Name }}</td>
+                            <td>{{ form.Sp_DOB }}</td>
+                            <td>{{ form.Sp_Qul }}</td>
+                            <td>{{ form.Sp_Occ }}</td>
+                            <td>{{ form.Sp_Deg }}</td>
+                            <td>{{ form.Sp_Inc }}</td>
+                        </tr>
+                        <tr>
+                            <td>Father</td>
+                            <td>{{ form.F_Name }}</td>
+                            <td>{{ form.F_DOB }}</td>
+                            <td>{{ form.F_Qul }}</td>
+                            <td>{{ form.F_Occ }}</td>
+                            <td>{{ form.F_Deg }}</td>
+                            <td>{{ form.F_Inc }}</td>
+                        </tr>
+                        <tr>
+                            <td>Mother</td>
+                            <td>{{ form.M_Name }}</td>
+                            <td>{{ form.M_DOB }}</td>
+                            <td>{{ form.M_Qul }}</td>
+                            <td>{{ form.M_Occ }}</td>
+                            <td>{{ form.M_Deg }}</td>
+                            <td>{{ form.M_Inc }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="form_box2">
+                <h1>CHILDREN DATA </h1>
+                <div class="form_box_inn3">
+                    <table>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Date of Birth</th>
+                            <th>Class Studying</th>
+                            <th>Present school name</th>
+                        </tr>
+                        <tr>
+                            <td class="sln">1</td>
+                            <td>{{ form.C1_Name}}</td>
+                            <td>{{ form.C1_DOB }}</td>
+                            <td>{{ form.C1_St  }}</td>
+                            <td>{{ form.C1_PSN }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sln">2</td>
+                            <td>{{ form.C2_Name}}</td>
+                            <td>{{ form.C2_DOB }}</td>
+                            <td>{{ form.C2_St  }}</td>
+                            <td>{{ form.C2_PSN }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            
+            <div class="form_box2">
+                <h1>REFERENCES </h1>
+                <div class="form_box_inn3">
+                    <table>
+                        <tr>
+                            <th>1. Name, Address & Contact No</th>
+                            <th>2. Name, Address & Contact No</th>
+                        </tr>
+                        <tr>
+                            <td>{{ form.Ref1}}</td>
+                            <td>{{ form.Ref2}}</td>
+                        
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            
+            <div class="form_box2">
+                <h1>UPLOAD YOUR RECENT RESUME</h1>
+                <div class="form_box_inn3">
+                    <p>{{ form.upload_cv }}</p>
+                </div>
+            </div>
+
+<br>
+
+
+
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+        {% endif %}
+    </div>
+</div>
+<br><br>
+{% endblock %}

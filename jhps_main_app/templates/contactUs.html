@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<br>
+<div class="pageTilesBox">
+    <div class="pageTiles">
+        <h2>Address</h2>
+        <h3><strong>Jubilee Hills Public School</strong><br>
+            Rampally Dayara, <br>Keesara Mandal, <br>Medchal Dist. <br>
+            Telangana - 501 301 <br></h3>
+        <br>
+        <h3> <strong> Admission: &phone; </strong> +91 9346784119, 9346781619 <br>
+            <strong>Transport: </strong> +91 9849998441 <br>
+
+            <strong>Office: </strong> +91 9515943805 <br>
+
+            <strong>Email: </strong> info@jhpsrampally.com <br>
+
+            <strong>Email : </strong>principal@jhpsrampally.com <br>
+    </div>
+    <div class="pageTiles"><iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15221.549097213316!2d78.661127!3d17.489017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc476139e32c6268a!2sJubilee%20Hills%20Public%20School%20Rampally!5e0!3m2!1sen!2sin!4v1672162520047!5m2!1sen!2sin"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="pageTiles"> 
+        <a href="{% static 'images/route.jpg' %}"> <img width="100%" height="450px" src="{% static 'images/route.jpg' %}" alt="JHPS Route"></a>
+        
+    </div>
+    <div class="pageTiles">
+        <div class="form_box">
+            <h1>Admission Enquiry</h1>
+            <div class="form_box_inn">
+                {% if submitted %}
+                <h1>We Received your details.....</h1>
+                {% else %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit" class="btn btn-success">
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<br><br>
+{% endblock %}

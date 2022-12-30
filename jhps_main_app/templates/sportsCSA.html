@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-box">
+<h1>Sports & CSA</h1>
+{% for x in sportsCSAData %}
+   <div class="pgf-cont">
+      <h2>{{x.title}}</h2>
+      <div class="pgf-inn">
+
+          <div class="pgf-img">
+              {% if x.upload_image %}
+              <img  src="{{ x.upload_image }}" alt="image">
+              {% endif %}
+            </div>
+            <div class="pgf-txt">
+               <p>{{x.paragraph_data|safe}}</p>
+            </div>
+      </div>
+   </div>
+  
+   {% endfor %}
+</div>
+{% endblock %}

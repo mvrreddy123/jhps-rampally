@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-box">
+<h1>Campus</h1>
+{% for x in admissionsData %}
+   <div class="pgf-cont">
+      {% if x.title %}
+      <h2>{{x.title}}</h2>
+      {% endif %}
+      <div class="pgf-inn">
+
+          <div class="pgf-img">
+              {% if x.upload_image %}
+              <img  src="{{ x.upload_image }}" alt="image">
+              {% endif %}
+            </div>
+            <div class="pgf-txt">
+               {% if x.paragraph_data|safe != "." %}
+               <p>{{x.paragraph_data|safe}}</p>
+               {% endif %}
+            </div>
+      </div>
+   </div>
+  
+   {% endfor %}
+</div>
+{% endblock %}
