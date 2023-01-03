@@ -8,22 +8,22 @@
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="2000">
-                <img src="{% static 'ss/1.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'images/1.png' %}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="{% static 'ss/2.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'images/2.png' %}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{% static 'ss/3.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'images/3.png' %}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item active" data-bs-interval="2000">
-                <img src="{% static 'ss/4.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'images/4.png' %}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="{% static 'ss/5.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'images/5.png' %}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{% static 'ss/6.jpg' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'images/6.png' %}" class="d-block w-100" alt="...">
             </div>
         </div>
         <button touch="true" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
@@ -42,90 +42,506 @@
 
 <div id="co_menu2" onclick="clsBtn(this)" class="co_m2_box">
     <!-- <img src="{% static 'images/str1.gif' %}" alt="BG JHPS"> -->
-    <div class="co_m2">
-        <img src="{% static 'images/bg1.gif' %}" alt="BG JHPS">
-        <div class="co_box">
-            <span class="close_btn">&times;</span>
-            <div class="sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admissions <br>for 2023-24 <br>in
-                    progress
-                </a></div>
-            <div class="sm2"> <a href="{% url 'jhps_main_app:ReferAStudent' %}"> Refer A Student </a></div>
-            <div class="sm3"> <a href="{% static 'pdf/JHPS_Application_Form.pdf' %}" target="_blank">Download
-                    Application Form </a></div>
+    <div class="co_m2_out">
+        <div class="co_m2">
+            <!-- <span class="close_btn">&times;</span> -->
+            <img src="{% static 'images/bg1.gif' %}" alt="BG JHPS">
+            <div class="co_box">
+                <div class="sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admissions <br>for 2023-24 <br>in
+                        progress
+                    </a></div>
+                <div class="sm2"> <a href="{% url 'jhps_main_app:ReferAStudent' %}"> Refer A Student </a></div>
+                <div class="sm3"> <a href="{% static 'pdf/JHPS_Application_Form.pdf' %}" target="_blank">Download
+                        Application Form </a></div>
+            </div>
         </div>
     </div>
 </div>
 <div class="l2">
-    <div class="l2-inn"></div>
+    <div class="l2-inn">
+
+        <div id="carouselExampleInterval2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our1.png' %}" class="d-block w-100" alt="image1">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our2.png' %}" class="d-block w-100" alt="image2">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our3.png' %}" class="d-block w-100" alt="image3">
+                    <a href="">
+                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/tr1.png' %}" class="d-block w-100" alt="imaget1">
+                    <a href="">
+                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/tr2.png' %}" class="d-block w-100" alt="imaget2">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our4.png' %}" class="d-block w-100" alt="image4">
+                    <a href="">
+                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our5.png' %}" class="d-block w-100" alt="image5">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our6.png' %}" class="d-block w-100" alt="image6">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our7.png' %}" class="d-block w-100" alt="image7">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our8.png' %}" class="d-block w-100" alt="image8">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our9.png' %}" class="d-block w-100" alt="image9">
+                    <a href="">
+                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our10.png' %}" class="d-block w-100" alt="image10">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our11.png' %}" class="d-block w-100" alt="image11">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our12.png' %}" class="d-block w-100" alt="image12">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our13.png' %}" class="d-block w-100" alt="image13">
+                    <a href="">
+                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our14.png' %}" class="d-block w-100" alt="image14">
+                    <a href="">
+                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our15.png' %}" class="d-block w-100" alt="image15">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our16.png' %}" class="d-block w-100" alt="image16">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our17.png' %}" class="d-block w-100" alt="image17">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our18.png' %}" class="d-block w-100" alt="image18">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our19.png' %}" class="d-block w-100" alt="image19">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our20.png' %}" class="d-block w-100" alt="image20">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our21.png' %}" class="d-block w-100" alt="image21">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our22.png' %}" class="d-block w-100" alt="image22">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our23.png' %}" class="d-block w-100" alt="image23">
+                    <a href="">
+                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our24.png' %}" class="d-block w-100" alt="image24">
+                    <a href="">
+                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
+                    </a>
+                </div>
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/our25.png' %}" class="d-block w-100" alt="image25">
+                    <a href="">
+                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
+                    </a>
+                </div>
+
+
+            </div>
+            <button touch="true" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval2"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button touch="true" class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval2"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+    </div>
     <div class="l2-inn2">
-            <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'Welcome')" id="defaultOpen">Welcome</button>
-                <button class="tablinks" onclick="openCity(event, 'Vision')">Vision</button>
-                <button class="tablinks" onclick="openCity(event, 'Mission')">Mission</button>
-            </div>
+        <div class="tab" style="border-radius: 10px 10px 0 0;">
+            <button style="color:rgb(76, 64, 0) ; border-radius: 10px 0 0 0; background-color: rgb(253, 233, 120);"
+                class="tablinks" onclick="openCity(event, 'Welcome')" id="defaultOpen">Welcome</button>
+            <button style="color:rgb(36, 83, 0) ; background-color: rgb(178, 253, 120)" class="tablinks"
+                onclick="openCity(event, 'Vision')">Vision</button>
+            <button style="color:rgb(0, 88, 26) ; background-color: rgb(120, 253, 160)" class="tablinks"
+                onclick="openCity(event, 'Mission')">Mission</button>
+        </div>
 
-            <div id="Welcome" class="tabcontent">
-                <h3>Welcome to Jubilee Hills Public School</h3>
-                <p>
-                    Jubilee Hills Public School, Rampally established in 2016, sponsored by the "Jubilee Hills
-                    Education Society" a non- profit organization aims at providing high quality education at the
-                    Primary, Secondary and Senior Secondary under the CBSE pattern. This School is a non-profit
-                    organization has been set up for disseminating education to every strata of the Society.
-                </p>
-                <p>
-                    Jubilee Hills Public School, Rampally is located near Keesara in a 6 acre campus amidst huge
-                    expansive greenery.
-                </p>
-                <p>
-                    The endeavor is to provide students with overall personality development through academic
-                    excellence and communicative, creative and sportive skills and build their confidence while
-                    being rooted to their own culture with a mindset to be both modern and democratic.</p>
-            </div>
+        <div class="tabcontent" style="color:rgb(48, 41, 0) ; background-color: rgb(253, 233, 120);" id="Welcome">
+            <h3>Welcome to Jubilee Hills Public School</h3>
+            <p style="color:rgb(48, 41, 0) ;">
+                Jubilee Hills Public School, Rampally established in 2016, sponsored by the "Jubilee Hills
+                Education Society" a non- profit organization aims at providing high quality education at the
+                Primary, Secondary and Senior Secondary under the CBSE pattern. This School is a non-profit
+                organization has been set up for disseminating education to every strata of the Society.
+            </p>
+            <p style="color:rgb(48, 41, 0) ;">
+                Jubilee Hills Public School, Rampally is located near Keesara, ECIL, Hyderabad in a <strong> 6 acre
+                    campus amidst huge
+                    expansive greenery.</strong>
 
-            <div id="Vision" class="tabcontent">
-                <h3>Vision</h3>
-                <p>"The School will develop and utilize the opportunities inherent in the information society to
-                    improve quality of life, knowledge, international competitiveness and interaction in an
-                    exemplary, versatile and sustainable way. The school will nurture the students in desired values
-                    and culture as is expected of a good society".</p>
-            </div>
+                The endeavor is to provide students with overall personality development through academic
+                excellence and communicative, creative and sportive skills and build their confidence while
+                being rooted to their own culture with a mindset to be both modern and democratic.</p>
+        </div>
 
-            <div id="Mission" class="tabcontent">
-                <h3>Mission</h3>
-                <p>
-                    Educational establishment will be innovative center of learning where teachers will collaborate
-                    with students in developing new pedagogical (teaching / learning) applications. The school will
-                    have greater responsibility for preventing social exclusion. The use of networks for tutoring
-                    and support will become more frequent to avoid children opting for tuition shops.
-                </p>
-                <p>
-                    Students will be continuously supported in the transition phase between different educational
-                    levels. Education will be imparted with a premise that “every child can learn” The institution
-                    will strive in future to learn how to exploit tacit knowledge to explicit knowledge.
-                </p>
-            </div>
+        <div class="tabcontent" style="color:rgb(26, 61, 0) ; background-color: rgb(178, 253, 120)" id="Vision">
+            <h3>Vision</h3>
+            <p style="color:rgb(26, 61, 0) ;">"The School will develop and utilize the opportunities inherent in the
+                information society to
+                improve quality of life, knowledge, international competitiveness and interaction in an
+                exemplary, versatile and sustainable way. The school will nurture the students in desired values
+                and culture as is expected of a good society".</p>
+        </div>
 
-            <script>
-                function openCity(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
+        <div class="tabcontent" style="color:rgb(0, 55, 16) ; background-color: rgb(120, 253, 160)" id="Mission">
+            <h3>Mission</h3>
+            <p style="color:rgb(0, 55, 16) ;">
+                Educational establishment will be innovative center of learning where teachers will collaborate
+                with students in developing new pedagogical (teaching / learning) applications. The school will
+                have greater responsibility for preventing social exclusion. The use of networks for tutoring
+                and support will become more frequent to avoid children opting for tuition shops.
+            </p>
+            <p>
+                Students will be continuously supported in the transition phase between different educational
+                levels. Education will be imparted with a premise that “every child can learn” The institution
+                will strive in future to learn how to exploit tacit knowledge to explicit knowledge.
+            </p>
+        </div>
+
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
                 }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
 
-                // Get the element with id="defaultOpen" and click on it
-                document.getElementById("defaultOpen").click();
-            </script>
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
     </div>
 </div>
-<div class="l3"></div>
+<div class="jhps_tour">
+    
+<video width="100%" src="{% static 'videos/jhpstour1.mp4' %}" autoplay muted loop>         Your browser does not support the video tag.</video>
+</div>
+<div class="l3">
+    <h3>Recent Events</h3>
+    <div class="owl-carousel owl-2">
+        <div style="background-color: rgb(250, 200, 119);" class="media-29101">
+            <a href="#"><img src="{% static 'images/our1.png' %}" alt="Image" class="img-fluid"></a>
+            <h3><a href="#">Events</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+        </div>
+        <div style="background-color: rgb(138, 185, 255);" class="media-29101">
+            <a href="#"><img src="{% static 'images/our2.png' %}" alt="Image" class="img-fluid"></a>
+            <h3><a href="#">Events</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+        </div>
+        <div style="background-color: rgb(150, 254, 142);" class="media-29101">
+            <a href="#"><img src="{% static 'images/our3.png' %}" alt="Image" class="img-fluid"></a>
+            <h3><a href="#">Events</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+        </div>
+        <div style="background-color: rgb(251, 159, 190);" class="media-29101">
+            <a href="#"><img src="{% static 'images/our4.png' %}" alt="Image" class="img-fluid"></a>
+            <h3><a href="#">Events</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+        </div>
+        <div style="background-color: rgb(255, 249, 142);" class="media-29101">
+            <a href="#"><img src="{% static 'images/our5.png' %}" alt="Image" class="img-fluid"></a>
+            <h3><a href="#">Events</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+        </div>
+        <div style="background-color: rgb(240, 146, 255);" class="media-29101">
+            <a href="#"><img src="{% static 'images/our6.png' %}" alt="Image" class="img-fluid"></a>
+            <h3><a href="#">Events</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+        </div>
+    </div>
+</div>
 
+<div class="l4">
+    <div class="img_gal_box">
+        <h2>Image Gallery</h2>
+        <a href="{% url 'jhps_main_app:gallery' %}">
+            <div class="row">
+                <div class="column">
+                    <img src="{% static 'images/our8.png' %}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our14.png' %}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our26.pn' %}g" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our27.pn' %}g" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our28.pn' %}g" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our29.pn' %}g" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our3.png' %}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our12.pn' %}g" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our2.pn' %}g" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our9.pn' %}g" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our23.png' %}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our20.pn' %}g" style="width:100%">
+                </div>
+
+            </div>
+        </a>
+    </div>
+
+    <div class="notice_box">
+        <h2>Notice Board</h2>
+        <a href="#">
+            <div class="row">
+
+                <div class="column">
+                    <h4>1</h4>
+                    <h6>Dear Parents,</h6>
+                    <p>
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt. 
+                        
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin3.png' %}" alt="" style="width: 15px;">
+                </div>
+                <div class="column">
+                    <h4>2</h4>
+                    <p>Dear Parents,</h6>
+                        <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt. 
+                        
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin1.png' %}" style="width: 15px">
+                </div>
+                <div class="column">
+                    <h4>3</h4>
+                    <p>Dear Parents,</h6>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt. 
+                        
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin2.png' %}" alt="" style="width: 15px;">
+                </div>
+                <div class="column">
+                    <h4>4</h4>
+                    <p>Dear Parents,</h6>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt. 
+                        
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin2.png' %}" alt="" style="width: 15px;">
+                </div>
+                <div class="column">
+                    <h4>5</h4>
+                    <p>Dear Parents,</h6>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt. 
+                        
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin1.png' %}" alt="" style="width: 15px;">
+                </div>
+                <div class="column">
+                    <h4>6</h4>
+                    <p>Dear Parents,</h6>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt. 
+                        
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin3.png' %}" style="width: 15px;">
+                </div>
+
+            </div>
+        </a>
+    </div>
+    <div class="video_box">
+        <h2>Video Gallery</h2>
+        <a href="#">
+            <div class="row">
+                <div class="column">
+                    <img src="{% static 'videos/jhps1.gif' %}" >
+                </div>
+                <div class="column">
+                    <img src="{% static 'videos/jhps2.gif' %}" >
+                </div>
+                <div class="column">
+                    <img src="{% static 'videos/jhps3.gif' %}" >
+                </div>
+                <div class="column">
+                    <img src="{% static 'videos/jhps4.gif' %}" >
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+<div class="l5">
+    <h3 style="text-align: center;">Testimonials</h3>
+    <div style="height: 300px;" class="owl-carousel owl-2">
+        <div style=" background-color: rgb(255,255,255);" class="media-29101">
+            <img src="{% static 'images/jaya.png' %}" alt="Image" class="img-fluid">
+            <h4> Jaya Krishna.V</h4>
+            <h6> Student Name: Likith Sri Sai Teja</h6> 
+            <p> We as parents are very happy with our child progress and his improved communication skills. Teachers are friendly and supportive. We are thankful to all the teachers and team JHPS. Please keep rocking JHPS.</p>
+            <p>2021-03-15 12:16:06</p>
+        </div>
+        <div style=" background-color: rgb(255,255,255);" class="media-29101">
+            <img src="{% static 'images/praveen.png' %}" alt="Image" class="img-fluid">
+            <h4> Bommana Praveen Kumar</h4>
+            <h6> Student Name: Charvik</h6> 
+            <p> I am one of the happiest parents. Academics and cultural activities are good are here. Most importantly they encourage every child to take part of cultural activities and they give them a chance to perform on stage.</p>
+            <p>November 8, 2019</p>
+            
+        </div>
+        <div style=" background-color: rgb(255,255,255);" class="media-29101">
+            <img src="{% static 'images/harika.png' %}" alt="Image" class="img-fluid">
+            <h4>M.Harika</h4>
+            <h6> Student Name: Sriman Kommua</h6> 
+            <p> I am Harika. I was worried when I put my son here at JHPS. But now I am happy and I completely trust and believe in the Management and the teachers. I hope this will continue .Thank you.</p>
+            <p>2021-03-15 12:16:06</p>
+
+        </div>
+        <div style=" background-color: rgb(255,255,255);" class="media-29101">
+            <img src="{% static 'images/amrita.png' %}" alt="Image" class="img-fluid">
+            <h4> Amrita Priyadarshini</h4>
+            <h6> Student Name: Sumedha</h6> 
+            <p> Sumedha is enjoying and learning new things in class everyday.</p>
+            <p>2021-03-15 12:16:06</p>
+        </div>
+       
+    </div>
+</div>
 
 {% endblock %}

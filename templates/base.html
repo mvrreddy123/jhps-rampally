@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="{% static 'css/base_layout.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
     <style>
         .form_box {
             background-color: white;
@@ -111,15 +116,16 @@
             font-size: 20px;
         }
 
-        .main-box .blink_box, .nav-item .blink_box{
+        .main-box .blink_box,
+        .nav-item .blink_box {
             background-color: red;
             border: 1px solid red;
             color: rgb(255, 255, 255);
-            border-radius: 25px;
+            /* border-radius: 25px;
             padding: 0 15px 5px 15px;
-            margin: 5px 20px 0 0;
+            margin: 5px 20px 0 0; */
             text-decoration: none;
-            animation: bb1 1s infinite;
+            animation: bb1 2s infinite;
         }
 
         .main-box .blink_box:hover {
@@ -251,47 +257,7 @@
             font-size: 23px;
         }
 
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid gold;
-    background-color: rgb(252, 235, 141);
-  }
-  
-  /* Style the buttons inside the tab */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 25px;
-    color: maroon;
-    font-weight: bold;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: gold;
-  }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
-    background-color: gold;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid gold;
-    color: rgb(122, 0, 0);
-    border-top: none;
-    height: 300px;
-    overflow: auto;
-  }
+        /* Style the tab */
         @media only screen and (max-width:600px) {
             .pageTilesBox .pageTiles {
                 width: 99%;
@@ -354,19 +320,26 @@
                 <h1 class="t1">Jubilee Hills Public School - Rampally</h1>
                 <div class="nav_menu">
                     <nav class="navbar navbar-expand-lg  shadow"
-                        style="background-color: rgb(0, 194, 0); font-size: 20px; font-weight: 500;">
+                        style="background-color:#ffcc00; font-size: 20px; font-weight: 400;">
                         <div class="container-fluid">
-                            <a class="navbar-brand" href="#"> <span class="badge bg-primary"></span></a>
-                            <a class="navbar-brand mvr-menu" href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access"> <span class="badge bg-primary">Parents Login</span></a>
-                            <a class="navbar-brand mvr-menu" href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access"> <span class="badge bg-primary">Teache Login</span></a>
-                            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbar-content">
+
+                            <a class="mvr-menu"
+                                href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access">
+                                <span class="badge bg-primary">Parent Login</span></a>
+                            <a class="mvr-menu"
+                                href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access">
+                                <span class="badge bg-primary">Teacher Login</span></a>
+                            <a class="mvr-menu" href="{% url 'jhps_main_app:contactUs' %}"> <span
+                                    class="badge bg-primary"><i class="fa-solid fa-address-book"></i></span></a>
+                            <a class="mvr-menu" href="/"> <span class="badge bg-primary"><i class="fa fa-home"
+                                        aria-hidden="true"></i></span></a>
+                            <button class="navbar-toggler collapsed"
+                                style="border: 2px solid #a38200; padding:2px 5px ;" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#navbar-content">
                                 <div class="hamburger-toggle">
                                     <div class="hamburger">
                                         <span class="navbar-toggler-icon"></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
+
                                     </div>
                                 </div>
                             </button>
@@ -441,8 +414,9 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle blink_box" href="{% url 'jhps_main_app:admissions' %}"
-                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">Admission</a>
+                                        <a class="nav-link dropdown-toggle blink_box"
+                                            href="{% url 'jhps_main_app:admissions' %}" data-bs-toggle="dropdown"
+                                            data-bs-auto-close="outside">Admission</a>
                                         <ul class="dropdown-menu shadow">
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:admissions' %}">Admission Policy &
@@ -458,7 +432,9 @@
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:ReferAStudent' %}">Refer a Student</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="{% static 'pdf/JHPS_Application_Form.pdf' %}" target="_blank">Download Application Form</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="{% static 'pdf/JHPS_Application_Form.pdf' %}"
+                                                    target="_blank">Download Application Form</a></li>
                                             <!-- <li>
                                                 <hr class="dropdown-divider">
                                             </li>
@@ -518,14 +494,7 @@
 
 
                                 </ul>
-                                <form class="d-flex ms-auto">
-                                    <div class="input-group">
-                                        <input class="form-control border-0 mr-2" type="search" placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn btn-primary border-0" type="submit"><i
-                                                class="fa-solid fa-magnifying-glass"></i></button>
-                                    </div>
-                                </form>
+
                             </div>
                         </div>
                     </nav>
@@ -540,11 +509,55 @@
                     class="fa-brands fa-youtube"></i> </a></div>
     </div>
 
-<script>function clsBtn(x){x.style.display='none';}</script>
+    <script>function clsBtn(x) { x.style.display = 'none'; }</script>
     {% block content %}
     {% endblock %}
-    <br><br>
+
+    <!-- Happy New year -->
+    <div class="new_box_out">
+        <div class="new_box">
+            <div class="block">
+                <span style="--i:0;"></span>
+                <span style="--i:1;"></span>
+                <span style="--i:2;"></span>
+                <span style="--i:3;"></span>
+            </div>
+            <div class="block2">
+                <span style="--i:0;"><img src="{% static 'images/logo_jhps.png' %}" alt="img"></span>
+                <span style="--i:1;"><img src="{% static 'images/logo_jhps.png' %}" alt="img"></span>
+                <span style="--i:2;"><img src="{% static 'images/logo_jhps.png' %}" alt="img"></span>
+                <span style="--i:3;"><img src="{% static 'images/logo_jhps.png' %}" alt="img"></span>
+            </div>
+            <div class="text">
+                <span style="--i:0;" data-tex="Happy">Happy</span>
+                <span style="--i:1;" data-tex="New">New</span>
+                <span style="--i:2;" data-tex="Year">Year</span>
+                <span style="--i:3;" data-tex="2023">2023</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Happy New year End-->
+
+
+    <br>
+    <button onclick="gotop()" class="goToTop">Go to Top</button>
+    <script>
+        function gotop(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0
+        }
+    </script>
     <footer>
+        <div class="f_us">
+            <div>Follow Us on: </div>
+            <div>
+                <a style="color: rgb(255, 0, 0);" href="https://www.youtube.com/@JubileeHillsPublicSchool/ "
+                    target='_blank'> &nbsp; <i class="fa-brands fa-youtube"></i> </a>
+                <a href="#" style="color: rgb(23, 233, 0);"> <i class="fa-brands fa-whatsapp"></i> </a>
+            </div>
+        </div>
         <div class="nav_foot">
             <a href="{% url 'jhps_main_app:transport' %}">Transport</a>
             <a href="{% url 'jhps_main_app:circulars' %}">Circular</a>
@@ -554,18 +567,17 @@
             <a href="{% url 'jhps_main_app:careers' %}">School Magazines</a>
             <a href="{% url 'jhps_main_app:careers' %}">Grevience Cell</a>
         </div>
-        <div class="f_us">
-            <span>Follow Us on:</span>
-
-            <a style="color: rgb(255, 0, 0);" href="https://www.youtube.com/@JubileeHillsPublicSchool/ "
-                target='_blank'><i class="fa-brands fa-youtube"></i> </a>
-            <a href="#" style="color: rgb(23, 233, 0);"> <i class="fa-brands fa-whatsapp"></i> </a>
-
-        </div>
+      
     </footer>
     <!-- Optional JavaScript -->
     <script src="{% static 'js/all.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery-3.3.1.min2.js' %}"></script>
+    <script src="{% static 'js/popper.min2.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min2.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min2.js' %}"></script>
+    <script src="{% static 'js/main2.js' %}"></script>
 
 
 </body>

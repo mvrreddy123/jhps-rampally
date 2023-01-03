@@ -19,4 +19,5 @@ urlpatterns = [
     path('circulars', views.circulars, name='circulars'),
     path('downloads', views.downloads, name='downloads'),
     path('transport', views.transport, name='transport'),
+    path('gallery', views.gallery, name='gallery'),
 ]

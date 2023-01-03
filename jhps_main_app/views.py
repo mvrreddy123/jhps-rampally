@@ -52,6 +52,11 @@ def transport(request):
     # args = {'download': download}
     return render(request, 'transport.html')
 
+def gallery(request):
+    # download = Downloads.objects.all()
+    # args = {'download': download}
+    return render(request, 'imageGall.html')
+
 # start Forms
 def contactUs(request):
     # return HttpResponse('Hi JHPS')

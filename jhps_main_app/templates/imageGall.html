@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    
+<h2 style="text-align: centers;" >Image Gallery</h2>
+    <div class="img_gal" id="imgGal">
+
+    <div class="imgContainer" id="contId">
+        <span onclick="closeCont()" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+    
+    </div>
+    <div class="imgRow" id="rowId">
+        <div class="column">
+            <img src="{% static 'images/our10.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our6.png' %}" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our8.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our7.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our26.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our27.png' %}" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our28.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our29.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our3.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our12.png' %}" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our13.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our14.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our15.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our20.png' %}" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our23.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our24.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our1.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our2.png' %}" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our3.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="{% static 'images/our4.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+ 
+    function closeCont(){
+        document.getElementById('contId').style.display = 'none';
+        document.getElementById('rowId').style.width = '100%';
+        let x = document.getElementsByClassName('column');
+            for (let i = 0; i < x.length; i++){
+                x[i].style.width = '20%';
+            }
+    }
+    function myFunction(imgs) {
+        // alert(window.innerWidth);
+        if (window.innerWidth < '1000'){
+            document.getElementById('imgGal').style.flexDirection = 'column';
+            document.getElementById('rowId').style.width = '100%';
+            document.getElementById('contId').style.width = '100%';
+        }else{
+            document.getElementById('imgGal').style.flexDirection = 'row';
+            document.getElementById('rowId').style.width = '44%';
+            document.getElementById('contId').style.width = '56%';
+            let x = document.getElementsByClassName('column');
+            for (let i = 0; i < x.length; i++){
+                x[i].style.width = '25%';
+            }
+        }
+        var expandImg = document.getElementById("expandedImg");
+    
+        expandImg.src = imgs.src;
+      
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
+{% endblock %}

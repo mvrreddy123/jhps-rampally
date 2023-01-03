@@ -14,7 +14,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 99;
     height: 100px;
     width: 100%;
     /* background: linear-gradient(115deg, #c0ffa5, #e8b76f); */
@@ -165,21 +165,35 @@ body {
     left: 0; */
 }
 /* end ss */
+
 .l2{
     display: flex;
     width: 100%;
     height: 420px;
-   padding: 10px;
+   padding:0 10px;
    overflow: hidden;
 }
 .l2 .l2-inn{
     margin: 5px auto;
-    padding: 15px;
+    /* padding: 15px; */
     width: 40%;
     height: 400px;
-    /* box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.255); */
+    border-radius: 10px;
+    text-align: center;
+    
+    box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.255);
 }
-
+.l2 .l2-inn img{
+    border-radius: 10px 10px 0 0;
+}
+.l2 .l2-inn a{
+    text-align: center;
+    text-decoration: none;
+}
+.l2 .l2-inn a:hover{
+    text-decoration: underline;
+    text-decoration-color: gold;
+}
 .l2 .l2-inn p{
     text-align: justify;
     font-size: 20px;
@@ -213,6 +227,98 @@ body {
     height: 300px;
    
 }
+
+
+/* Happy New Year */
+.new_box_out{
+    position: fixed;
+    bottom: 0;
+    left: 50% ;
+}
+.new_box{
+    position: relative;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: yearanim 16s linear infinite;
+}
+@keyframes yearanim {
+    0% {transform: rotateX(-20deg) rotateY(360deg);}
+    100% {transform: rotateX(-20deg) rotateY(0deg);}
+}
+.new_box div{
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+}
+
+.new_box div.block span{
+    position: absolute;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 100px;
+    background-color: #444;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+    transition: 0.5s;
+}
+
+.new_box:hover div.block span{
+    background-color: #f00;
+    filter: drop-shadow(0 0 50px #f00);
+}
+
+.new_box div.text span{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+    cursor: pointer;
+    color: white;
+    font-size: 8em;
+    text-transform: uppercase;
+    z-index: 10;
+    line-height: 1em;
+    -webkit-text-stroke: 3px #000;
+    transform-style: preserve-3d;
+    
+}
+.new_box div.text span:nth-child(1){
+    font-size: 6em;
+}
+
+.new_box div.text span::before{
+    content: attr(data-text);
+    position: absolute;
+    bottom: 7px;
+    transform-origin: bottom;
+    transform: rotateX(-90deg);
+    color: rgba(0, 0, 0, 0.1);
+    -webkit-text-stroke: 0px #000;
+    filter: blur(5px);
+}
+
+.new_box div.text span::after{
+    content: "";
+    position: absolute;
+    top: 100px;
+    width: 360px;
+    height: 60px;
+    background: #444;
+    transform: rotateX(-90deg);
+    transition: 0.5s;
+    
+}
+
+
+.new_box:hover div.text span::after{
+    background: #f00;
+    filter: drop-shadow(0 0 50px #f00 );
+}
+
+
+/* Happy New Year  End*/
 
 .mvr_sm{
     width: 50px;
@@ -395,18 +501,30 @@ footer .f_us a:hover{
 }
 .mvr-menu{
     display: none;
+    padding: 0;
+    margin-left: -5px;
+    
 }
 
 
 @media only screen and (max-width:600px){
+    .top_grp{
+        height: 105px;
+    }
+.mvr_ss{
+    top: 100px;
+}
     .l2{
         flex-direction: column;
     }
     .l2 .l2-inn, .l2 .l2-inn2{
         width: 100%;
     }
+    .l2 .l2-inn, .l2 .l2-inn2 button{
+        font-size: 20px;
+    }
     .co_m2{
-        left: 20%;
+        left: 10%;
     }
 
     .login{
@@ -416,19 +534,29 @@ footer .f_us a:hover{
         display: inline-block;
     }
 .logo1{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     top: 0px;
-    left: 20px;
+    left: 10px;
     
 }
 .nav_menu{
     top: 55px;
+    height: 50px;
+}
+.nav_menu .navbar{
+    /* background-color: #ff0c78; */
+    margin-top: -6px;
+}
+.nav_menu .navbar .nav-item{
+    /* background-color: #ff0c78; */
+    /* margin-top: -6px; */
+    border-bottom: 1px solid rgb(16, 241, 252);
 }
 .t1{
-    font-size: 18px;
+    font-size: 14px;
     top: 20px;
-    left: 90px;
+    left: 75px;
     text-align: center;
     z-index: 1;
 
