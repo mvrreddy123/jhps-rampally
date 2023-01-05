@@ -16,5 +16,10 @@
     {% endif %}
     </div>
 </div>
-
+<script>
+    let sd = document.getElementsByTagName('select');
+    for (let i of sd){
+        i.setAttribute('class', 'form-select');
+    }
+</script>
 {% endblock %}

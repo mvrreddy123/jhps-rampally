@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-box">
+<h1>House Activities</h1>
+
+<p>Inter House competitions are organized periodically in Sports, Debates, Quiz, Dance, Arts and Music.</p>
+
+
+{% for x in HOUSEACTIVITIESData %}
+   <div class="pgf-cont">
+      {% if x.title %}
+      <h2>{{x.title}}</h2>
+      {% endif %}
+      <div class="pgf-inn">
+
+         <div class="pgf-txt">
+            <p>   
+               {{x.paragraph_data|safe}}</p>
+         </div>
+         <div class="pgf-img">
+            {% if x.upload_image %}
+            <img width="450px" src="{{ x.upload_image }}" alt="image">
+            {% endif %}
+         </div>
+      </div>
+   </div>
+   
+   {% endfor %}
+ 
+</div>
+{% endblock %}

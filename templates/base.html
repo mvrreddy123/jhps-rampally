@@ -104,28 +104,57 @@
 
         .main-box h1 {
             padding: 20px 70px;
+            color: rgb(117, 0, 0);
         }
 
         .main-box h3 {
             padding: 0px 70px;
+            color: rgb(123, 1, 1);
         }
 
         .main-box p {
             padding: 0px 70px;
             text-align: justify;
             font-size: 20px;
+            color: rgb(37, 0, 0);
         }
+        .main-box .blink_box
+        {
+            background-color: red;
+            border-width: 0 10px;
+            border-color: rgb(237, 202, 2) ;
+            border-style: solid;
+            color: rgb(255, 255, 255);
+            border-radius: 25px;
+            padding: 0 15px 5px 15px;
+            margin: 0 20px;
+            text-decoration: none;
+            animation: bb2 3s infinite;
+            animation-direction: alternate-reverse;
+        }
+        @keyframes bb2 {
+            from {
+                background-color: gold;
+                color: maroon;
+            }
 
-        .main-box .blink_box,
+            to {
+                background-color: maroon;
+                color: gold;
+            }
+        }
         .nav-item .blink_box {
             background-color: red;
-            border: 1px solid red;
+            border-width: 0 10px;
+            border-color: rgb(237, 202, 2) ;
+            border-style: solid;
             color: rgb(255, 255, 255);
-            /* border-radius: 25px;
-            padding: 0 15px 5px 15px;
-            margin: 5px 20px 0 0; */
+            border-radius: 25px;
+            padding: 10px 15px;
+          
             text-decoration: none;
             animation: bb1 2s infinite;
+            animation-direction: alternate-reverse;
         }
 
         .main-box .blink_box:hover {
@@ -204,20 +233,26 @@
             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
         }
 
-        table {
-            width: 100%;
+        .main-box  table {
+            width: 90%;
+            margin: 10px auto;
+            border-radius: 6px;
 
         }
-
-        table th {
+        .main-box table th{
+            background-color: rgb(255, 217, 0);
+        }
+        .main-box table, .main-box table th, .main-box table td {
             border: 1px solid rgb(250, 221, 56);
             padding: 5px 10px;
-            border-radius: 6px;
             border-collapse: collapse;
-            text-align: center;
+            
         }
-
-        table tr a {
+        .main-box table tr:hover{
+            cursor: pointer;
+            background-color: #ffe374;
+        }
+        .main-box table tr a {
             text-decoration: none;
             color: rgb(59, 50, 0);
             margin: 0 10px;
@@ -256,7 +291,10 @@
             margin: 10px;
             font-size: 23px;
         }
-
+        label{
+            color: rgb(55, 55, 55);
+            margin-left: 10px;
+        }
         /* Style the tab */
         @media only screen and (max-width:600px) {
             .pageTilesBox .pageTiles {
@@ -322,16 +360,16 @@
                     <nav class="navbar navbar-expand-lg  shadow"
                         style="background-color:#ffcc00; font-size: 20px; font-weight: 400;">
                         <div class="container-fluid">
-
+  
                             <a class="mvr-menu"
                                 href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access">
-                                <span class="badge bg-primary">Parent Login</span></a>
+                                <span class="badge bg-warning">Parent Login</span></a>
                             <a class="mvr-menu"
                                 href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access">
-                                <span class="badge bg-primary">Teacher Login</span></a>
+                                <span class="badge bg-warning">Teacher Login</span></a>
                             <a class="mvr-menu" href="{% url 'jhps_main_app:contactUs' %}"> <span
-                                    class="badge bg-primary"><i class="fa-solid fa-address-book"></i></span></a>
-                            <a class="mvr-menu" href="/"> <span class="badge bg-primary"><i class="fa fa-home"
+                                    class="badge bg-warning"><i class="fa-solid fa-address-book"></i></span></a>
+                            <a class="mvr-menu" href="/"> <span class="badge bg-warning"><i class="fa fa-home"
                                         aria-hidden="true"></i></span></a>
                             <button class="navbar-toggler collapsed"
                                 style="border: 2px solid #a38200; padding:2px 5px ;" type="button"
@@ -356,16 +394,16 @@
                                         <ul class="dropdown-menu shadow">
                                             <li><a class="dropdown-item" href="{% url 'jhps_main_app:aboutUs' %}">About
                                                     Us</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:aboutUs' %}">Vision
+                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:vision_mission' %}">Vision
                                                     & Mission</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:aboutUs' %}">Awards</a></li>
+                                                    href="{% url 'jhps_main_app:awards' %}">Awards</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:aboutUs' %}">Presidential Visit</a></li>
+                                                    href="{% url 'jhps_main_app:presidential_visit' %}">Presidential Visit</a></li>
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>
-                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:aboutUs' %}">School
+                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:SMCommittee' %}">School
                                                     Managing Committee</a></li>
                                         </ul>
                                     </li>
@@ -373,40 +411,45 @@
                                         <a class="nav-link dropdown-toggle" href="{% url 'jhps_main_app:campus' %}"
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">Campus</a>
                                         <ul class="dropdown-menu shadow">
-                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:campus' %}">Class
+                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:ClassRoom' %}">Class
                                                     Rooms</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:campus' %}">Auditorium</a></li>
+                                                    href="{% url 'jhps_main_app:Auditorium' %}">Auditorium</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:campus' %}">Library</a></li>
+                                                    href="{% url 'jhps_main_app:Library' %}">Library</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:campus' %}">Infirmary Room</a></li>
+                                                    href="{% url 'jhps_main_app:InformaryRoom' %}">Infirmary Room</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:campus' %}">Canteen</a></li>
+                                                    href="{% url 'jhps_main_app:Canteen' %}">Canteen</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:campus' %}">Stationery</a></li>
+                                                    href="{% url 'jhps_main_app:Stationary' %}">Stationery</a></li>
 
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>
                                             <li class="dropend">
-                                                <a href="{% url 'jhps_main_app:campus' %}"
+                                                <a href="{% url 'jhps_main_app:TeacherWelfare' %}"
                                                     class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
                                                     data-bs-auto-close="outside">Teacher
                                                     Welfare</a>
                                                 <ul class="dropdown-menu shadow">
                                                     <li><a class="dropdown-item"
-                                                            href="{% url 'jhps_main_app:campus' %}">Admission Policy &
-                                                            Procedure</a></li>
+                                                            href="{% url 'jhps_main_app:TeacherWelfare' %}">Health Card</a></li>
                                                     <li><a class="dropdown-item"
-                                                            href="{% url 'jhps_main_app:campus' %}">Fee Structure</a>
+                                                            href="{% url 'jhps_main_app:TeacherWelfare' %}">Staff Picnics</a>
                                                     </li>
                                                     <li><a class="dropdown-item"
-                                                            href="{% url 'jhps_main_app:campus' %}">Student
-                                                            Enrolment</a></li>
+                                                            href="{% url 'jhps_main_app:TeacherWelfare' %}">100% Attendance Award</a></li>
                                                     <li><a class="dropdown-item"
-                                                            href="{% url 'jhps_main_app:campus' %}">TC-Verification</a>
+                                                            href="{% url 'jhps_main_app:TeacherWelfare' %}">Provident Fund</a>
                                                     </li>
+                                                    <li><a class="dropdown-item"
+                                                            href="{% url 'jhps_main_app:TeacherWelfare' %}">Edli</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item"
+                                                            href="{% url 'jhps_main_app:TeacherWelfare' %}">Professional Development</a>
+                                                    </li>
+                                                    
 
                                                 </ul>
                                             </li>
@@ -421,7 +464,7 @@
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:admissions' %}">Admission Policy &
                                                     Procedure</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:admissions' %}">Fee
+                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:FeeStructure' %}">Fee
                                                     Structure</a></li>
                                             <li>
                                                 <hr class="dropdown-divider">
@@ -432,15 +475,14 @@
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:ReferAStudent' %}">Refer a Student</a>
                                             </li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
                                             <li><a class="dropdown-item"
                                                     href="{% static 'pdf/JHPS_Application_Form.pdf' %}"
                                                     target="_blank">Download Application Form</a></li>
-                                            <!-- <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:admissions' %}">Student Enrolment</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:admissions' %}">TC-Verification</a></li> -->
-
+                                            <li><a class="dropdown-item" target="_blank" href="{% static 'pdf/JHPS_Rampally_CBSE_Updation.pdf' %}">Mandatory Public Disclosure</a></li>
+                                
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -450,19 +492,22 @@
                                         <ul class="dropdown-menu shadow">
                                             <a class="dropdown-item" href="{% url 'jhps_main_app:academics' %}">Class
                                                 Room Learning</a>
-                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:academics' %}">E
+                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:ELearning' %}">E
                                                     Learning</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:academics' %}">Curriculum Syllabus</a>
+                                                    href="{% url 'jhps_main_app:CurriculumSyllabus' %}">Curriculum Syllabus</a>
                                             </li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:academics' %}">Syllabus</a></li>
+                                                    href="{% url 'jhps_main_app:CurriculumSyllabus' %}">Syllabus</a></li>
 
                                             <li>
+                                                <li><a class="dropdown-item"
+                                                    href="{% url 'jhps_main_app:CurriculumSyllabus' %}">School Timings</a>
+                                                </li>
                                                 <hr class="dropdown-divider">
                                             </li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:academics' %}">Faculty</a></li>
+                                                    href="{% url 'jhps_main_app:Faculty' %}">Faculty</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -472,13 +517,13 @@
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:sportsCSA' %}">Sports</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:sportsCSA' %}">CSA</a></li>
+                                                    href="{% url 'jhps_main_app:CSA' %}">CSA</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:sportsCSA' %}">ECA</a></li>
+                                                    href="{% url 'jhps_main_app:ECA' %}">ECA</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:sportsCSA' %}">House Activities</a></li>
+                                                    href="{% url 'jhps_main_app:HouseAactivities' %}">House Activities</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:sportsCSA' %}">Educational Tour</a></li>
+                                                    href="{% url 'jhps_main_app:EducationalTours' %}">Educational Tour</a></li>
 
                                         </ul>
                                     </li>
@@ -514,7 +559,7 @@
     {% endblock %}
 
     <!-- Happy New year -->
-    <div class="new_box_out">
+    <div class="new_box_out"  onclick="clsBtn(this)">
         <div class="new_box">
             <div class="block">
                 <span style="--i:0;"></span>

@@ -68,7 +68,7 @@ class StudentEnquiryForm(ModelForm):
         labels = {'academic_year': 'Academic Year', 'first_name': '', 'middle_name': '', 'last_name': '', 'date_of_birth': '', 'gender': 'Gender', 'relation': 'Relation', 'local_type': 'Local Type', 'transfer_from': '', 'mobile_No': '', 'email': '', 'message': '', 'mother_name': '', 'mother_organization': '', 'mother_designation': '', 'mother_income': '', 'mother_mobile_No': '',
                   'mother_email': '', 'father_name': '', 'father_orgnization': '', 'father_designation': '', 'father_income': '', 'father_mobile_No': '', 'father_email': '', 'reference_name': '', 'reference_designation': '', 'reference_department': '', 'reference_company': '', 'reference_mobile_No': '', 'reference_email': '', 'remarks': ''}
         widgets = {
-            # 'academic_year': forms.ChoiceField(choices = Student_Enquiry.YEAR_CHOICES),
+            # 'academic_year': forms.Select(choices = Student_Enquiry.YEAR_CHOICES),
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name*'}),
             'middle_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Middle Name*'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last name*'}),

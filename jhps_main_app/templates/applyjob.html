@@ -16,7 +16,7 @@
                 <p>{{ form.Own_house_rented }}</p>
                 <p>{{ form.Mother_Tongue }}</p>
                 <p>{{ form.date_of_birth }}</p>
-                <p>Caste Category /Religion : {{ form.Caste_Category_Religion }}</p>
+                <p style="color: rgb(63, 63, 63);">Caste Category /Religion : {{ form.Caste_Category_Religion }}</p>
                 <p>{{ form.Email_ID }}</p>
                 <p>{{ form.Telephone_No }}</p>
                 <p>{{ form.Qualifications }}</p>
@@ -304,4 +304,11 @@
     </div>
 </div>
 <br><br>
+
+<script>
+    let sd = document.getElementsByTagName('select');
+    for (let i of sd){
+        i.setAttribute('class', 'form-select');
+    }
+</script>
 {% endblock %}

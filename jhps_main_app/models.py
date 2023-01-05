@@ -241,8 +241,8 @@ class Admission (models.Model):
     upload_image = models.ImageField(null=True, blank=True, upload_to='admission_images/') 
 
 class Academics (models.Model):
-    p1, p2 = 0, 1
-    ACADEMICS_CHOICES = [(p1, 'Class Room Learning'), (p2, 'E-Learning')]
+    p1, p2, p3 = 0, 1, 2
+    ACADEMICS_CHOICES = [(p1, 'Class Room Learning'), (p2, 'E-Learning'), (p3, 'Curriculum Syllabus')]
     select_page = models.IntegerField(choices=ACADEMICS_CHOICES)
     title = models.CharField(null=True, blank=True, max_length=255)
     paragraph_data = RichTextField()

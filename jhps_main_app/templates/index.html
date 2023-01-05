@@ -5,7 +5,7 @@
 
 <div class="mvr_ss">
 
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="2000">
                 <img src="{% static 'images/1.png' %}" class="d-block w-100" alt="...">
@@ -41,10 +41,10 @@
 </div>
 
 <div id="co_menu2" onclick="clsBtn(this)" class="co_m2_box">
-    <!-- <img src="{% static 'images/str1.gif' %}" alt="BG JHPS"> -->
+   
     <div class="co_m2_out">
         <div class="co_m2">
-            <!-- <span class="close_btn">&times;</span> -->
+   
             <img src="{% static 'images/bg1.gif' %}" alt="BG JHPS">
             <div class="co_box">
                 <div class="sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admissions <br>for 2023-24 <br>in
@@ -54,6 +54,7 @@
                 <div class="sm3"> <a href="{% static 'pdf/JHPS_Application_Form.pdf' %}" target="_blank">Download
                         Application Form </a></div>
             </div>
+
         </div>
     </div>
 </div>
@@ -116,12 +117,7 @@
                         <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
                     </a>
                 </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our8.png' %}" class="d-block w-100" alt="image8">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
+               
                 <div class="carousel-item active" data-bs-interval="2000">
                     <img src="{% static 'images/our9.png' %}" class="d-block w-100" alt="image9">
                     <a href="">
@@ -286,7 +282,7 @@
                 have greater responsibility for preventing social exclusion. The use of networks for tutoring
                 and support will become more frequent to avoid children opting for tuition shops.
             </p>
-            <p>
+            <p style="color:rgb(26, 61, 0) ;">
                 Students will be continuously supported in the transition phase between different educational
                 levels. Education will be imparted with a premise that “every child can learn” The institution
                 will strive in future to learn how to exploit tacit knowledge to explicit knowledge.
@@ -359,40 +355,40 @@
         <a href="{% url 'jhps_main_app:gallery' %}">
             <div class="row">
                 <div class="column">
-                    <img src="{% static 'images/our8.png' %}" alt="" style="width:100%">
+                    <img src="{% static 'images/our1.png' %}" alt="" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our14.png' %}" alt="" style="width:100%">
+                    <img src="{% static 'images/our2.png' %}" alt="" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our26.pn' %}g" alt="" style="width:100%">
+                    <img src="{% static 'images/our3.pn' %}g" alt="" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our27.pn' %}g" style="width:100%">
+                    <img src="{% static 'images/our4.pn' %}g" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our28.pn' %}g" alt="" style="width:100%">
+                    <img src="{% static 'images/our5.pn' %}g" alt="" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our29.pn' %}g" alt="" style="width:100%">
+                    <img src="{% static 'images/our6.pn' %}g" alt="" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our3.png' %}" alt="" style="width:100%">
+                    <img src="{% static 'images/our7.png' %}" alt="" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our12.pn' %}g" style="width:100%">
-                </div>
-                <div class="column">
-                    <img src="{% static 'images/our2.pn' %}g" alt="" style="width:100%">
+                    <img src="{% static 'images/our13.pn' %}g" style="width:100%">
                 </div>
                 <div class="column">
                     <img src="{% static 'images/our9.pn' %}g" alt="" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our23.png' %}" alt="" style="width:100%">
+                    <img src="{% static 'images/our10.pn' %}g" alt="" style="width:100%">
                 </div>
                 <div class="column">
-                    <img src="{% static 'images/our20.pn' %}g" style="width:100%">
+                    <img src="{% static 'images/our11.png' %}" alt="" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/our12.pn' %}g" style="width:100%">
                 </div>
 
             </div>
@@ -401,7 +397,7 @@
 
     <div class="notice_box">
         <h2>Notice Board</h2>
-        <a href="#">
+        <a href="{% url 'jhps_main_app:noticeboard' %}">
             <div class="row">
 
                 <div class="column">
@@ -487,7 +483,7 @@
     </div>
     <div class="video_box">
         <h2>Video Gallery</h2>
-        <a href="#">
+        <a href="{% url 'jhps_main_app:videogallery' %}">
             <div class="row">
                 <div class="column">
                     <img src="{% static 'videos/jhps1.gif' %}" >

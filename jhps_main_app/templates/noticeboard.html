@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    
+.accordion {
+    background-color: rgb(255, 182, 99);
+    border-top: 1px solid rgb(255, 136, 0);
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    color: rgb(78, 42, 0);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    
+    text-align: left;
+    outline: none;
+    font-size: 22px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: rgb(253, 196, 131);
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .panel p{
+    color: brown;
+  }
+</style>
+<br>
+<div class="main-box">
+   
+    <div class="pgf-cont">
+   
+        <h1>Notice Board</h1>
+  
+  <button class="accordion">June 12, 2022 | Dear Parents .....</button>
+  <div class="panel">
+    <p>Dear Parents, <br><br>
+ 
+        We inform you that the school reopening is postponed to Thursday, the 16th June,2022.
+
+         Circular will be sent to you shortly giving all the details of transport etc. 
+         <br><br><br>         
+        Regards<br>
+        JHPS-Rampally<br>
+       June 12, 2022</p>
+  </div>
+  
+  <button class="accordion">June 12, 2022 | Dear Parents .....</button>
+  <div class="panel">
+    <p>Dear Parents, <br><br>
+ 
+        We inform you that the school reopening is postponed to Thursday, the 16th June,2022.
+
+         Circular will be sent to you shortly giving all the details of transport etc. 
+         <br><br><br>         
+        Regards<br>
+        JHPS-Rampally<br>
+       June 12, 2022</p>
+  </div>
+  
+  
+  <script>
+  var acc1 = document.getElementsByClassName("accordion");
+  var j;
+  
+  for (j = 0; j < acc1.length; j++) {
+    acc1[j].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+        
+    </div>
+
+</div>
+{% endblock %}

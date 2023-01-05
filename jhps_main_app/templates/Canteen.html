@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-box">
+<h1>Canteen</h1>
+{% for x in CanteenData %}
+   <div class="pgf-cont">
+      {% if x.title %}
+      <h2>{{x.title}}</h2>
+      {% endif %}
+      <div class="pgf-inn">
+
+         <div class="pgf-txt">
+            <p>   
+               {{x.paragraph_data|safe}}</p>
+         </div>
+         <div class="pgf-img">
+            {% if x.upload_image %}
+            <img width="450px" src="{{ x.upload_image }}" alt="image">
+            {% endif %}
+         </div>
+      </div>
+   </div>
+   
+   {% endfor %}
+   
+</div>
+{% endblock %}

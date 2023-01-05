@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-box">
+   <h1>School Management Committee</h1>
+   <div class="pgf-cont">
+      {% for x in SMCommitteeData %}
+      <div class="pgf-cont">
+        
+         <h2>{{x.member_name}}</h2>
+               
+               <p>   
+                  {{x.designation}}</p>
+            
+            
+         
+      </div>
+      {% endfor %}
+   </div>
+</div>
+</div>
+
+
+</div>
+{% endblock %}
