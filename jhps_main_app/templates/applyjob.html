@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="form_box">
+<div class="form_box" style="width: 100%;">
     <h1>ADMINISTRATION PERSONAL DATA SHEET </h1>
-    <div class="form_box_inn">
+    <div class="form_box_inn" style="width: 100%;">
         {% if submitted %}
         <h1>We Received your details.....</h1>
         {% else %}
@@ -181,11 +181,11 @@
                     <table>
                         <tr>
                             <td class="sln">1</td>
-                            <td>{{ form.skill1 }}</td>
+                            <td style="width: 100%;">{{ form.skill1 }}</td>
                         </tr>
                         <tr>
                             <td class="sln">2</td>
-                            <td>{{ form.skill2 }}</td>
+                            <td style="width: 100%;">{{ form.skill2 }}</td>
                         </tr>
                     </table>
                 </div>
@@ -271,7 +271,7 @@
             
             <div class="form_box2">
                 <h1>REFERENCES </h1>
-                <div class="form_box_inn3">
+               
                     <table>
                         <tr>
                             <th>1. Name, Address & Contact No</th>
@@ -283,7 +283,7 @@
                         
                         </tr>
                     </table>
-                </div>
+          
             </div>
 
             

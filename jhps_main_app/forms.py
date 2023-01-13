@@ -7,7 +7,8 @@ from .models import Admission_Enquiry, Refer_A_Student, Student_Enquiry, ApplyJo
 
 class AdmissionEnquiryForm(ModelForm):
     mobile_No =  PhoneNumberField(
-        widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control', 'placeholder': 'Phone Number*'}),
+
+        widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Phone Number*'}),
         
     )
     class Meta:
@@ -65,6 +66,11 @@ class ReferAStudentForm(ModelForm):
 
 
 class StudentEnquiryForm(ModelForm):
+    mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Mobile No*'}), )
+    mother_mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Mother Mobile No*'}), )
+    father_mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Father Mobile No*'}), )
+    reference_mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Reference Mobile No*'}), )
+    
     class Meta:
         model = Student_Enquiry
         fields = ('academic_year', 'first_name', 'middle_name', 'last_name', 'date_of_birth', 'gender', 'relation', 'local_type', 'transfer_from', 'mobile_No', 'email', 'message', 'mother_name', 'mother_organization', 'mother_designation', 'mother_income', 'mother_mobile_No',
@@ -84,31 +90,33 @@ class StudentEnquiryForm(ModelForm):
             'transfer_from': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Transfer From*'}),
             'mobile_No': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mobile No*'}),
             'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email*'}),
-            'message': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Message*'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Message*'}),
             'mother_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mother Name*'}),
             'mother_organization': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mother Organization*'}),
             'mother_designation': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mother Designation*'}),
             'mother_income': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mother Income*'}),
-            'mother_mobile_No': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mother Mobile_No*'}),
             'mother_email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mother Email*'}),
             'father_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Father Name*'}),
             'father_orgnization': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Father Orgnization*'}),
             'father_designation': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Father Designation*'}),
             'father_income': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Father Income*'}),
-            'father_mobile_No': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Father Mobile No*'}),
             'father_email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Father Email*'}),
             'reference_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Reference Name*'}),
             'reference_designation': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Reference Designation*'}),
             'reference_department': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Reference Department*'}),
             'reference_company': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Reference Company*'}),
-            'reference_mobile_No': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Reference Mobile No*'}),
             'reference_email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Reference Email*'}),
-            'remarks': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Remarks*'})
+            'remarks': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Remarks*'})
 
         }
 
 
 class ApplyJobForm(ModelForm):
+    Telephone_No =  PhoneNumberField(
+
+        widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Telephone No*'}),
+        
+    )
     class Meta:
         model = ApplyJob
         fields = ('Post_Applying_For', 'Name_of_the_Candidate', 'Residential_Address', 'Own_house_rented', 'Mother_Tongue', 'date_of_birth', 'Caste_Category_Religion', 'Email_ID', 'Telephone_No', 'Qualifications', 'Last_Worked', 'Reasons', 'Any_friends', 'Have_you_worked', 'Present_Salary', 'Expected_Salary', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'nsc1', 'nsc2', 'nsc3', 'nsc4', 'nsc5', 'nsc6', 'u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'pos6', 'yp1', 'yp2', 'yp3', 'yp4', 'yp5', 'yp6', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'rc1', 'rc2',
@@ -119,19 +127,18 @@ class ApplyJobForm(ModelForm):
         'Post_Applying_For': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Post Applying For*'}), 
         'Name_of_the_Candidate': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Name of the Candidate*'}), 
         'Residential_Address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Residential Address*'}), 
-        'Own_house_rented': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Own_house rented*'}), 
+        'Own_house_rented': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Own house / Rented*'}), 
         'Mother_Tongue': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mother Tongue*'}), 
-        'date_of_birth': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'date of birth*'}), 
+        'date_of_birth': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Date of Birth*'}), 
         # 'Caste_Category_Religion': forms.ChoiceField(), 
-        'Email_ID': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email_ID*'}), 
-        'Telephone_No': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Telephone_No*'}), 
+        'Email_ID': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email ID*'}), 
         'Qualifications': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Qualifications*'}), 
-        'Last_Worked': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last_Worked *'}), 
-        'Reasons': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Reasons*'}), 
-        'Any_friends': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Any_friends*'}), 
-        'Have_you_worked': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Have_you_worked *'}), 
-        'Present_Salary': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Present_Salary*'}), 
-        'Expected_Salary': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Expected_Salary*'}), 
+        'Last_Worked': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Organization Last Worked / Working *'}), 
+        'Reasons': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Reasons for or desire to leave present Job / Position*'}), 
+        'Any_friends': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Any friends /relatives working in this school *'}), 
+        'Have_you_worked': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Have you worked in this school earlier – Details of service & reason for leaving *'}), 
+        'Present_Salary': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Present Salary(Salary certificate/ Pay slip to be submitted)*'}), 
+        'Expected_Salary': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Expected Salary*'}), 
         'c1': forms.TextInput(attrs={'class': 'form-control'}), 
         'c2': forms.TextInput(attrs={'class': 'form-control'}), 
         'c3': forms.TextInput(attrs={'class': 'form-control'}), 

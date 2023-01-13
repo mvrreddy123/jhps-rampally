@@ -1,7 +1,44 @@
 
 {% extends "base.html" %}
 {% block content %}
-<div class="form_box">
+
+<style>
+    .formData{
+        display: flex;
+        
+    }
+    .formData .stDet,  .formData .mDet,   .formData .rDet{
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 33%;
+        margin: 8px;
+    }
+
+    .formData .stDet h2,  .formData .mDet h2,   .formData .rDet h2{
+        background-color: rgb(255, 240, 157);
+        margin: 0;
+        padding: 5px;
+        color: rgb(128, 23, 23);
+        text-align: center;
+    }
+    .formData .stDet div,  .formData .mDet div,    .formData .rDet div{
+        padding: 5px;
+    }
+    .stDet textarea{
+        height: 75px;
+    }
+    @media only screen and (max-width:600px) {
+        .formData{
+            flex-direction: column;
+        }
+        .formData .stDet,  .formData .mDet,   .formData .rDet{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+</style>
+<div class="form_box" style="width: 100%;">
 <h1>Student Admission Enquiry</h1>
 <div class="form_box_inn">
 {% if submitted %}
@@ -10,7 +47,62 @@
 
     <form action="" method="POST">
         {% csrf_token %}          
-        {{ form.as_p }}
+    <div class="formData">
+
+    
+        <div class="stDet">
+            <h2>STUDENT DETAILS</h2>
+            <div>
+                <p>{{ form.academic_year }}</p>
+                <p>{{ form.first_name }}</p>
+                <p>{{ form.middle_name }}</p>
+                <p>{{ form.last_name }}</p>
+                <p>{{ form.date_of_birth }}</p>
+                <p>{{ form.gender }}</p>
+                <p>{{ form.relation }}</p>
+                <p>{{ form.relation }}</p>
+                <p>{{ form.local_type }}</p>
+                <p>{{ form.transfer_from }}</p>
+                <p>{{ form.mobile_No }}</p>
+                <p>{{ form.email }}</p>
+                <p>{{ form.message }}</p>
+            </div>
+
+        </div>
+        <div class="mDet">
+            <h2>MOTHER DETAILS</h2>
+            <div>
+                <p>{{ form.mother_name }}</p>
+                <p>{{ form.mother_organization }}</p>
+                <p>{{ form.mother_designation }}</p>
+                <p>{{ form.mother_income }}</p>
+                <p>{{ form.mother_email }}</p>
+
+            </div>
+            <h2>FATHER DETAILS</h2>
+            <div>
+                <p>{{ form.father_name }}</p>
+                <p>{{ form.father_orgnization }}</p>
+                <p>{{ form.father_designation }}</p>
+                <p>{{ form.father_income }}</p>
+                <p>{{ form.father_email }}</p>
+            </div>
+        </div>
+       
+        <div class="rDet">
+            <h2>REFERENCE DETAILS</h2>
+            <div>
+                <p>{{ form.reference_name }}</p>
+                <p>{{ form.reference_designation }}</p>
+                <p>{{ form.reference_department }}</p>
+                <p>{{ form.reference_company }}</p>
+                <p>{{ form.reference_email }}</p>
+                <p>{{ form.remarks }}</p>
+            </div>
+
+        </div>
+    </div>
+    <br>
         <input type="submit" value="Submit" class="btn btn-success">  
     </form>
     {% endif %}

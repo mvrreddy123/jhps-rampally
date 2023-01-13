@@ -1,19 +1,34 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<style>
+    .main-box .pgf-cont h3 {
+        margin: 0;
+        padding: 5px 0;
+        text-align: center;
+    }
+    .main-box .pgf-cont p {
+        padding: 10px;
+        text-align: justify;
+    }
+</style>
 <div class="main-box">
     <br>
     <div class="pgf-cont">
-    <h1>Careers</h1>
-    <h3>Staff Recruitment 2023-24</h3>
-    <h3><a class="blink_box" href="{% url 'jhps_main_app:Applyjob' %}">Apply Online </a></h3>
-   <h3> or Mail to: <a href="#">careers@jhpsrampally.com</a> </h3>
-    <p style="color: rgb(93, 0, 0);"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-        some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
-        text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this
-        the first true generator on the Internet.</p>
-        </div>
+        <h1>Careers</h1>
+        <h3>Staff Recruitment 2023-24</h3>
+        <h3><a class="blink_box" href="{% url 'jhps_main_app:Applyjob' %}">Apply Online </a></h3>
+        <h3> or Mail to: <a href="#">careers@jhpsrampally.com</a> </h3>
+        <p style="color: rgb(93, 0, 0);"> There are many variations of passages of Lorem Ipsum available, but the
+            majority have suffered alteration in
+            some form, by injected humour, or randomised words which don't look even slightly believable. If you are
+            going
+            to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle
+            of
+            text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
+            this
+            the first true generator on the Internet.</p>
+    </div>
     {% for x in career %}
     <div class="pgf-cont">
         <h2>{{x.title}}</h2>

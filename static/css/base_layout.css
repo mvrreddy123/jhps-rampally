@@ -69,11 +69,12 @@ header .t1 {
 
 .login {
     position: relative;
-    top: 5px;
+    top: 10px;
     right: 5px;
     width: auto;
     height: auto;
     z-index: 99;
+ 
 }
 
 .login img {
@@ -114,7 +115,8 @@ header .t1 {
     border-radius: 50%;
     font-size: 23px;
     font-weight: 600;
-    background-color: gold;
+    background-color: rgb(249, 212, 0);
+    background-image:linear-gradient(to right, #ddc300, gold, #ddc300);
     box-shadow: 2px 2px 2px rgba(106, 106, 106, 0.477);
     color: maroon;
     position: absolute;
@@ -129,7 +131,8 @@ header .t1 {
 }
 
 .login .t2-1:hover {
-    background-color: rgb(0, 150, 0);
+  
+    background-image:linear-gradient(to right, rgb(77, 255, 0), rgb(34, 255, 0), rgb(17, 255, 0));
     color: rgb(255, 255, 255);
 }
 
@@ -147,7 +150,8 @@ header .t1 {
     border-radius: 50%;
     font-size: 23px;
     font-weight: 600;
-    background-color: gold;
+    background-color: rgb(249, 212, 0);
+    background-image:linear-gradient(to right, #ddc300, gold, #ddc300);
     box-shadow: 2px 2px 2px rgba(106, 106, 106, 0.477);
     color: maroon;
     position: absolute;
@@ -161,7 +165,7 @@ header .t1 {
 }
 
 .login .t2-2:hover {
-    background-color: rgb(255, 106, 0);
+    background-image:linear-gradient(to right, rgb(255, 106, 0), orange, rgb(255, 106, 0));
     color: rgb(255, 255, 255);
 }
 
@@ -584,12 +588,12 @@ color: rgb(0, 0, 50);
 }
 .co_box .clsBtnCo{
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: -2px;
+    right: 1px;
     width: 25px;
     height: 25px;
-    font-size: 25px;
-    border: 1px solid red ;
+    font-size: 30px;
+    /* border: 1px solid red ; */
     border-radius: 6px;
     cursor: pointer;
     user-select: none;
@@ -599,7 +603,7 @@ color: rgb(0, 0, 50);
 }
 .co_box .clsBtnCo div { 
     margin: -10px 0 0 3px;
-    color: yellow;
+    color: rgb(158, 0, 0);
 }
 .co_m2_box .co_m2_out .co_box:hover {
     background-color: #aa004d;
@@ -1056,6 +1060,7 @@ footer .f_us a:hover {
         
     }
 @media only screen and (max-width:600px) {
+   
     .mvr_admin li.nav-item{
        visibility: visible;}
     .l4{
@@ -1073,14 +1078,7 @@ footer .f_us a:hover {
     .l4 .video_box {
         height: 245px;
     }
-    header .t1 {
-        /* font-size: 15px; */
-        top: 20px;
-        left: 70px;
-        text-align: center;
-        z-index: 1;
-
-    }
+  
 
     .l2 {
         flex-direction: column;
@@ -1131,40 +1129,49 @@ footer .f_us a:hover {
     }
 
     .new_box_out {
-        
         left: 50%;
         z-index: 99;
     }
 
-    .top_grp {
-        height: 100px;
-    }
-
-    .mvr_ss {
-        top: 100px;
-    }
-
   
+    .top_grp{
+        height: 80px;
+        position: sticky;
+        top: -2px;
+        z-index: 555;
+    }
+    .top_grp_inn {
+        height: 80px;
+        background: white;
+    }
 
     .login {
         display: none;
     }
-
 
     .logo1 {
         width: 65px;
         height: 65px;
         top: 0px;
         left: 5px;
+    }
+    header .t1 {
+        /* font-size: 15px; */
+        top: 15px;
+        left: 75px;
+        text-align: center;
+        z-index: 1;
 
     }
-
     .nav_menu {
-        top: 55px;
+        top: 35px;
+    }
+    .mvr_ss {
+        top: 80px;
     }
     .nav_menu .navbar .container-fluid .mvr-menu {
         
-        margin: -15px 0 0 0;
+        margin: -5px 0 0 0;
         display: inline-block;
         
     }
@@ -1219,7 +1226,7 @@ footer .f_us a:hover {
 
       
     .co_m2_box .co_m2_out .co_m2 .sm1 a {
-        font-size: 30px;
+        font-size: 27px;
     }
     .co_m2_box .co_m2_out .co_m2 .sm2 a {
         font-size: 22px;
