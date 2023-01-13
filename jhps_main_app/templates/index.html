@@ -3,27 +3,144 @@
 
 {% block content %}
 
-<div class="mvr_ss">
+<style>
+    .mvr_ss .owl-carousel {
+        margin-top: 6px;
+    }
 
+    .mvr_ss .media-29101 {
+        overflow: hidden;
+        margin-left: -30px;
+        height: 290px;
+        /* box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2); */
+    }
+
+    .mvr_ss .media-29101 img {
+        width: 48%;
+        margin-left: 5px;
+        float: left;
+    }
+
+    .mvr_ss .carousel .carousel-inner .carousel-item {
+        height: 530px;
+
+    }
+
+    .mvr_ss .carousel-control-prev,
+    .mvr_ss .carousel-control-next {
+        margin-top: -300px;
+    }
+
+    @media only screen and (max-width:600px) {
+
+        .mvr_ss .carousel-control-prev,
+        .mvr_ss .carousel-control-next {
+            margin-top: -250px;
+        }
+
+        .mvr_ss .carousel .carousel-inner .carousel-item {
+            height: 245px;
+        }
+    }
+</style>
+
+<div class="mvr_ss">
     <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="2000">
+            <div class="carousel-item active" data-bs-interval="15000">
                 <img src="{% static 'images/1.png' %}" class="d-block w-100" alt="...">
+                <div class="owl-carousel owl-2">
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our1.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our2.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our1.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our2.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our1.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our2.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+
+                </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
+            <div class="carousel-item" data-bs-interval="15000">
                 <img src="{% static 'images/2.png' %}" class="d-block w-100" alt="...">
+                <div class="owl-carousel owl-2">
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our2.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our3.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our2.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our3.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our2.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our3.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    
+
+                </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-interval="15000">
                 <img src="{% static 'images/3.png' %}" class="d-block w-100" alt="...">
+                <div class="owl-carousel owl-2">
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our3.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our4.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our3.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our4.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our3.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our4.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    
+
+                </div>
             </div>
-            <div class="carousel-item active" data-bs-interval="2000">
+            <div class="carousel-item" data-bs-interval="15000">
                 <img src="{% static 'images/4.png' %}" class="d-block w-100" alt="...">
+                <div class="owl-carousel owl-2">
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our5.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our6.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our5.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our6.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our5.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our6.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    
+
+                </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
+            <div class="carousel-item" data-bs-interval="15000">
                 <img src="{% static 'images/5.png' %}" class="d-block w-100" alt="...">
+                <div class="owl-carousel owl-2">
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our6.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our7.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our6.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our7.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our6.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our7.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    
+
+                </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-interval="15000">
                 <img src="{% static 'images/6.png' %}" class="d-block w-100" alt="...">
+                <div class="owl-carousel owl-2">
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our4.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our9.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our4.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our9.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    <div class="media-29101">
+                        <a href="#"><img src="{% static 'images/our4.png' %}" alt="Image" class="img-fluid"></a><a href="#"><img src="{% static 'images/our9.png' %}" alt="Image" class="img-fluid"></a>
+                    </div>
+                    
+
+                </div>
             </div>
         </div>
         <button touch="true" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
@@ -41,17 +158,18 @@
 </div>
 
 <div id="co_menu2" onclick="clsBtn(this)" class="co_m2_box">
-   
+
     <div class="co_m2_out">
         <div class="co_m2">
-   
-            <img src="{% static 'images/bg1.gif' %}" alt="BG JHPS">
             <div class="co_box">
-                <div class="sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admissions <br>for 2023-24 <br>in
+                <div class="clsBtnCo" onclick="clsBtnCo()">
+                        <div>&times;</div>
+                </div>
+                <div class=" sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admission <br>for 2023-24 <br>in
                         progress
                     </a></div>
-                <div class="sm2"> <a href="{% url 'jhps_main_app:ReferAStudent' %}"> Refer A Student </a></div>
-                <div class="sm3"> <a href="{% static 'pdf/JHPS_Application_Form.pdf' %}" target="_blank">Download
+
+                <div class="sm2"> <a href="{% static 'pdf/JHPS_Application_Form.pdf' %}" target="_blank">Download
                         Application Form </a></div>
             </div>
 
@@ -59,185 +177,7 @@
     </div>
 </div>
 <div class="l2">
-    <div class="l2-inn">
-
-        <div id="carouselExampleInterval2" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our1.png' %}" class="d-block w-100" alt="image1">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our2.png' %}" class="d-block w-100" alt="image2">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our3.png' %}" class="d-block w-100" alt="image3">
-                    <a href="">
-                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/tr1.png' %}" class="d-block w-100" alt="imaget1">
-                    <a href="">
-                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/tr2.png' %}" class="d-block w-100" alt="imaget2">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our4.png' %}" class="d-block w-100" alt="image4">
-                    <a href="">
-                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our5.png' %}" class="d-block w-100" alt="image5">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our6.png' %}" class="d-block w-100" alt="image6">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our7.png' %}" class="d-block w-100" alt="image7">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-               
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our9.png' %}" class="d-block w-100" alt="image9">
-                    <a href="">
-                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our10.png' %}" class="d-block w-100" alt="image10">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our11.png' %}" class="d-block w-100" alt="image11">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our12.png' %}" class="d-block w-100" alt="image12">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our13.png' %}" class="d-block w-100" alt="image13">
-                    <a href="">
-                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our14.png' %}" class="d-block w-100" alt="image14">
-                    <a href="">
-                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our15.png' %}" class="d-block w-100" alt="image15">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our16.png' %}" class="d-block w-100" alt="image16">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our17.png' %}" class="d-block w-100" alt="image17">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our18.png' %}" class="d-block w-100" alt="image18">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our19.png' %}" class="d-block w-100" alt="image19">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our20.png' %}" class="d-block w-100" alt="image20">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our21.png' %}" class="d-block w-100" alt="image21">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our22.png' %}" class="d-block w-100" alt="image22">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our23.png' %}" class="d-block w-100" alt="image23">
-                    <a href="">
-                        <h3>EXPERIENTIAL LEARNING AT ITS BEST</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our24.png' %}" class="d-block w-100" alt="image24">
-                    <a href="">
-                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
-                    </a>
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="{% static 'images/our25.png' %}" class="d-block w-100" alt="image25">
-                    <a href="">
-                        <h3>NURTURING THE FUTURE OF GLOBAL CITIZENS</h3>
-                    </a>
-                </div>
-
-
-            </div>
-            <button touch="true" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval2"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button touch="true" class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval2"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-
-    </div>
-    <div class="l2-inn2">
+       <div class="l2-inn2">
         <div class="tab" style="border-radius: 10px 10px 0 0;">
             <button style="color:rgb(76, 64, 0) ; border-radius: 10px 0 0 0; background-color: rgb(253, 233, 120);"
                 class="tablinks" onclick="openCity(event, 'Welcome')" id="defaultOpen">Welcome</button>
@@ -308,43 +248,106 @@
             document.getElementById("defaultOpen").click();
         </script>
     </div>
+    <div class="l2-inn">
+
+        <img src="{% static 'videos/jhpstour1.gif' %}" alt="Image">
+
+    </div>
 </div>
-<div class="jhps_tour">
-    
-<video width="100%" src="{% static 'videos/jhpstour1.mp4' %}" autoplay muted loop>         Your browser does not support the video tag.</video>
-</div>
+
 <div class="l3">
     <h3>Recent Events</h3>
     <div class="owl-carousel owl-2">
         <div style="background-color: rgb(250, 200, 119);" class="media-29101">
-            <a href="#"><img src="{% static 'images/our1.png' %}" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Events</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our1.png' %}" alt="Image"
+                    class="img-fluid"></a>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our2.png' %}" alt="Image"
+                    class="img-fluid"></a>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
+                    class="img-fluid"></a>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
+                    class="img-fluid"></a>
+            
+            <h3><a href="{% url 'jhps_main_app:events' %}">Events-1</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
+                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
+                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
+            </p>
         </div>
         <div style="background-color: rgb(138, 185, 255);" class="media-29101">
-            <a href="#"><img src="{% static 'images/our2.png' %}" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Events</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our2.png' %}" alt="Image"
+                    class="img-fluid"></a>
+                    <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our2.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
+                        class="img-fluid"></a>
+            <h3><a href="{% url 'jhps_main_app:events' %}">Events-2</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
+                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
+                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
+            </p>
         </div>
         <div style="background-color: rgb(150, 254, 142);" class="media-29101">
-            <a href="#"><img src="{% static 'images/our3.png' %}" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Events</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
+                    class="img-fluid"></a>
+                    <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our2.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
+                        class="img-fluid"></a>
+            <h3><a href="{% url 'jhps_main_app:events' %}">Events-3</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
+                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
+                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
+            </p>
         </div>
         <div style="background-color: rgb(251, 159, 190);" class="media-29101">
-            <a href="#"><img src="{% static 'images/our4.png' %}" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Events</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
+                    class="img-fluid"></a>
+                    <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our2.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
+                        class="img-fluid"></a>
+            <h3><a href="{% url 'jhps_main_app:events' %}">Events-4</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
+                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
+                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
+            </p>
         </div>
         <div style="background-color: rgb(255, 249, 142);" class="media-29101">
-            <a href="#"><img src="{% static 'images/our5.png' %}" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Events</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our5.png' %}" alt="Image"
+                    class="img-fluid"></a>
+                    <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our2.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
+                        class="img-fluid"></a>
+            <h3><a href="{% url 'jhps_main_app:events' %}">Events-5</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
+                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
+                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
+            </p>
         </div>
         <div style="background-color: rgb(240, 146, 255);" class="media-29101">
-            <a href="#"><img src="{% static 'images/our6.png' %}" alt="Image" class="img-fluid"></a>
-            <h3><a href="#">Events</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha</p>
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our6.png' %}" alt="Image"
+                    class="img-fluid"></a>
+                    <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our2.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
+                        class="img-fluid"></a>
+                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
+                        class="img-fluid"></a>
+            <h3><a href="{% url 'jhps_main_app:events' %}">Event-6</a></h3>
+            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
+                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
+                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
+            </p>
         </div>
     </div>
 </div>
@@ -405,8 +408,8 @@
                     <h6>Dear Parents,</h6>
                     <p>
                         Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt. 
-                        
+                        the recent Govt.
+
                     </p>
                     <h5>JHPS, Rampally</h5>
                     <h6>July 01, 2021</h6>
@@ -415,11 +418,11 @@
                 <div class="column">
                     <h4>2</h4>
                     <p>Dear Parents,</h6>
-                        <p>
+                    <p>
 
                         Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt. 
-                        
+                        the recent Govt.
+
                     </p>
                     <h5>JHPS, Rampally</h5>
                     <h6>July 01, 2021</h6>
@@ -431,8 +434,8 @@
                     <p>
 
                         Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt. 
-                        
+                        the recent Govt.
+
                     </p>
                     <h5>JHPS, Rampally</h5>
                     <h6>July 01, 2021</h6>
@@ -444,8 +447,8 @@
                     <p>
 
                         Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt. 
-                        
+                        the recent Govt.
+
                     </p>
                     <h5>JHPS, Rampally</h5>
                     <h6>July 01, 2021</h6>
@@ -457,8 +460,8 @@
                     <p>
 
                         Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt. 
-                        
+                        the recent Govt.
+
                     </p>
                     <h5>JHPS, Rampally</h5>
                     <h6>July 01, 2021</h6>
@@ -470,8 +473,8 @@
                     <p>
 
                         Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt. 
-                        
+                        the recent Govt.
+
                     </p>
                     <h5>JHPS, Rampally</h5>
                     <h6>July 01, 2021</h6>
@@ -486,16 +489,16 @@
         <a href="{% url 'jhps_main_app:videogallery' %}">
             <div class="row">
                 <div class="column">
-                    <img src="{% static 'videos/jhps1.gif' %}" >
+                    <img src="{% static 'videos/jhps1.gif' %}">
                 </div>
                 <div class="column">
-                    <img src="{% static 'videos/jhps2.gif' %}" >
+                    <img src="{% static 'videos/jhps2.gif' %}">
                 </div>
                 <div class="column">
-                    <img src="{% static 'videos/jhps3.gif' %}" >
+                    <img src="{% static 'videos/jhps3.gif' %}">
                 </div>
                 <div class="column">
-                    <img src="{% static 'videos/jhps4.gif' %}" >
+                    <img src="{% static 'videos/jhps4.gif' %}">
                 </div>
             </div>
         </a>
@@ -509,34 +512,39 @@
         <div style=" background-color: rgb(255,255,255);" class="media-29101">
             <img src="{% static 'images/jaya.png' %}" alt="Image" class="img-fluid">
             <h4> Jaya Krishna.V</h4>
-            <h6> Student Name: Likith Sri Sai Teja</h6> 
-            <p> We as parents are very happy with our child progress and his improved communication skills. Teachers are friendly and supportive. We are thankful to all the teachers and team JHPS. Please keep rocking JHPS.</p>
+            <h6> Student Name: Likith Sri Sai Teja</h6>
+            <p> We as parents are very happy with our child progress and his improved communication skills. Teachers are
+                friendly and supportive. We are thankful to all the teachers and team JHPS. Please keep rocking JHPS.
+            </p>
             <p>2021-03-15 12:16:06</p>
         </div>
         <div style=" background-color: rgb(255,255,255);" class="media-29101">
             <img src="{% static 'images/praveen.png' %}" alt="Image" class="img-fluid">
             <h4> Bommana Praveen Kumar</h4>
-            <h6> Student Name: Charvik</h6> 
-            <p> I am one of the happiest parents. Academics and cultural activities are good are here. Most importantly they encourage every child to take part of cultural activities and they give them a chance to perform on stage.</p>
+            <h6> Student Name: Charvik</h6>
+            <p> I am one of the happiest parents. Academics and cultural activities are good are here. Most importantly
+                they encourage every child to take part of cultural activities and they give them a chance to perform on
+                stage.</p>
             <p>November 8, 2019</p>
-            
+
         </div>
         <div style=" background-color: rgb(255,255,255);" class="media-29101">
             <img src="{% static 'images/harika.png' %}" alt="Image" class="img-fluid">
             <h4>M.Harika</h4>
-            <h6> Student Name: Sriman Kommua</h6> 
-            <p> I am Harika. I was worried when I put my son here at JHPS. But now I am happy and I completely trust and believe in the Management and the teachers. I hope this will continue .Thank you.</p>
+            <h6> Student Name: Sriman Kommua</h6>
+            <p> I am Harika. I was worried when I put my son here at JHPS. But now I am happy and I completely trust and
+                believe in the Management and the teachers. I hope this will continue .Thank you.</p>
             <p>2021-03-15 12:16:06</p>
 
         </div>
         <div style=" background-color: rgb(255,255,255);" class="media-29101">
             <img src="{% static 'images/amrita.png' %}" alt="Image" class="img-fluid">
             <h4> Amrita Priyadarshini</h4>
-            <h6> Student Name: Sumedha</h6> 
+            <h6> Student Name: Sumedha</h6>
             <p> Sumedha is enjoying and learning new things in class everyday.</p>
             <p>2021-03-15 12:16:06</p>
         </div>
-       
+
     </div>
 </div>
 

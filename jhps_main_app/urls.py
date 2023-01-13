@@ -44,5 +44,6 @@ urlpatterns = [
     path('transport', views.transport, name='transport'),
     path('gallery', views.gallery, name='gallery'),
     path('noticeboard', views.noticeboard, name='noticeboard'),
+    path('events', views.events, name='events'),
     path('videogallery', views.videogallery, name='videogallery'),
 ]

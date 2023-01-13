@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import About_us, Campus, Admission, Academics, Sports_CSA, Careers, Circulars, Downloads, Management
 from .forms import AdmissionEnquiryForm, ReferAStudentForm, StudentEnquiryForm, ApplyJobForm
 from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 
 def index(request):
@@ -137,14 +139,28 @@ def noticeboard(request):
     # download = Downloads.objects.all()
     # args = {'download': download}
     return render(request, 'noticeboard.html')
+def events(request):
+    # download = Downloads.objects.all()
+    # args = {'download': download}
+    return render(request, 'events.html')
 
 # start Forms
 def contactUs(request):
-    # return HttpResponse('Hi JHPS')
     submitted = False
     if request.method == 'POST':
         form = AdmissionEnquiryForm(request.POST)
+        enq_name = form['enq_name'].value()
+        mobile_No = form['mobile_No'].value()
+        email = form['email'].value()
+        message = form['message'].value()
+        
         if form.is_valid():
+            send_mail(
+                f'Enquiry from {enq_name} phone {mobile_No}',
+                message,
+                settings.EMAIL_HOST_USER,
+                ['mvr.9441088048@gmail.com',],
+            )
             form.save()
             return HttpResponseRedirect('?submitted=True')
     else:
@@ -174,7 +190,77 @@ def StudentEnquiry(request):
     submitted = False
     if request.method == 'POST':
         form = StudentEnquiryForm(request.POST)
+        academic_year = form['academic_year'].value() 
+        first_name = form['first_name'].value() 
+        middle_name = form['middle_name'].value() 
+        last_name = form['last_name'].value() 
+        date_of_birth = form['date_of_birth'].value() 
+        gender = form['gender'].value() 
+        relation = form['relation'].value() 
+        local_type = form['local_type'].value() 
+        transfer_from = form['transfer_from'].value() 
+        mobile_No = form['mobile_No'].value() 
+        email = form['email'].value() 
+        message = form['message'].value() 
+        mother_name = form['mother_name'].value() 
+        mother_organization = form['mother_organization'].value() 
+        mother_designation = form['mother_designation'].value() 
+        mother_income = form['mother_income'].value() 
+        mother_mobile_No = form['mother_mobile_No'].value()
+        mother_email = form['mother_email'].value() 
+        father_name = form['father_name'].value() 
+        father_orgnization = form['father_orgnization'].value() 
+        father_designation = form['father_designation'].value() 
+        father_income = form['father_income'].value() 
+        father_mobile_No = form['father_mobile_No'].value() 
+        father_email = form['father_email'].value() 
+        reference_name = form['reference_name'].value() 
+        reference_designation = form['reference_designation'].value() 
+        reference_department = form['reference_department'].value() 
+        reference_company = form['reference_company'].value() 
+        reference_mobile_No = form['reference_mobile_No'].value() 
+        reference_email = form['reference_email'].value() 
+        remarks = form['remarks'].value() 
+        
         if form.is_valid():
+            send_mail(
+                f'Enquiry from {mother_name} phone {mobile_No}',
+                f"""
+                Academic Year : {academic_year},
+                First Name : {first_name},
+                Middle Name : {middle_name},
+                Last Name : {last_name},
+                Date_of_Birth : {date_of_birth},
+                gender : {gender},
+                relation : {relation},
+                local_type : {local_type},
+                transfer_from : {transfer_from},
+                mobile_No : {mobile_No},
+                email : {email},
+                message : {message},
+                mother_name : {mother_name},
+                mother_organization : {mother_organization},
+                mother_designation : {mother_designation},
+                mother_income : {mother_income},
+                mother_mobile_No : {mother_mobile_No},
+                mother_email : {mother_email},
+                father_name : {father_name},
+                father_orgnization : {father_orgnization},
+                father_designation : {father_designation},
+                father_income : {father_income},
+                father_mobile_No : {father_mobile_No},
+                father_email : {father_email},
+                reference_name : {reference_name},
+                reference_designation : {reference_designation},
+                reference_department : {reference_department},
+                reference_company : {reference_company},
+                reference_mobile_No : {reference_mobile_No},
+                reference_email : {reference_email},
+                remarks : {remarks},
+                """,
+                settings.EMAIL_HOST_USER,
+                ['mvr.9441088048@gmail.com',],
+            )
             form.save()
             return HttpResponseRedirect('?submitted=True')
     else:

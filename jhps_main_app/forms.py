@@ -1,13 +1,18 @@
 from django import forms
 from django.forms import ModelForm
-# from phonenumber_field.modelfields import PhoneNumberField
-
+from phonenumber_field.formfields import PhoneNumberField
+from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from .models import Admission_Enquiry, Refer_A_Student, Student_Enquiry, ApplyJob
 
 
 class AdmissionEnquiryForm(ModelForm):
+    mobile_No =  PhoneNumberField(
+        widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control', 'placeholder': 'Phone Number*'}),
+        
+    )
     class Meta:
         model = Admission_Enquiry
+        # fields = "__all__"
         fields = ('enq_name', 'mobile_No', 'email', 'message')
         labels = {
             'enq_name': '',
@@ -17,7 +22,6 @@ class AdmissionEnquiryForm(ModelForm):
         }
         widgets = {
             'enq_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Parent Name*'}),
-            'mobile_No': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Moile Number*'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email ID*'}),
             'message': forms.Textarea(attrs={'class': 'form-control txt-ara', 'placeholder': 'Enter Message*'})
         }

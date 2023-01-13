@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+  .flip_cnt {
+            max-width: 1000px;
+            margin: 10px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .flip_cnt .card {
+            position: relative;
+            margin: 20px 0;
+            width: 300px;
+            height: 400px;
+            background: #fff;
+            transform-style: preserve-3d;
+            transform: perspective(2000px);
+            transition: 1s;
+            box-shadow: inset 300px 0 50px rgba(0,0,0,0.5);
+        }
+        .flip_cnt .card:hover {
+            z-index: 1000;
+            transform: perspective(2000px) rotate(-10deg);
+            box-shadow: inset 20px 0 50px rgba(0,0,0,0.5);
+        }
+        .flip_cnt .card .imgBox{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            transform-origin: left;
+            z-index: 1;
+          transition: 1s;
+        }
+        .flip_cnt .card:hover .imgBox{
+            transform: rotateY(-135deg);
+        }
+        .flip_cnt .card .imgBox img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+        .flip_cnt .card .details{
+            position: absolute;
+            text-align: justify;
+            height: 370px;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            padding: 10px 5px 10px 10px;
+            overflow: auto;
+            
+        }
+        .flip_cnt .card .details div{
+            font-size: 22px;
+            margin-left: 17px;
+            margin-bottom: 10px;
+            color: maroon;
+        }
+        .flip_cnt .card .details p{
+            font-size: 16px;
+            color: maroon;
+            
+        }
+</style>
+<br>
+<div class="main-box">
+    <div class="pgf-cont">
+        <h1>Recent Events</h1>
+
+    <div class="flip_cnt">
+        <div class="card">
+            <div class="imgBox">
+                <img src="{% static 'images/our1.png' %}" alt="image">
+            </div>
+            <div class="details">
+                <div>Vanamahotsavam</div>
+                <p>Jubilee Hills Public School, Rampally conducted a Special Assembly for Vanamahotsavam on 10th July.
+                    The Academic Coordinator, Jubilee Hills Public School, Ms. Sonia Nagpal and The Principal, Jubilee
+                    Hills Public School, Rampally Ms. Namrata Sandhu were present to grace the occasion. The programme
+                    began with a sloka invoking the blessings of the Lord. This was followed by a sequence of wonderful
+                    cultural events presented by the students of Jubilee Hills Public School, Rampally. The assembly
+                    consisted of a dance, song and a ballet stating the importance of both trees and forests. It also
+                    laid the importance of saving, protecting and planting more trees not only for the present
+                    generations but also for future generations. The Academic Coordinator, Jubilee Hills Public School,
+                    Ms. Sonia Nagpal and The Principal, Jubilee Hills Public School, Rampally Ms. Namrata Sandhu
+                    participated in the programme and along with the students of class VIII planted saplings in the
+                    school premises which initiated the Vanamahotsavam programme. With this the assembly came to an end
+                    and all the students dispersed to their classes
+
+                    Posted on July 10, 2019</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBox">
+                <img src="{% static 'images/our2.png' %}" alt="image">
+            </div>
+            <div class="details">
+                <div>Vanamahotsavam</div>
+                <p>Jubilee Hills Public School, Rampally conducted a Special Assembly for Vanamahotsavam on 10th July.
+                    The Academic Coordinator, Jubilee Hills Public School, Ms. Sonia Nagpal and The Principal, Jubilee
+                    Hills Public School, Rampally Ms. Namrata Sandhu were present to grace the occasion. The programme
+                    began with a sloka invoking the blessings of the Lord. This was followed by a sequence of wonderful
+                    cultural events presented by the students of Jubilee Hills Public School, Rampally. The assembly
+                    consisted of a dance, song and a ballet stating the importance of both trees and forests. It also
+                    laid the importance of saving, protecting and planting more trees not only for the present
+                    generations but also for future generations. The Academic Coordinator, Jubilee Hills Public School,
+                    Ms. Sonia Nagpal and The Principal, Jubilee Hills Public School, Rampally Ms. Namrata Sandhu
+                    participated in the programme and along with the students of class VIII planted saplings in the
+                    school premises which initiated the Vanamahotsavam programme. With this the assembly came to an end
+                    and all the students dispersed to their classes
+
+                    Posted on July 10, 2019</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBox">
+                <img src="{% static 'images/our3.png' %}" alt="image">
+            </div>
+            <div class="details">
+                <div>Vanamahotsavam</div>
+                <p>Jubilee Hills Public School, Rampally conducted a Special Assembly for Vanamahotsavam on 10th July.
+                    The Academic Coordinator, Jubilee Hills Public School, Ms. Sonia Nagpal and The Principal, Jubilee
+                    Hills Public School, Rampally Ms. Namrata Sandhu were present to grace the occasion. The programme
+                    began with a sloka invoking the blessings of the Lord. This was followed by a sequence of wonderful
+                    cultural events presented by the students of Jubilee Hills Public School, Rampally. The assembly
+                    consisted of a dance, song and a ballet stating the importance of both trees and forests. It also
+                    laid the importance of saving, protecting and planting more trees not only for the present
+                    generations but also for future generations. The Academic Coordinator, Jubilee Hills Public School,
+                    Ms. Sonia Nagpal and The Principal, Jubilee Hills Public School, Rampally Ms. Namrata Sandhu
+                    participated in the programme and along with the students of class VIII planted saplings in the
+                    school premises which initiated the Vanamahotsavam programme. With this the assembly came to an end
+                    and all the students dispersed to their classes
+
+                    Posted on July 10, 2019</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBox">
+                <img src="{% static 'images/our4.png' %}" alt="image">
+            </div>
+            <div class="details">
+                <div>Vanamahotsavam</div>
+                <p>Jubilee Hills Public School, Rampally conducted a Special Assembly for Vanamahotsavam on 10th July.
+                    The Academic Coordinator, Jubilee Hills Public School, Ms. Sonia Nagpal and The Principal, Jubilee
+                    Hills Public School, Rampally Ms. Namrata Sandhu were present to grace the occasion. The programme
+                    began with a sloka invoking the blessings of the Lord. This was followed by a sequence of wonderful
+                    cultural events presented by the students of Jubilee Hills Public School, Rampally. The assembly
+                    consisted of a dance, song and a ballet stating the importance of both trees and forests. It also
+                    laid the importance of saving, protecting and planting more trees not only for the present
+                    generations but also for future generations. The Academic Coordinator, Jubilee Hills Public School,
+                    Ms. Sonia Nagpal and The Principal, Jubilee Hills Public School, Rampally Ms. Namrata Sandhu
+                    participated in the programme and along with the students of class VIII planted saplings in the
+                    school premises which initiated the Vanamahotsavam programme. With this the assembly came to an end
+                    and all the students dispersed to their classes
+
+                    Posted on July 10, 2019</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBox">
+                <img src="{% static 'images/our5.png' %}" alt="image">
+            </div>
+            <div class="details">
+                <div>Vanamahotsavam</div>
+                <p>Jubilee Hills Public School, Rampally conducted a Special Assembly for Vanamahotsavam on 10th July.
+                    The Academic Coordinator, Jubilee Hills Public School, Ms. Sonia Nagpal and The Principal, Jubilee
+                    Hills Public School, Rampally Ms. Namrata Sandhu were present to grace the occasion. The programme
+                    began with a sloka invoking the blessings of the Lord. This was followed by a sequence of wonderful
+                    cultural events presented by the students of Jubilee Hills Public School, Rampally. The assembly
+                    consisted of a dance, song and a ballet stating the importance of both trees and forests. It also
+                    laid the importance of saving, protecting and planting more trees not only for the present
+                    generations but also for future generations. The Academic Coordinator, Jubilee Hills Public School,
+                    Ms. Sonia Nagpal and The Principal, Jubilee Hills Public School, Rampally Ms. Namrata Sandhu
+                    participated in the programme and along with the students of class VIII planted saplings in the
+                    school premises which initiated the Vanamahotsavam programme. With this the assembly came to an end
+                    and all the students dispersed to their classes
+
+                    Posted on July 10, 2019</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBox">
+                <img src="{% static 'images/our6.png' %}" alt="image">
+            </div>
+            <div class="details">
+                <div>Vanamahotsavam</div>
+                <p>Jubilee Hills Public School, Rampally conducted a Special Assembly for Vanamahotsavam on 10th July.
+                    The Academic Coordinator, Jubilee Hills Public School, Ms. Sonia Nagpal and The Principal, Jubilee
+                    Hills Public School, Rampally Ms. Namrata Sandhu were present to grace the occasion. The programme
+                    began with a sloka invoking the blessings of the Lord. This was followed by a sequence of wonderful
+                    cultural events presented by the students of Jubilee Hills Public School, Rampally. The assembly
+                    consisted of a dance, song and a ballet stating the importance of both trees and forests. It also
+                    laid the importance of saving, protecting and planting more trees not only for the present
+                    generations but also for future generations. The Academic Coordinator, Jubilee Hills Public School,
+                    Ms. Sonia Nagpal and The Principal, Jubilee Hills Public School, Rampally Ms. Namrata Sandhu
+                    participated in the programme and along with the students of class VIII planted saplings in the
+                    school premises which initiated the Vanamahotsavam programme. With this the assembly came to an end
+                    and all the students dispersed to their classes
+
+                    Posted on July 10, 2019</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+</div>
+{% endblock %}
