@@ -66,19 +66,28 @@ class ReferAStudentForm(ModelForm):
 
 
 class StudentEnquiryForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(StudentEnquiryForm, self).__init__(*args, **kwargs)
+        self.fields['academic_year'].choices =  [('', '---Please select Academic Year---')] + Student_Enquiry.YEAR_CHOICES
+        self.fields['gender'].choices =  [('', '---Please select Gender---')] + Student_Enquiry.GENDER_CHOICES
+        self.fields['relation'].choices =  [('', '---Please select Relation---')] + Student_Enquiry.REL_CHOICES
+        self.fields['local_type'].choices =  [('', '---Please select Local Type---')] + Student_Enquiry.LOCAL_CHOICES
+
     mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Mobile No*'}), )
     mother_mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Mother Mobile No*'}), )
     father_mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Father Mobile No*'}), )
     reference_mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Reference Mobile No*'}), )
-    
+   
+
     class Meta:
         model = Student_Enquiry
+        # academic_year = forms.ModelChoiceField(label="", queryset= Student_Enquiry.objects.values_list("academic_year"),  empty_label= "Placeholder")
         fields = ('academic_year', 'first_name', 'middle_name', 'last_name', 'date_of_birth', 'gender', 'relation', 'local_type', 'transfer_from', 'mobile_No', 'email', 'message', 'mother_name', 'mother_organization', 'mother_designation', 'mother_income', 'mother_mobile_No',
                   'mother_email', 'father_name', 'father_orgnization', 'father_designation', 'father_income', 'father_mobile_No', 'father_email', 'reference_name', 'reference_designation', 'reference_department', 'reference_company', 'reference_mobile_No', 'reference_email', 'remarks')
-        labels = {'academic_year': 'Academic Year', 'first_name': '', 'middle_name': '', 'last_name': '', 'date_of_birth': '', 'gender': 'Gender', 'relation': 'Relation', 'local_type': 'Local Type', 'transfer_from': '', 'mobile_No': '', 'email': '', 'message': '', 'mother_name': '', 'mother_organization': '', 'mother_designation': '', 'mother_income': '', 'mother_mobile_No': '',
+        labels = {'first_name': '', 'middle_name': '', 'last_name': '', 'date_of_birth': '', 'gender': 'Gender', 'relation': 'Relation', 'local_type': 'Local Type', 'transfer_from': '', 'mobile_No': '', 'email': '', 'message': '', 'mother_name': '', 'mother_organization': '', 'mother_designation': '', 'mother_income': '', 'mother_mobile_No': '',
                   'mother_email': '', 'father_name': '', 'father_orgnization': '', 'father_designation': '', 'father_income': '', 'father_mobile_No': '', 'father_email': '', 'reference_name': '', 'reference_designation': '', 'reference_department': '', 'reference_company': '', 'reference_mobile_No': '', 'reference_email': '', 'remarks': ''}
         widgets = {
-            # 'academic_year': forms.Select(choices = Student_Enquiry.YEAR_CHOICES),
+            
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name*'}),
             'middle_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Middle Name*'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last name*'}),

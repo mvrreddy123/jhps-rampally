@@ -28,7 +28,13 @@
     .stDet textarea{
         height: 75px;
     }
+    .btn-success{
+        font-size: 25px;
+    }
     @media only screen and (max-width:600px) {
+        .btn-success{
+        font-size: 18px;
+    }
         .formData{
             flex-direction: column;
         }
@@ -76,6 +82,7 @@
                 <p>{{ form.mother_organization }}</p>
                 <p>{{ form.mother_designation }}</p>
                 <p>{{ form.mother_income }}</p>
+                <p>{{ form.mother_mobile_No }}</p>
                 <p>{{ form.mother_email }}</p>
 
             </div>
@@ -85,6 +92,7 @@
                 <p>{{ form.father_orgnization }}</p>
                 <p>{{ form.father_designation }}</p>
                 <p>{{ form.father_income }}</p>
+                <p>{{ form.father_mobile_No }}</p>
                 <p>{{ form.father_email }}</p>
             </div>
         </div>
@@ -96,6 +104,7 @@
                 <p>{{ form.reference_designation }}</p>
                 <p>{{ form.reference_department }}</p>
                 <p>{{ form.reference_company }}</p>
+                <p>{{ form.reference_mobile_No }}</p>
                 <p>{{ form.reference_email }}</p>
                 <p>{{ form.remarks }}</p>
             </div>
@@ -103,7 +112,7 @@
         </div>
     </div>
     <br>
-        <input type="submit" value="Submit" class="btn btn-success">  
+        <input type="submit" value="Submit" class="btn btn-success" >  
     </form>
     {% endif %}
     </div>
