@@ -30,7 +30,7 @@ class Student_Enquiry (models.Model):
     REL_CHOICES = [(ch1, 'FATHER'), (ch2, 'MOTHER')]
     relation = models.IntegerField(choices=REL_CHOICES)
     L1 = 0
-    L2 = 1
+    L2 = 1 
     LOCAL_CHOICES = [(L1, 'Local'), (L2, 'Non-Local')]
     local_type = models.IntegerField(choices=LOCAL_CHOICES)
     transfer_from = models.CharField(null=True, blank=True, max_length=150)
