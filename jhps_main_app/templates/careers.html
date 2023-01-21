@@ -7,9 +7,61 @@
         padding: 5px 0;
         text-align: center;
     }
+
     .main-box .pgf-cont p {
         padding: 10px;
         text-align: justify;
+    }
+
+ 
+
+    .accordion {
+        background-color: rgb(255, 182, 99);
+        border-top: 1px solid rgb(255, 136, 0);
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        color: rgb(78, 42, 0);
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+
+        text-align: left;
+        outline: none;
+        font-size: 22px;
+        transition: 0.4s;
+    }
+    .accordion:first-child{
+        border: none;
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: rgb(253, 196, 131);
+    }
+
+    .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .panel p {
+        color: brown;
     }
 </style>
 <div class="main-box">
@@ -29,22 +81,32 @@
             this
             the first true generator on the Internet.</p>
     </div>
-    {% for x in career %}
     <div class="pgf-cont">
-        <h2>{{x.title}}</h2>
-        <div class="pgf-inn">
-
-            <div class="pgf-img">
-                {% if x.upload_image %}
-                <img src="{{ x.upload_image }}" alt="image">
-                {% endif %}
-            </div>
-            <div>
-                <p>{{x.paragraph_data|safe}}</p>
-            </div>
+        {% for x in career %}
+        <button class="accordion">{{x.title}}</button>
+        <div class="panel">
+            <p>{{x.paragraph_data|safe}}</p>
         </div>
+
+        {% endfor %}
     </div>
 
-    {% endfor %}
 </div>
+
+<script>
+    var acc1 = document.getElementsByClassName("accordion");
+    var j;
+
+    for (j = 0; j < acc1.length; j++) {
+        acc1[j].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
 {% endblock %}

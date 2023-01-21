@@ -104,7 +104,8 @@
         }
 
         .main-box h1 {
-            padding: 20px 70px;
+            text-align: center;
+            padding: 20px;
             color: rgb(117, 0, 0);
         }
 
@@ -332,34 +333,40 @@
 
         /* Style the tab */
         @media only screen and (max-width:600px) {
+            .main-box h1 {
+                padding: 10px;
+               font-size: 26px;
+            }
+
             .nav-item .blink_box {
-            background-color: #f7d148;
-            border-width: 0;
-            border-color: #f7d148;
-            border-style: none;
-            color: maroon;
-            border-radius: 0px;
-            padding: 0px;
-            text-decoration: none;
-            animation: bb1 2s infinite;
-            animation-direction: alternate-reverse;
-        }
-
-        .main-box .blink_box:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes bb1 {
-            from {
-               
+                background-color: #f7d148;
+                border-width: 0;
+                border-color: #f7d148;
+                border-style: none;
                 color: maroon;
+                border-radius: 0px;
+                padding: 0px;
+                text-decoration: none;
+                animation: bb1 2s infinite;
+                animation-direction: alternate-reverse;
             }
 
-            to {
-               
-                color: rgb(255, 0, 0);
+            .main-box .blink_box:hover {
+                animation-play-state: paused;
             }
-        }
+
+            @keyframes bb1 {
+                from {
+
+                    color: maroon;
+                }
+
+                to {
+
+                    color: rgb(255, 0, 0);
+                }
+            }
+
             .pageTilesBox .pageTiles {
                 width: 99%;
 
@@ -369,19 +376,24 @@
                 width: 100%;
 
             }
+            .form_box h1 {
+         
+            font-size: 18px;
+            padding: 8px;
+        }
 
             .form_box_inn2 {
                 width: 100%;
-                padding: 0;
+                padding: 5px;
 
             }
 
-            .form_box2 .form_box_inn3{
-                min-width: 600px;
+            .form_box2 .form_box_inn3 {
+                width: 100%;
                 overflow-x: scroll;
-                margin: 2px;
+        
             }
-       
+
             .pgf-cont {
                 width: 100%;
 
@@ -404,7 +416,7 @@
             table tr {
                 font-size: 13px;
             }
-           
+
         }
     </style>
 </head>
@@ -639,14 +651,16 @@
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item"
                                                 href="{% url 'jhps_main_app:sportsCSA' %}">Sports</a></li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
                                         <li><a class="dropdown-item" href="#">Carrom Board</a></li>
                                         <li><a class="dropdown-item" href="#">Chess</a></li>
                                         <li><a class="dropdown-item" href="#">Badminton</a></li>
                                         <li><a class="dropdown-item" href="#">Table Tennis</a></li>
-                                        <li> <hr class="dropdown-divider"></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
                                         <li><a class="dropdown-item" href="#">Foot Ball</a></li>
                                         <li><a class="dropdown-item" href="#">Cricket</a></li>
                                         <li><a class="dropdown-item" href="#">Throw Ball</a></li>
@@ -675,13 +689,13 @@
                                 <!-- <li class="nav-item">
                                         <a class="nav-link" href="#">Awards</a>
                                     </li> -->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'jhps_main_app:careers' %}">Careers</a>
-                                    </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'jhps_main_app:careers' %}">Careers</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'jhps_main_app:contactUs' %}">Contact Us</a>
                                 </li>
-                                
+
 
 
                                 </ul>
@@ -696,8 +710,10 @@
 
 
     <div id="side_menu" class="mvr_sm">
-        <div class="gall"> <a href="{% url 'jhps_main_app:gallery' %}"><i class="fa-solid fa-images"></i>  Gallery</a></div>
-        <div class="evnt"> <a href="{% url 'jhps_main_app:events' %}"><i class="fa-solid fa-calendar-days"></i>  Events</a></div>
+        <div class="gall"> <a href="{% url 'jhps_main_app:gallery' %}"><i class="fa-solid fa-images"></i> Gallery</a>
+        </div>
+        <div class="evnt"> <a href="{% url 'jhps_main_app:events' %}"><i class="fa-solid fa-calendar-days"></i>
+                Events</a></div>
     </div>
     <div id="side_menu" class="mvr_sm2">
         <div class="ytb"> <a href="https://www.youtube.com/@JubileeHillsPublicSchool/ " target='_blank'><i
@@ -707,11 +723,11 @@
     </div>
 
     <script>
-    function clsBtn(x) { x.style.display = 'none'; }
-    function clsBtnCo() { document.getElementById('co_menu2').style.display = 'none'; }
-    
+        function clsBtn(x) { x.style.display = 'none'; }
+        function clsBtnCo() { document.getElementById('co_menu2').style.display = 'none'; }
+
     </script>
-    
+
     {% block content %}
     {% endblock %}
 

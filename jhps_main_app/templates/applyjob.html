@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
+<style>
+    .tblh th, .sln{
+        text-align: center;
+        border: 1px solid rgb(226, 225, 225);
+        
+    }
+    @media only screen and (max-width:600px) {
+       #id_Sp_Name,#id_M_Name,#id_F_Name,#id_Sp_DOB,#id_Sp_DOB,#id_Sp_DOB,#id_C1_Name,#id_C2_Name,#id_C2_PSN,#id_C2_PSN #id_no1, #id_no2, #id_no3, #id_no4, #id_no5, #id_no6,#id_nsc1, #id_nsc2, #id_nsc3, #id_nsc4, #id_nsc5, #id_nsc6, #id_c1, #id_c2, #id_c3, #id_c4, #id_c5, #id_c6,#id_u1, #id_u2, #id_u3, #id_u4, #id_u5, #id_u6, #id_pos1, #id_pos2, #id_pos3, #id_pos4, #id_pos5, #id_pos6{
+             width: 150px;
+         }
+    .form_box_inn{
+        padding: 0;
+        margin: 0;
+    }
+    }
+</style>
 <div class="form_box" style="width: 100%;">
     <h1>ADMINISTRATION PERSONAL DATA SHEET </h1>
     <div class="form_box_inn" style="width: 100%;">
@@ -31,7 +47,7 @@
                 <h1>EDUCATIONAL & PROFESSIONAL QUALIFICATIONS – (10th Grade to Final Certification)</h1>
                 <div class="form_box_inn3">
                     <table>
-                        <tr>
+                        <tr class="tblh">
                             <th>SlNo</th>
                             <th>Course</th>
                             <th>Name of the School / College</th>
@@ -119,7 +135,7 @@
                 <h1>WORK EXPERIENCE </h1>
                 <div class="form_box_inn3">
                     <table>
-                        <tr>
+                        <tr class="tblh">
                             <th>SlNo</th>
                             <th>Name of the organization</th>
                             <th>Designation</th>
@@ -195,7 +211,7 @@
                 <h1>FAMILY DATA</h1>
                 <div class="form_box_inn3">
                     <table>
-                        <tr>
+                        <tr class="tblh">
                             <th>Family Members</th>
                             <th>Name</th>
                             <th>Date of Birth</th>
@@ -207,7 +223,7 @@
                             <th>Annual income</th>
                         </tr>
                         <tr>
-                            <td>Spouse</td>
+                            <td class="sln">Spouse</td>
                             <td>{{ form.Sp_Name }}</td>
                             <td>{{ form.Sp_DOB }}</td>
                             <td>{{ form.Sp_Qul }}</td>
@@ -216,7 +232,7 @@
                             <td>{{ form.Sp_Inc }}</td>
                         </tr>
                         <tr>
-                            <td>Father</td>
+                            <td class="sln">Father</td>
                             <td>{{ form.F_Name }}</td>
                             <td>{{ form.F_DOB }}</td>
                             <td>{{ form.F_Qul }}</td>
@@ -225,7 +241,7 @@
                             <td>{{ form.F_Inc }}</td>
                         </tr>
                         <tr>
-                            <td>Mother</td>
+                            <td class="sln">Mother</td>
                             <td>{{ form.M_Name }}</td>
                             <td>{{ form.M_DOB }}</td>
                             <td>{{ form.M_Qul }}</td>
@@ -242,7 +258,7 @@
                 <h1>CHILDREN DATA </h1>
                 <div class="form_box_inn3">
                     <table>
-                        <tr>
+                        <tr class="tblh">
                             <th>No</th>
                             <th>Name</th>
                             <th>Date of Birth</th>
@@ -298,7 +314,7 @@
 
 
 
-            <input type="submit" value="Submit" class="btn btn-success">
+            <input type="submit" value="Submit" class="btn btn-success"><br>
         </form>
         {% endif %}
     </div>

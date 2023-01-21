@@ -156,8 +156,8 @@ def contactUs(request):
         
         if form.is_valid():
             send_mail(
-                f'Enquiry from {enq_name} phone {mobile_No}',
-                message,
+                f'Enquiry from: {enq_name}, phone: {mobile_No}',
+                f'Enquiry from: {enq_name}, phone: {mobile_No}, \n{message}',
                 settings.EMAIL_HOST_USER,
                 ['mvr.9441088048@gmail.com',],
             )
@@ -187,6 +187,7 @@ def ReferAStudent(request):
 
 def StudentEnquiry(request):
     # return HttpResponse('Hi JHPS')
+    print('HI1')
     submitted = False
     if request.method == 'POST':
         form = StudentEnquiryForm(request.POST)
@@ -221,8 +222,9 @@ def StudentEnquiry(request):
         reference_mobile_No = form['reference_mobile_No'].value() 
         reference_email = form['reference_email'].value() 
         remarks = form['remarks'].value() 
-        
+        print('HI2')
         if form.is_valid():
+            print('HI3')
             send_mail(
                 f'Enquiry from {mother_name} phone {mobile_No}',
                 f"""

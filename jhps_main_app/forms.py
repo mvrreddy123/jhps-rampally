@@ -4,6 +4,8 @@ from phonenumber_field.formfields import PhoneNumberField
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from .models import Admission_Enquiry, Refer_A_Student, Student_Enquiry, ApplyJob
 
+class DateInput(forms.DateInput):
+        input_type = 'date'
 
 class AdmissionEnquiryForm(ModelForm):
     mobile_No =  PhoneNumberField(
@@ -78,7 +80,7 @@ class StudentEnquiryForm(ModelForm):
     father_mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Father Mobile No*'}), )
     reference_mobile_No =  PhoneNumberField( widget = PhoneNumberPrefixWidget(initial="IN", attrs={'class': 'form-control mvrdd', 'placeholder': 'Reference Mobile No*'}), )
    
-
+  
     class Meta:
         model = Student_Enquiry
         # academic_year = forms.ModelChoiceField(label="", queryset= Student_Enquiry.objects.values_list("academic_year"),  empty_label= "Placeholder")
@@ -91,7 +93,7 @@ class StudentEnquiryForm(ModelForm):
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name*'}),
             'middle_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Middle Name*'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last name*'}),
-            'date_of_birth': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Date of Birth*'}),
+            'date_of_birth': DateInput(attrs={'class': 'form-control dte', 'placeholder': 'Date of Birth*'}),
             #  'gender': forms.RadioSelect(attrs={'class':'form-control','placeholder': 'Gender*'}),
             #  'relation': forms.ChoiceField(choices = Student_Enquiry.REL_CHOICES),form-select
             # 'relation': forms.ChoiceField(attrs={'class':'form-select'}),
@@ -138,7 +140,7 @@ class ApplyJobForm(ModelForm):
         'Residential_Address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Residential Address*'}), 
         'Own_house_rented': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Own house / Rented*'}), 
         'Mother_Tongue': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Mother Tongue*'}), 
-        'date_of_birth': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Date of Birth*'}), 
+        'date_of_birth': DateInput(attrs={'class': 'form-control', 'placeholder': 'Date of Birth*'}), 
         # 'Caste_Category_Religion': forms.ChoiceField(), 
         'Email_ID': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email ID*'}), 
         'Qualifications': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Qualifications*'}), 

@@ -16,44 +16,44 @@ class Student_Enquiry (models.Model):
     year1 = 0
     year2 = 1
     YEAR_CHOICES = [(year1, '2022-23'), (year2, '2023-24')]
-    academic_year = models.IntegerField(choices=YEAR_CHOICES)
-    first_name = models.CharField(max_length=100)
-    middle_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    date_of_birth = models.DateField()
+    academic_year = models.IntegerField(null=True, blank=True, choices=YEAR_CHOICES)
+    first_name = models.CharField(null=True, blank=True, max_length=100)
+    middle_name = models.CharField(null=True, blank=True, max_length=100)
+    last_name = models.CharField(null=True, blank=True, max_length=100)
+    date_of_birth = models.DateField(null=True, blank=True)
     GENDER_MALE = 0
     GENDER_FEMALE = 1
     GENDER_CHOICES = [(GENDER_MALE, 'Male'), (GENDER_FEMALE, 'Female')]
-    gender = models.IntegerField(choices=GENDER_CHOICES)
+    gender = models.IntegerField(null=True, blank=True, choices=GENDER_CHOICES)
     ch1 = 0
     ch2 = 1
     REL_CHOICES = [(ch1, 'FATHER'), (ch2, 'MOTHER')]
-    relation = models.IntegerField(choices=REL_CHOICES)
+    relation = models.IntegerField(null=True, blank=True, choices=REL_CHOICES)
     L1 = 0
     L2 = 1 
     LOCAL_CHOICES = [(L1, 'Local'), (L2, 'Non-Local')]
-    local_type = models.IntegerField(choices=LOCAL_CHOICES)
+    local_type = models.IntegerField(null=True, blank=True, choices=LOCAL_CHOICES)
     transfer_from = models.CharField(null=True, blank=True, max_length=150)
-    mobile_No = PhoneNumberField()
+    mobile_No = PhoneNumberField(null=True, blank=True, max_length=50)
     email = models.EmailField(null=True, blank=True, max_length=150)
     message = models.TextField(null=True, blank=True, max_length=500)
-    mother_name = models.CharField(max_length=150)
+    mother_name = models.CharField(null=True, blank=True, max_length=150)
     mother_organization = models.CharField(null=True, blank=True, max_length=150)
     mother_designation = models.CharField(null=True, blank=True, max_length=50)
     mother_income = models.CharField(null=True, blank=True, max_length=12)
-    mother_mobile_No = PhoneNumberField(null=True, blank=True)
+    mother_mobile_No = PhoneNumberField(null=True, blank=True, max_length=50)
     mother_email = models.EmailField(null=True, blank=True, max_length=150)
-    father_name = models.CharField(max_length=150)
-    father_orgnization = models.CharField(max_length=150)
-    father_designation = models.CharField(max_length=50)
-    father_income = models.CharField(max_length=12)
-    father_mobile_No = PhoneNumberField(max_length=15)
+    father_name = models.CharField(null=True, blank=True, max_length=150)
+    father_orgnization = models.CharField(null=True, blank=True, max_length=150)
+    father_designation = models.CharField(null=True, blank=True, max_length=50)
+    father_income = models.CharField(null=True, blank=True, max_length=12)
+    father_mobile_No = PhoneNumberField(null=True, blank=True, max_length=50)
     father_email = models.EmailField(null=True, blank=True, max_length=150)
     reference_name = models.CharField(null=True, blank=True, max_length=150)
     reference_designation = models.CharField(null=True, blank=True, max_length=50)
     reference_department = models.CharField(null=True, blank=True, max_length=50)
     reference_company = models.CharField(null=True, blank=True, max_length=50)
-    reference_mobile_No = PhoneNumberField(null=True, blank=True)
+    reference_mobile_No = PhoneNumberField(null=True, blank=True, max_length=50)
     reference_email = models.EmailField(null=True, blank=True, max_length=150)
     remarks = models.TextField(null=True, blank=True, max_length=500)
 
