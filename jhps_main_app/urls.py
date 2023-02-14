@@ -27,11 +27,14 @@ urlpatterns = [
 
     path('admissions', views.admissions, name='admissions'),
     path('FeeStructure', views.FeeStructure, name='FeeStructure'),
+
     path('academics', views.academics, name='academics'),
+    path('LearningProcess', views.LearningProcess, name='LearningProcess'),
     path('ELearning', views.ELearning, name='ELearning'),
     path('CurriculumSyllabus', views.CurriculumSyllabus, name='CurriculumSyllabus'),
+    path('SchoolTimings', views.SchoolTimings, name='SchoolTimings'),
     path('Faculty', views.Faculty, name='Faculty'),
-
+ 
     path('sportsCSA', views.sportsCSA, name='sportsCSA'),
     path('CSA', views.CSA, name='CSA'),
     path('ECA', views.ECA, name='ECA'),

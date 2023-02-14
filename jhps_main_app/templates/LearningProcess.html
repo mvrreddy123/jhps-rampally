@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 <div class="main-box">
-<h1>Library</h1>
-{% for x in LibraryData %}
+<h1>Learning Process</h1>
+{% for x in LearningProcessData %}
    <div class="pgf-cont">
       {% if x.title %}
       <h2>{{x.title}}</h2>
@@ -26,4 +26,3 @@
  
 </div>
 {% endblock %}
-

@@ -9,19 +9,20 @@
     }
 
     .main-box .pgf-cont p {
+        margin: 0 20px;
         padding: 10px;
         text-align: justify;
     }
 
- 
+
 
     .accordion {
-        background-color: rgb(255, 182, 99);
-        border-top: 1px solid rgb(255, 136, 0);
+        background-color: rgb(141, 255, 158);
+        border-top: 1px solid rgb(30, 200, 0);
         border-right: none;
         border-bottom: none;
         border-left: none;
-        color: rgb(78, 42, 0);
+        color: rgb(8, 78, 0);
         cursor: pointer;
         padding: 18px;
         width: 100%;
@@ -31,13 +32,14 @@
         font-size: 22px;
         transition: 0.4s;
     }
-    .accordion:first-child{
+
+    .accordion:first-child {
         border: none;
     }
 
     .active,
     .accordion:hover {
-        background-color: rgb(253, 196, 131);
+        background-color: rgb(143, 253, 131);
     }
 
     .accordion:after {
@@ -61,34 +63,138 @@
     }
 
     .panel p {
-        color: brown;
+        color: rgb(21, 141, 0);
+    }
+
+    .pgf-cont .btn1 {
+        background-color: aqua;
+        padding: 3px 25px 8px 25px;
+        border-radius: 30px;
+    }
+
+    .pgf-cont .btn1:hover {
+        background-color: rgb(0, 255, 153);
+    }
+    .pgf-cont ol li{
+        /* list-style-position: inside; */
+        margin: 10px 50px;
+        /* background-color: rgb(223, 252, 242); */
+
+    }
+
+    @media only screen and (max-width:600px) {
+        .pgf-cont .btn1 {
+            border-radius: 10px;
+            margin-top: 5px;
+            display: block;
+            width: 100%;
+        }
     }
 </style>
 <div class="main-box">
     <br>
     <div class="pgf-cont">
-        <h1>Careers</h1>
-        <h3>Staff Recruitment 2023-24</h3>
+        <h1 style="background-color: rgb(0, 171, 48); color: white;">Careers</h1>
+        <h3>JHPS - Rampally Employs:</h3>
+        <div class="pgf-cont">
+            {% for x in career %}
+            <button class="accordion">{{x.title}}</button>
+            <div class="panel">
+                <p>{{x.paragraph_data|safe}}</p>
+            </div>
+            {% endfor %}
+        </div><br>
         <h3><a class="blink_box" href="{% url 'jhps_main_app:Applyjob' %}">Apply Online </a></h3>
-        <h3> or Mail to: <a href="mailto: careers@jhpsrampally.com">careers@jhpsrampally.com</a> </h3>
-        <p style="color: rgb(93, 0, 0);"> There are many variations of passages of Lorem Ipsum available, but the
-            majority have suffered alteration in
-            some form, by injected humour, or randomised words which don't look even slightly believable. If you are
-            going
-            to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle
-            of
-            text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
-            this
-            the first true generator on the Internet.</p>
+        <h3>-------- or --------- </h3>
+        <h3> Mail to: <a href="mailto: careers@jhpsrampally.com">careers@jhpsrampally.com</a> </h3>
+      <br>  <table>
+            <tr>
+                <th>Sl.No</th>
+                <th>Subject /Speciality</th>
+                <th>Category</th>
+                <th>Period</th>
+                <th>Vacancies</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>English</td>
+                <td>Preprimary</td>
+                <td>Permanent</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>English</td>
+                <td>Secondary</td>
+                <td>One Year</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Maths</td>
+                <td>Secondary</td>
+                <td>One Year</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Physics</td>
+                <td>Secondary</td>
+                <td>One Year</td>
+                <td>2</td>
+            </tr>
+        </table>
+<br>
+        <h3>For Details on <a class="btn1" href="{% static 'pdf/Qualification.pdf'  %}" target="_blank">Qualification</a><a class="btn1" href="{% static 'pdf/Experience.pdf'  %}" target="_blank">Experience</a><a
+                class="btn1" href="{% static 'pdf/PayScales.pdf'  %}" target="_blank">Pay Scales</a><a class="btn1" href="{% static 'pdf/TermsofEmployment.pdf'  %}" target="_blank">Terms of Employment</a></h3>
+<br><br>
     </div>
     <div class="pgf-cont">
-        {% for x in career %}
-        <button class="accordion">{{x.title}}</button>
-        <div class="panel">
-            <p>{{x.paragraph_data|safe}}</p>
-        </div>
+        <h3>A Note on JHPS – Rampally’s </h3>
+        <h3>Teaching Program & Support to Teachers</h3>
+        <p>JHPS – Rampally offers quality education to its Students. The motto is to provide extensive knowledge base
+            that a child would be able to retain for the life-time and also to develop a sense of creativity and the
+            will to achieve.
+        </p>
+        <p>
+            The teaching methodologies employed are such that they make learning interesting and enjoyable for the
+            learners. The underlying conceptual framework enshrined in the National Education Policy 2020 forms the
+            basis of our pedagogies. The learning process takes place through projects, role plays, group-discussions,
+            making models, elicitation, research, class presentations and exhaustive hands on activities (learning by
+            doing mode)that are designed to generate willing interest among the children to learn.
+        </p>
+        <p>
+            JHPS views education as a wholesome process. The focus is not only on academics and co-curricular activities
+            but also on inculcating values. The teaching-learning process is aimed at fostering competencies like
+            problem solving, decision making, effective communication skills and self-study.
+        </p>
+        <p>
+            The top notch infrastructure which include well ventilated and spacious classrooms, that are equipped with
+            the latest in teaching technology aids like
+        </p>
 
-        {% endfor %}
+        <ol>
+            <li>Electronic Smart Boards that work like a Desktop Computer /Projector with sound systems/ A writing board that can record and store all that is taught (for recovery & recapitulation), built-in cameras for online teaching/ Drawing & writing support systems / internet connected / and many more.</li>
+            <li>Provision is made for teachers, to be able to access educational software(s) for complementing the Teaching-Learning Process in the classroom in a more interactive, child centric and inter disciplinary manner.</li>
+            <li>The 20,000 Sq Ft Laboratory Complex, is almost the best as it comes and includes Physics, Chemistry, Biology, Mathematic, Geography, Social Science, 3D Lab and computer Labs. </li>
+            <ol style="list-style-type: lower-alpha;">
+                <li>These labs cater to the requirements of ‘Experiential Learning’ to all the students, right from 1st Class to 10th Class.</li>
+                <li>The Labs are manned by specially oriented subject specialist teachers who create the experiential learning projects and activities, through which, the regular teachers are expected to showcase to the children the various concepts, that are envisaged to be taught through the curriculum.</li>
+            </ol>
+            <li>Activity Rooms include the huge Pre-Primary Activity Room, Music, Art, Dance, Craft Rooms, Ideation Room, Home Crafts Room, Journalist Den and Photography Center, etc., which cater to the multidimensional learning processes among the children. The Auditorium, with 900 seating capacity and Panorama size ‘School Cinema’ projection systems, where value-based movies are periodically shown to the students, is almost the best in Hyderabad.</li>
+            <li>The Canteen Provides Breakfast Lunch & evening snacks at subsidized rates.</li>
+            <li>The differently organized Playgrounds & sports facilities plus the Organo Garden help children learn their academic concepts through on hands learning processes apart from physical activities. </li>
+        </ol>
+        <p>The Curriculum at JHPS Rampally has been set at lower quantum, keeping in view the current philosophy of the CBSE, not to burden the children with undue content cramming and with a perspective to making education play the vital role in developing interest and curiosity amongst children. 
+            </p><p>
+            Teachers are provided with specialised training through the inhouse skill development centre in all areas of teaching requirements which help teachers gain extensive teaching abilities. 
+            </p>
+            <p>
+                <strong>Together, all these facilities help the teachers provide the necessary learning atmosphere that is easy and truly comprehensive. 
+                    JHPS - Rampally is organised to function as a truly student – teacher friendly school, with un-paralleled support systems.</strong>
+            </p>
+            
+
     </div>
 
 </div>

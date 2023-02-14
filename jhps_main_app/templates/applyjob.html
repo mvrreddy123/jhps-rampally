@@ -20,7 +20,7 @@
     <h1>ADMINISTRATION PERSONAL DATA SHEET </h1>
     <div class="form_box_inn" style="width: 100%;">
         {% if submitted %}
-        <h1>We Received your details.....</h1>
+        <h1 style="background-color: green; color: yellow;" >We Received your details.....</h1>
         {% else %}
         <form action="" method="POST">
             {% csrf_token %}
@@ -31,6 +31,7 @@
                 <p>{{ form.Residential_Address }}</p>
                 <p>{{ form.Own_house_rented }}</p>
                 <p>{{ form.Mother_Tongue }}</p>
+                <span> Date of Birth</span>
                 <p>{{ form.date_of_birth }}</p>
                 <p style="color: rgb(63, 63, 63);">Caste Category /Religion : {{ form.Caste_Category_Religion }}</p>
                 <p>{{ form.Email_ID }}</p>

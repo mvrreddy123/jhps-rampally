@@ -239,7 +239,7 @@ header .t1 {
 
 .l2 .l2-inn2 .tab {
     overflow: hidden;
-    background-color: rgb(183, 245, 255);
+    background-color: rgb(253, 127, 1);
 
 }
 
@@ -454,21 +454,21 @@ color: rgb(0, 0, 50);
 /* media cards1 end*/
 
 .mvr_sm {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 100px;
     position: fixed;
-    top: 60%;
+    bottom: 20px;
     right: 0px;
-    z-index: 99;
-    overflow: hidden;
+    z-index: 100;
+    /* overflow: hidden; */
 }
 
 
 .mvr_sm .gall {
-    font-size: 20px;
-    padding: 5px 0 5px 5px;
+    font-size: 19px;
+    padding: 2px 0 2px 5px;
     width: 100px;
-    height: 45px;
+    height: 35px;
     border: 1px solid gold;
     border-radius: 10px 0 0 10px;
     cursor: pointer;
@@ -478,27 +478,81 @@ color: rgb(0, 0, 50);
     right: 0px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     background-color: rgb(0, 175, 87);
-    opacity: 1;
+    z-index: 1;
 }
 .mvr_sm .gall:hover {
     background-color: rgb(1, 235, 118);
 }
 
+
+.mvr_sm .gall .iGall{
+    font-size: 19px;
+    padding: 2px 0 2px 5px;
+    width: 160px;
+    height: 35px;
+    border: 1px solid gold;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    top: 0px;
+    right: -170px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgb(0, 175, 87);
+    transition: 0.2s;
+    z-index: -1;
+}
+.mvr_sm .gall .iGall:hover {
+    background-color: rgb(1, 235, 118);
+}
+
+
+.mvr_sm .gall .vGall{
+    font-size: 19px;
+    padding: 2px 0 2px 5px;
+    width: 160px;
+    height: 35px;
+    border: 1px solid gold;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    top: 0px;
+    right: -170px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgb(0, 175, 87);
+    transition: 0.2s;
+    z-index: -1;
+}
+.mvr_sm .gall .vGall:hover {
+    background-color: rgb(1, 235, 118);
+}
+
+.mvr_sm .gall:hover .iGall{
+    top: -17px;
+    right: 100px;
+}
+.mvr_sm .gall:hover .vGall{
+    top: 18px;
+    right: 100px;
+}
+
 .mvr_sm .evnt {
-    font-size: 20px;
-    padding: 5px 0 5px 5px;
+    font-size: 19px;
+    padding: 2px 0 2px 5px;
     width: 100px;
-    height: 45px;
+    height: 35px;
     border: 1px solid gold;
     border-radius: 10px 0 0 10px;
     cursor: pointer;
     user-select: none;
     position: absolute;
-    top: 45px;
+    top: 35px;
     right: 0px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     background-color: rgb(0, 97, 145);
     opacity: 1;
+    z-index: 1;
 }
 .mvr_sm .evnt:hover {
     background-color: rgb(0, 148, 222);
@@ -509,7 +563,7 @@ color: rgb(0, 0, 50);
 
 
 .mvr_sm2 {
-    width: 150px;
+    width: 50px;
     height: 50px;
     position: fixed;
     bottom: 10px;
@@ -616,7 +670,7 @@ color: rgb(0, 0, 50);
     background-color: #FF7F50;
     height: 160px;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     transition: 0.2s;
 }
 .co_box .sm1:hover {
@@ -629,7 +683,7 @@ color: rgb(0, 0, 50);
 .co_box .sm1 a {
     text-decoration: none;
     color: white;
-    font-size: 35px;
+    font-size: 25px;
     line-height: 1.1;
 }
 
@@ -761,16 +815,18 @@ color: rgb(0, 0, 50);
 .l4{
     margin-top: 50px;
     width: 100%;
-    height: 330px;
+    height: 450px;
     padding: 10px;
     /* display: flex; */
+    display: flex;
+    justify-content: space-around;
 }
 
 .l4 .img_gal_box {
-    height: 300px;
+    height: 380px;
     margin: 5px;
-    width: 37%;
-    float: left;
+    width: 49%;
+    /* float: left; */
     border-radius: 6px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
     overflow: hidden;
@@ -804,79 +860,17 @@ color: rgb(0, 0, 50);
     filter: brightness(120%);
 }
 
-.l4 .notice_box {
-    width: 27%;
-    float: left;
-    height: 300px;
-    margin: 5px;
-    border-radius: 6px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-}
-
-.l4 .notice_box h2 {
-    padding: 5px;
-    text-align: center;
-    background-color: rgb(113, 144, 254);
-}
-
-.l4 .notice_box .row {
-    width: 100%;
-    margin: 5px 8px;
-}
-
-.l4 .notice_box .row .column {
-    position: relative;
-    float: left;
-    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
-    margin: 5px;
-    width: 29%;
-    height: 115px;
-    padding: 5px;
-    overflow: hidden;
-    transition: 0.2s;
-}
-.l4 .notice_box .row .column:hover {
-    background-color: #ffff9e;
-}
-
-.l4 .notice_box .row .column img {
-    position: absolute;
-    top: 5px;
-    left: 41%;
-   
-}
-.l4 .notice_box .row .column h4 {
-   color: goldenrod;
-   margin: 0;
-   font-size: 25px;
-}
-.l4 .notice_box .row .column h5 {
-   color: goldenrod;
-   margin: 3px 0 0 0;
-   font-size: 10px;
-}
-.l4 .notice_box .row .column h6 {
-   color: goldenrod;
-   margin: 0;
-   font-size: 8px;
-}
-.l4 .notice_box .row .column p {
-   color: rgb(74, 53, 0);
-   margin: 0;
-   font-size: 7px;
-}
-
 
 
 .l4 .video_box {
-    width: 33%;
-    float: left;
-    height: 300px;
+    width: 49%;
+    /* float: left; */
+    height: 380px;
     margin: 5px;
     border-radius: 6px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
     overflow: hidden;
+
 }
 .l4 .video_box  h2{
     padding: 5px;
@@ -886,12 +880,14 @@ color: rgb(0, 0, 50);
 
 .l4 .video_box .row {
     width: 95%;
-    margin-left: 10px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .l4 .video_box .row .column {
-    float: left;
-    width: 50%;
+    /* float: left; */
+    width: 48%;
     padding: 3px;
 }
 
@@ -940,6 +936,80 @@ color: rgb(0, 0, 50);
 .l5 .owl-carousel .media-29101 p{
     text-align: center;
     color: rgb(111, 92, 0);
+}
+
+
+
+.l6{
+    margin-top: 10px;
+    width: 100%;
+    height: 250px;
+    /* padding: 10px; */
+    /* display: flex; */
+}
+
+.l6 .notice_box {
+    width: 100%;
+    height: 240px;
+    margin: 0px;
+    /* border-radius: 6px; */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.l6 .notice_box h2 {
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(113, 144, 254);
+}
+
+.l6 .notice_box .row {
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.l6 .notice_box .row .column {
+    position: relative;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    width: 15%;
+
+    height: 175px;
+    padding: 5px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.l6 .notice_box .row .column:hover {
+    background-color: #ffff9e;
+}
+
+.l6 .notice_box .row .column img {
+    position: absolute;
+    top: 5px;
+    left: 41%;
+   
+}
+.l6 .notice_box .row .column h4 {
+   color: goldenrod;
+   margin: 0;
+   font-size: 25px;
+}
+.l6 .notice_box .row .column h5 {
+   color: goldenrod;
+   margin: 3px 0 0 0;
+   font-size: 18px;
+}
+.l6 .notice_box .row .column h6 {
+   color: goldenrod;
+   margin: 0;
+   font-size: 15px;
+}
+.l6 .notice_box .row .column p {
+   color: rgb(74, 53, 0);
+   margin: 0;
+   font-size: 13px;
 }
 
 /* footer */
@@ -1022,8 +1092,8 @@ footer .f_us a:hover {
         .l4 .img_gal_box{
             width: 34%;
         }
-        .l4 .notice_box{
-            width: 28%;
+        .l6 .notice_box .row .column{
+            width: 45%;
         }
         .l4 .video_box {
             width: 34%;
@@ -1067,11 +1137,11 @@ footer .f_us a:hover {
     .mvr_admin li.nav-item{
        visibility: visible;}
     .l4{
-        height: 815px;
+        height: 515px;
    
     }
    
-    .l4 .img_gal_box, .l4 .notice_box, .l4 .video_box {
+    .l4 .img_gal_box,  .l4 .video_box {
         width: 100%;
     }
     
@@ -1082,6 +1152,39 @@ footer .f_us a:hover {
         height: 245px;
     }
   
+.l6 {
+    height: 370px;
+    
+}
+.l6 .notice_box{
+    height: 350px;
+    
+}
+.l6 .notice_box .row .column {
+    height: 150px;
+    width: 30%;
+}
+
+.l6 .notice_box .row .column h4 {
+   color: goldenrod;
+   margin: 0;
+   font-size: 16px;
+}
+.l6 .notice_box .row .column h5 {
+   color: goldenrod;
+   margin: 3px 0 0 0;
+   font-size: 12px;
+}
+.l6 .notice_box .row .column h6 {
+   color: goldenrod;
+   margin: 0;
+   font-size: 10px;
+}
+.l6 .notice_box .row .column p {
+   color: rgb(74, 53, 0);
+   margin: 0;
+   font-size: 8px;
+}
 
     .l2 {
         flex-direction: column;

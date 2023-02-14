@@ -5,54 +5,46 @@
  label{
     display: none;
  }
-
+ table{
+    width: 100%;
+ }
+th, td{
+    border: 1px solid aqua;
+    border-collapse: collapse;
+    padding: 2px 10px;
+}
+tr:hover{
+    background-color: aqua;
+    cursor: pointer;
+}
 </style>
 <br>
 <div class="pageTilesBox">
     <div class="pageTiles">
-        <h2>Address</h2>
-        <h3><strong>Jubilee Hills Public School</strong><br>
-            Rampally Dayara, <br>Keesara Mandal, <br>Medchal Dist. <br>
-            Telangana - 501 301 <br></h3>
-        <br>
-        <h3> <strong> Admission: &phone; </strong>
-            <a href="tel: +919346784119">+91 9346784119</a>, 
-            <a href="tel: +919346781619">9346781619</a>,<br>
-            <strong>Transport: </strong>
-            <a href="tel: +919849998441">+91 9849998441</a>,<br>
-            <strong>Office: </strong>
-            <a href="tel: +919515943805">+91 9515943805</a>,<br>
-            <strong>Email: </strong> 
-            <a href="mailto: info@jhpsrampally.com">info@jhpsrampally.com</a>,<br>
-
-            <strong>Email : </strong>
-            <a href="mailto: principal@jhpsrampally.com">principal@jhpsrampally.com</a>,<br></h3>
-    </div>
-    <div class="pageTiles"><iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15221.549097213316!2d78.661127!3d17.489017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc476139e32c6268a!2sJubilee%20Hills%20Public%20School%20Rampally!5e0!3m2!1sen!2sin!4v1672162520047!5m2!1sen!2sin"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <div class="pageTiles"> 
-        <a href="{% static 'images/route.jpg' %}"> <img width="100%" height="450px" src="{% static 'images/route.jpg' %}" alt="JHPS Route"></a>
-        
+        <h2 style="background-color: rgb(0, 185, 120); color: white; text-align: center;">Address</h2> 
+        <table>
+            <tr><th style="padding-left: 30px; background-color: rgb(166, 250, 222);" colspan="3" >Jubilee Hills Public School,</th></tr>
+            <tr><th style="padding-left: 30px; background-color: rgb(166, 250, 222);" colspan="3">Rampally Dayara,</th></tr>
+            <tr><th style="padding-left: 30px; background-color: rgb(166, 250, 222);" colspan="3">Keesara Mandal,</th></tr>
+            <tr><th style="padding-left: 30px; background-color: rgb(166, 250, 222);" colspan="3">Medchal Dist.,</th></tr>
+            <tr><th style="padding-left: 30px; background-color: rgb(166, 250, 222);" colspan="3">Telangana - 501301. </th></tr>
+            <tr><th style="background-color: rgb(218, 255, 243); color: rgb(218, 255, 243);" colspan="3">- </th></tr>
+            <tr><th style="background-color: rgb(72, 253, 193);" >Department</th><th style="background-color: rgb(72, 253, 193); text-align: center;">Phone</th><th style="background-color: rgb(72, 253, 193); text-align: center;">Email</th></tr>
+            <tr><th style="background-color: rgb(145, 253, 217);" >Admission</th><td style="background-color: rgb(193, 251, 231);"><a href="tel: +919346784119">+91 9346784119</a>, <a href="tel: +919346781619">+91 9346781619</a></td><td style="background-color: rgb(204, 253, 237);"><a href="mailto: principal@jhpsrampally.com">principal@jhpsrampally.com</a></td></tr>
+            <tr><th style="background-color: rgb(95, 251, 199);" >Office</th><td style="background-color: rgb(171, 253, 226);"><a href="tel: +919515943805">+91 9515943805</a></td><td style="background-color: rgb(171, 253, 226);"><a href="mailto: info@jhpsrampally.com">info@jhpsrampally.com</a>,<br><a href="mailto: principal@jhpsrampally.com">principal@jhpsrampally.com</a></td></tr>
+            <tr><th style="background-color: rgb(147, 249, 215);" >Transport</th><td style="background-color: rgb(196, 254, 235);"><a href="tel: +919849998441">+91 9849998441</a></td><td style="background-color: rgb(203, 252, 235);"><a href="mailto: info@jhpsrampally.com">info@jhpsrampally.com</a></td></tr>
+            
+        </table>
+             
     </div>
     <div class="pageTiles">
-        <div class="form_box">
-            <h1>Admission Enquiry</h1>
-            <div class="form_box_inn">
-                {% if submitted %}
-                <h1>We Received your details.....</h1>
-                {% else %}
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="submit" value="Submit" class="btn btn-success">
-                </form>
-                {% endif %}
-            </div>
-        </div>
+        <h2 style="background-color: maroon; color: white; text-align: center;">Location on Map</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15221.549097213316!2d78.661127!3d17.489017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc476139e32c6268a!2sJubilee%20Hills%20Public%20School%20Rampally!5e0!3m2!1sen!2sin!4v1672162520047!5m2!1sen!2sin"
+            width="100%" height="410" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+
 
 </div>
 

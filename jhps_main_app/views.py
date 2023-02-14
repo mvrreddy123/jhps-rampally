@@ -4,8 +4,11 @@ from .forms import AdmissionEnquiryForm, ReferAStudentForm, StudentEnquiryForm, 
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
+# import io
+# from django.http import FileResponse
+# from reportlab.pdfgen import canvas
 # Create your views here.
-
+toEmailId1 = 'mvr.9441088048@gmail.com'
 def index(request):
     return render(request, 'index.html')
 
@@ -75,6 +78,10 @@ def academics(request):
     academicsData = Academics.objects.all()
     args = {'academicsData': academicsData}
     return render(request, 'academics.html', args)
+def LearningProcess(request):
+    LearningProcessData = Academics.objects.filter(select_page = 0 )
+    args = {'LearningProcessData': LearningProcessData}
+    return render(request, 'LearningProcess.html', args)
 def ELearning(request):
     ELearningData = Academics.objects.filter(select_page = 1 )
     args = {'ELearningData': ELearningData}
@@ -83,6 +90,9 @@ def CurriculumSyllabus(request):
     CurriculumSyllabusData = Academics.objects.filter(select_page = 2 )
     args = {'CurriculumSyllabusData': CurriculumSyllabusData}
     return render(request, 'CurriculumSyllabus.html', args)
+def SchoolTimings(request):
+    return render(request, 'timings.html')
+
 def Faculty(request):
     return render(request, 'Faculty.html')
 
@@ -149,17 +159,17 @@ def contactUs(request):
     submitted = False
     if request.method == 'POST':
         form = AdmissionEnquiryForm(request.POST)
-        enq_name = form['enq_name'].value()
-        mobile_No = form['mobile_No'].value()
-        email = form['email'].value()
-        message = form['message'].value()
-        
         if form.is_valid():
+            enq_name = form['enq_name'].value()
+            mobile_No = form['mobile_No'].value()
+            email = form['email'].value()
+            message = form['message'].value()
+        
             send_mail(
                 f'Enquiry from: {enq_name}, phone: {mobile_No}',
                 f'Enquiry from: {enq_name}, phone: {mobile_No}, \n{message}',
                 settings.EMAIL_HOST_USER,
-                ['mvr.9441088048@gmail.com',],
+                [toEmailId1,],
             )
             form.save()
             return HttpResponseRedirect('?submitted=True')
@@ -186,45 +196,42 @@ def ReferAStudent(request):
     
 
 def StudentEnquiry(request):
-    # return HttpResponse('Hi JHPS')
-    print('HI1')
     submitted = False
     if request.method == 'POST':
         form = StudentEnquiryForm(request.POST)
-        academic_year = form['academic_year'].value() 
-        first_name = form['first_name'].value() 
-        middle_name = form['middle_name'].value() 
-        last_name = form['last_name'].value() 
-        date_of_birth = form['date_of_birth'].value() 
-        gender = form['gender'].value() 
-        relation = form['relation'].value() 
-        local_type = form['local_type'].value() 
-        transfer_from = form['transfer_from'].value() 
-        mobile_No = form['mobile_No'].value() 
-        email = form['email'].value() 
-        message = form['message'].value() 
-        mother_name = form['mother_name'].value() 
-        mother_organization = form['mother_organization'].value() 
-        mother_designation = form['mother_designation'].value() 
-        mother_income = form['mother_income'].value() 
-        mother_mobile_No = form['mother_mobile_No'].value()
-        mother_email = form['mother_email'].value() 
-        father_name = form['father_name'].value() 
-        father_orgnization = form['father_orgnization'].value() 
-        father_designation = form['father_designation'].value() 
-        father_income = form['father_income'].value() 
-        father_mobile_No = form['father_mobile_No'].value() 
-        father_email = form['father_email'].value() 
-        reference_name = form['reference_name'].value() 
-        reference_designation = form['reference_designation'].value() 
-        reference_department = form['reference_department'].value() 
-        reference_company = form['reference_company'].value() 
-        reference_mobile_No = form['reference_mobile_No'].value() 
-        reference_email = form['reference_email'].value() 
-        remarks = form['remarks'].value() 
-        print('HI2')
         if form.is_valid():
-            print('HI3')
+            academic_year = form['academic_year'].value() 
+            first_name = form['first_name'].value() 
+            middle_name = form['middle_name'].value() 
+            last_name = form['last_name'].value() 
+            date_of_birth = form['date_of_birth'].value() 
+            gender = form['gender'].value() 
+            relation = form['relation'].value() 
+            local_type = form['local_type'].value() 
+            transfer_from = form['transfer_from'].value() 
+            mobile_No = form['mobile_No'].value() 
+            email = form['email'].value() 
+            message = form['message'].value() 
+            mother_name = form['mother_name'].value() 
+            mother_organization = form['mother_organization'].value() 
+            mother_designation = form['mother_designation'].value() 
+            mother_income = form['mother_income'].value() 
+            mother_mobile_No = form['mother_mobile_No'].value()
+            mother_email = form['mother_email'].value() 
+            father_name = form['father_name'].value() 
+            father_orgnization = form['father_orgnization'].value() 
+            father_designation = form['father_designation'].value() 
+            father_income = form['father_income'].value() 
+            father_mobile_No = form['father_mobile_No'].value() 
+            father_email = form['father_email'].value() 
+            reference_name = form['reference_name'].value() 
+            reference_designation = form['reference_designation'].value() 
+            reference_department = form['reference_department'].value() 
+            reference_company = form['reference_company'].value() 
+            reference_mobile_No = form['reference_mobile_No'].value() 
+            reference_email = form['reference_email'].value() 
+            remarks = form['remarks'].value() 
+        
             send_mail(
                 f'Enquiry from {mother_name} phone {mobile_No}',
                 f"""
@@ -261,7 +268,7 @@ def StudentEnquiry(request):
                 remarks : {remarks},
                 """,
                 settings.EMAIL_HOST_USER,
-                ['mvr.9441088048@gmail.com',],
+                [toEmailId1,],
             )
             form.save()
             return HttpResponseRedirect('?submitted=True')
@@ -273,11 +280,152 @@ def StudentEnquiry(request):
 
 
 def Applyjob(request):
-    # return HttpResponse('Hi JHPS')
     submitted = False
     if request.method == 'POST':
         form = ApplyJobForm(request.POST)
         if form.is_valid():
+            Post_Applying_For = form['Post_Applying_For'].value()
+            Name_of_the_Candidate = form['Name_of_the_Candidate'].value()
+            Residential_Address = form['Residential_Address'].value()
+            Own_house_rented = form['Own_house_rented'].value()
+            Mother_Tongue = form['Mother_Tongue'].value()
+            date_of_birth = form['date_of_birth'].value()
+            Caste_Category_Religion = form['Caste_Category_Religion'].value()
+            Telephone_No = form['Telephone_No'].value()
+            Email_ID = form['Email_ID'].value()
+            Qualifications = form['Qualifications'].value()
+            Last_Worked  = form['Last_Worked'].value()
+            Reasons = form['Reasons'].value()
+            Any_friends = form['Any_friends'].value()
+            Have_you_worked  = form['Have_you_worked'].value()
+            Present_Salary = form['Present_Salary'].value()
+            Expected_Salary = form['Expected_Salary'].value()
+            c1 = form['c1'].value()
+            c2 = form['c2'].value()
+            c3 = form['c3'].value()
+            c4 = form['c4'].value()
+            c5 = form['c5'].value()
+            c6 = form['c6'].value()
+            nsc1 = form['nsc1'].value()
+            nsc2 = form['nsc2'].value()
+            nsc3 = form['nsc3'].value()
+            nsc4 = form['nsc4'].value()
+            nsc5 = form['nsc5'].value()
+            nsc6 = form['nsc6'].value()
+            u1 = form['u1'].value()
+            u2 = form['u2'].value()
+            u3 = form['u3'].value()
+            u4 = form['u4'].value()
+            u5 = form['u5'].value()
+            u6 = form['u6'].value()
+            pos1 = form['pos1'].value()
+            pos2 = form['pos2'].value()
+            pos3 = form['pos3'].value()
+            pos4 = form['pos4'].value()
+            pos5 = form['pos5'].value()
+            pos6 = form['pos6'].value()
+            yp1 = form['yp1'].value()
+            yp2 = form['yp2'].value()
+            yp3 = form['yp3'].value()
+            yp4 = form['yp4'].value()
+            yp5 = form['yp5'].value()
+            yp6 = form['yp6'].value()
+            m1 = form['m1'].value()
+            m2 = form['m2'].value()
+            m3 = form['m3'].value()
+            m4 = form['m4'].value()
+            m5 = form['m5'].value()
+            m6 = form['m6'].value()
+            rc1 = form['rc1'].value()
+            rc2 = form['rc2'].value()
+            rc3 = form['rc3'].value()
+            rc4 = form['rc4'].value()
+            rc5 = form['rc5'].value()
+            rc6 = form['rc6'].value()
+            sec1 = form['sec1'].value()
+            sec2 = form['sec2'].value()
+            sec3 = form['sec3'].value()
+            sec4 = form['sec4'].value()
+            sec5 = form['sec5'].value()
+            sec6 = form['sec6'].value()
+            no1 = form['no1'].value()
+            no2 = form['no2'].value()
+            no3 = form['no3'].value()
+            no4 = form['no4'].value()
+            no5 = form['no5'].value()
+            no6 = form['no6'].value()
+            deg1 = form['deg1'].value()
+            deg2 = form['deg2'].value()
+            deg3 = form['deg3'].value()
+            deg4 = form['deg4'].value()
+            deg5 = form['deg5'].value()
+            deg6 = form['deg6'].value()
+            yow1 = form['yow1'].value()
+            yow2 = form['yow2'].value()
+            yow3 = form['yow3'].value()
+            yow4 = form['yow4'].value()
+            yow5 = form['yow5'].value()
+            yow6 = form['yow6'].value()
+            sal1 = form['sal1'].value()
+            sal2 = form['sal2'].value()
+            sal3 = form['sal3'].value()
+            sal4 = form['sal4'].value()
+            sal5 = form['sal5'].value()
+            sal6 = form['sal6'].value()
+            skill1 = form['skill1'].value()
+            skill2 = form['skill2'].value()
+            Sp_Name = form['Sp_Name'].value()
+            Sp_DOB = form['Sp_DOB'].value()
+            Sp_Qul = form['Sp_Qul'].value()
+            Sp_Occ = form['Sp_Occ'].value()
+            Sp_Deg = form['Sp_Deg'].value()
+            Sp_Inc = form['Sp_Inc'].value()
+            F_Name = form['F_Name'].value()
+            F_DOB = form['F_DOB'].value()
+            F_Qul = form['F_Qul'].value()
+            F_Occ = form['F_Occ'].value()
+            F_Deg = form['F_Deg'].value()
+            F_Inc = form['F_Inc'].value()
+            M_Name = form['M_Name'].value()
+            M_DOB = form['M_DOB'].value()
+            M_Qul = form['M_Qul'].value()
+            M_Occ = form['M_Occ'].value()
+            M_Deg = form['M_Deg'].value()
+            M_Inc = form['M_Inc'].value()
+            C1_Name = form['C1_Name'].value()
+            C1_DOB = form['C1_DOB'].value()
+            C1_St = form['C1_St'].value()
+            C1_PSN = form['C1_PSN'].value()
+            C2_Name = form['C2_Name'].value()
+            C2_DOB = form['C2_DOB'].value()
+            C2_St = form['C2_St'].value()
+            C2_PSN = form['C2_PSN'].value()
+            Ref1 = form['Ref1'].value()
+            Ref2 = form['Ref2'].value()
+            send_mail(
+                f'Application for Job from: {Name_of_the_Candidate}, Phone: {Telephone_No}',
+                f'''
+                
+                Post_Applying_For : {Post_Applying_For},
+                Name_of_the_Candidate : {Name_of_the_Candidate},
+                Residential_Address : {Residential_Address},
+                Own_house_rented : {Own_house_rented},
+                Mother_Tongue : {Mother_Tongue},
+                date_of_birth : {date_of_birth},
+                Caste_Category_Religion : {Caste_Category_Religion},
+                Telephone_No : {Telephone_No},
+                Email_ID : {Email_ID},
+                Qualifications : {Qualifications},
+                Last_Worked  : {Last_Worked},
+                Reasons : {Reasons},
+                Any_friends : {Any_friends},
+                Have_you_worked  : {Have_you_worked},
+                Present_Salary : {Present_Salary},
+                Expected_Salary : {Expected_Salary}
+                ''',
+                settings.EMAIL_HOST_USER,
+                [toEmailId1,],
+            )
             form.save()
             return HttpResponseRedirect('?submitted=True')
     else:

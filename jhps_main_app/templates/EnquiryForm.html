@@ -4,7 +4,7 @@
 <h1>Admission Enquiry</h1>
 <div class="form_box_inn">
 {% if submitted %}
-<h1>We Received your details.....</h1>
+<h1 style="background-color: green; color: yellow;">We Received your details.....</h1>
 {% else %}
 <form action="" method="POST">
     {% csrf_token %}          

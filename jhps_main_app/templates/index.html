@@ -161,12 +161,11 @@
                 <div class="clsBtnCo" onclick="clsBtnCo()">
                         <div>&times;</div>
                 </div>
-                <div class=" sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admission <br>for 2023-24 <br>in
+                <div class="sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admission <br>for Class I - IX <br>for the academic year 2023-24 <br>in
                         progress
                     </a></div>
 
-                <div class="sm2"> <a href="{% static 'pdf/JHPS_Application_Form.pdf' %}" target="_blank">Download
-                        Application Form </a></div>
+                <div class="sm2"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}" target="_blank">Online Admission Enquiry Form </a></div>
             </div>
 
         </div>
@@ -175,16 +174,12 @@
 <div class="l2">
        <div class="l2-inn2">
         <div class="tab" style="border-radius: 10px 10px 0 0;">
-            <button style="color:rgb(76, 64, 0) ; border-radius: 10px 0 0 0; background-color: rgb(253, 233, 120);"
-                class="tablinks" onclick="openCity(event, 'Welcome')" id="defaultOpen">Welcome</button>
-            <button style="color:rgb(36, 83, 0) ; background-color: rgb(178, 253, 120)" class="tablinks"
-                onclick="openCity(event, 'Vision')">Vision</button>
-            <button style="color:rgb(0, 88, 26) ; background-color: rgb(120, 253, 160)" class="tablinks"
-                onclick="openCity(event, 'Mission')">Mission</button>
+            <button style="color:rgb(76, 64, 0) ; border-radius: 10px 0 0 0; background-color: rgb(253, 127, 1);"
+                class="tablinks" onclick="openCity(event, 'Welcome')" id="defaultOpen">Welcome to Jubilee Hills Public School - Rampally</button>
         </div>
 
         <div class="tabcontent" style="color:rgb(48, 41, 0) ; background-color: rgb(253, 233, 120);" id="Welcome">
-            <h3>Welcome to Jubilee Hills Public School</h3>
+
             <p style="color:rgb(48, 41, 0) ;">
                 Jubilee Hills Public School, Rampally established in 2016, sponsored by the "Jubilee Hills
                 Education Society" a non- profit organization aims at providing high quality education at the
@@ -201,29 +196,7 @@
                 being rooted to their own culture with a mindset to be both modern and democratic.</p>
         </div>
 
-        <div class="tabcontent" style="color:rgb(26, 61, 0) ; background-color: rgb(178, 253, 120)" id="Vision">
-            <h3>Vision</h3>
-            <p style="color:rgb(26, 61, 0) ;">"The School will develop and utilize the opportunities inherent in the
-                information society to
-                improve quality of life, knowledge, international competitiveness and interaction in an
-                exemplary, versatile and sustainable way. The school will nurture the students in desired values
-                and culture as is expected of a good society".</p>
-        </div>
-
-        <div class="tabcontent" style="color:rgb(0, 55, 16) ; background-color: rgb(120, 253, 160)" id="Mission">
-            <h3>Mission</h3>
-            <p style="color:rgb(0, 55, 16) ;">
-                Educational establishment will be innovative center of learning where teachers will collaborate
-                with students in developing new pedagogical (teaching / learning) applications. The school will
-                have greater responsibility for preventing social exclusion. The use of networks for tutoring
-                and support will become more frequent to avoid children opting for tuition shops.
-            </p>
-            <p style="color:rgb(26, 61, 0) ;">
-                Students will be continuously supported in the transition phase between different educational
-                levels. Education will be imparted with a premise that “every child can learn” The institution
-                will strive in future to learn how to exploit tacit knowledge to explicit knowledge.
-            </p>
-        </div>
+       
 
         <script>
             function openCity(evt, cityName) {
@@ -251,6 +224,95 @@
     </div>
 </div>
 
+<div class="l6">
+    
+    <div class="notice_box">
+        <h2>Notice Board</h2>
+        <a href="{% url 'jhps_main_app:noticeboard' %}">
+            <div class="row">
+
+                <div class="column">
+                    <h4>1</h4>
+                    <p>Dear Parents,</p>
+                    <p>
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt.
+
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin3.png' %}" alt="" style="width: 15px;">
+                </div>
+                <div class="column">
+                    <h4>2</h4>
+                    <p>Dear Parents,</p>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt.
+
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin1.png' %}" style="width: 15px">
+                </div>
+                <div class="column">
+                    <h4>3</h4>
+                    <p>Dear Parents,</p>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt.
+
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin2.png' %}" alt="" style="width: 15px;">
+                </div>
+                <div class="column">
+                    <h4>4</h4>
+                    <p>Dear Parents,</p>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt.
+
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin2.png' %}" alt="" style="width: 15px;">
+                </div>
+                <div class="column">
+                    <h4>5</h4>
+                    <p>Dear Parents,</p>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt.
+
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin1.png' %}" alt="" style="width: 15px;">
+                </div>
+                <div class="column">
+                    <h4>6</h4>
+                    <p>Dear Parents,</p>
+                    <p>
+
+                        Fees will be charged as per the last year’s class wise structure, in order to comply with
+                        the recent Govt.
+
+                    </p>
+                    <h5>JHPS, Rampally</h5>
+                    <h6>July 01, 2021</h6>
+                    <img src="{% static 'images/pin3.png' %}" style="width: 15px;">
+                </div>
+
+            </div>
+        </a>
+    </div>
+</div>
 <div class="l3">
     <h3>Recent Events</h3>
     <div class="owl-carousel owl-2">
@@ -394,92 +456,6 @@
         </a>
     </div>
 
-    <div class="notice_box">
-        <h2>Notice Board</h2>
-        <a href="{% url 'jhps_main_app:noticeboard' %}">
-            <div class="row">
-
-                <div class="column">
-                    <h4>1</h4>
-                    <h6>Dear Parents,</h6>
-                    <p>
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin3.png' %}" alt="" style="width: 15px;">
-                </div>
-                <div class="column">
-                    <h4>2</h4>
-                    <p>Dear Parents,</h6>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin1.png' %}" style="width: 15px">
-                </div>
-                <div class="column">
-                    <h4>3</h4>
-                    <p>Dear Parents,</h6>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin2.png' %}" alt="" style="width: 15px;">
-                </div>
-                <div class="column">
-                    <h4>4</h4>
-                    <p>Dear Parents,</h6>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin2.png' %}" alt="" style="width: 15px;">
-                </div>
-                <div class="column">
-                    <h4>5</h4>
-                    <p>Dear Parents,</h6>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin1.png' %}" alt="" style="width: 15px;">
-                </div>
-                <div class="column">
-                    <h4>6</h4>
-                    <p>Dear Parents,</h6>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin3.png' %}" style="width: 15px;">
-                </div>
-
-            </div>
-        </a>
-    </div>
     <div class="video_box">
         <h2>Video Gallery</h2>
         <a href="{% url 'jhps_main_app:videogallery' %}">

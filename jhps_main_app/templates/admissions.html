@@ -2,27 +2,35 @@
 {% load static %}
 {% block content %}
 <div class="main-box">
-<h1>Campus</h1>
-{% for x in admissionsData %}
+   <h1>Admissions</h1>
+   {% for x in admissionsData %}
    <div class="pgf-cont">
       {% if x.title %}
       <h2>{{x.title}}</h2>
       {% endif %}
       <div class="pgf-inn">
 
-          <div class="pgf-img">
-              {% if x.upload_image %}
-              <img  src="{{ x.upload_image }}" alt="image">
-              {% endif %}
-            </div>
-            <div class="pgf-txt">
-               {% if x.paragraph_data|safe != "." %}
-               <p>{{x.paragraph_data|safe}}</p>
-               {% endif %}
-            </div>
+         {% if x.upload_image %}
+         {% if x.title == 'Fee Structure' %}
+         <div style="width: 100%;" class="pgf-img">
+            <img src="{{ x.upload_image }}" alt="image">
+         </div>
+         {% else %}
+         <div class="pgf-img">
+            <img src="{{ x.upload_image }}" alt="image">
+         </div>
+         {% endif %}
+         {% endif %}
+         {% if x.paragraph_data|safe != "." %}
+         <div class="pgf-txt">
+           
+            <p>{{x.paragraph_data|safe}}</p>
+           
+         </div>
+         {% endif %}
       </div>
    </div>
-  
+
    {% endfor %}
 </div>
 {% endblock %}
