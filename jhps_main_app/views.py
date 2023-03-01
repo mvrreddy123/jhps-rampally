@@ -153,6 +153,8 @@ def events(request):
     # download = Downloads.objects.all()
     # args = {'download': download}
     return render(request, 'events.html')
+def uc(request):
+    return render(request, 'uc.html')
 
 # start Forms
 def contactUs(request):

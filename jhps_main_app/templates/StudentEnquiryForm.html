@@ -123,6 +123,19 @@
     for (let i of sd){
         i.setAttribute('class', 'form-select');
     }
+    
+   let navDD = document.getElementsByClassName("actNav");
+   for (let i = 0; i < navDD.length; i++) {
+       navDD[i].className = navDD[i].className.replace(" active", "");
+   }
+   navDD[0].className += " active";
+   navDD[8].className += " active";
+   let navDi = document.getElementsByClassName("dropdown-item");
+   for (let i = 0; i < navDi.length; i++) {
+       navDi[i].className = navDi[i].className.replace(" active", "");
+   }
+   navDi[17].className += " active";
+   navDi[2].className += " active";
 
 </script>
 {% endblock %}

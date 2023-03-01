@@ -214,5 +214,15 @@
             }
         });
     }
+
+
+    
+	let navDD = document.getElementsByClassName("actNav");
+	for (let i = 0; i < navDD.length; i++) {
+		navDD[i].className = navDD[i].className.replace(" active", "");
+	}
+	navDD[12].className += " active";
+	
+ 
 </script>
 {% endblock %}

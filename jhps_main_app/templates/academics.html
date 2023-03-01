@@ -37,4 +37,16 @@
   
    {% endfor %}
 </div>
+<script>
+   let navDD = document.getElementsByClassName("actNav");
+   for (let i = 0; i < navDD.length; i++) {
+       navDD[i].className = navDD[i].className.replace(" active", "");
+   }
+   navDD[9].className += " active";
+   let navDi = document.getElementsByClassName("dropdown-item");
+   for (let i = 0; i < navDi.length; i++) {
+       navDi[i].className = navDi[i].className.replace(" active", "");
+   }
+   navDi[19].className += " active";
+</script>
 {% endblock %}

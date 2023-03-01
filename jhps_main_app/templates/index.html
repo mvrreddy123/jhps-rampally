@@ -161,7 +161,7 @@
                 <div class="clsBtnCo" onclick="clsBtnCo()">
                         <div>&times;</div>
                 </div>
-                <div class="sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admission <br>for Class I - IX <br>for the academic year 2023-24 <br>in
+                <div class="sm1"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}"> Admission <br>for Class I - IX <br>for the academic year 2023-24 in
                         progress
                     </a></div>
 
@@ -477,5 +477,16 @@
     </div>
 </div>
 
-
+<script>
+    let i;
+    let navDD = document.getElementsByClassName("actNav");
+    for (i = 0; i < navDD.length; i++) {
+        navDD[i].className = navDD[i].className.replace(" active", "");
+        if (i < 5){
+            navDD[i].style.color = 'maroon';
+        }
+    }
+    navDD[4].style.color = 'red';
+    navDD[5].className += " active";
+</script>
 {% endblock %}

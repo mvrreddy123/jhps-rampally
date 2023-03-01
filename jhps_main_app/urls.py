@@ -49,4 +49,6 @@ urlpatterns = [
     path('noticeboard', views.noticeboard, name='noticeboard'),
     path('events', views.events, name='events'),
     path('videogallery', views.videogallery, name='videogallery'),
+    
+    path('uc', views.uc, name='uc'),
 ]

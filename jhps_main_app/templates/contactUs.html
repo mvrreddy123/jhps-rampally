@@ -47,6 +47,16 @@ tr:hover{
 
 
 </div>
-
+<script>
+    let navDD = document.getElementsByClassName("actNav");
+	for (let i = 0; i < navDD.length; i++) {
+		navDD[i].className = navDD[i].className.replace(" active", "");
+        if (i < 5){
+            navDD[i].style.color = 'maroon';
+        }
+    }
+    navDD[3].style.color = 'red';
+	navDD[14].className += " active";
+</script>
 <br><br>
 {% endblock %}

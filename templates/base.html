@@ -123,7 +123,7 @@
         }
 
         .main-box .blink_box {
-            background-color: red;
+          
             border-width: 0 10px;
             border-color: rgb(237, 202, 2);
             border-style: solid;
@@ -138,13 +138,12 @@
 
         @keyframes bb2 {
             from {
-                background-color: gold;
+                
                 color: rgb(255, 0, 0);
             }
 
             to {
-                background-color: rgb(255, 0, 0);
-                color: gold;
+                color: rgb(8, 61, 0);
             }
         }
 
@@ -167,19 +166,13 @@
 
             to {
 
-                color: gold;
+                color: rgb(26, 141, 0);
             }
         }
 
 
         .nav-item .blink_box {
-            background-color: red;
-            border-width: 0 10px;
-            border-color: rgb(237, 202, 2);
-            border-style: solid;
-            color: rgb(255, 255, 255);
-            border-radius: 25px;
-            padding: 10px 15px;
+           color: maroon;
 
             text-decoration: none;
             animation: bb1 2s infinite;
@@ -192,13 +185,13 @@
 
         @keyframes bb1 {
             from {
-                background-color: rgb(255, 255, 255);
+               
                 color: red;
             }
 
             to {
-                background-color: rgb(255, 0, 0);
-                color: white;
+               
+                color: rgb(20, 118, 0);
             }
         }
 
@@ -338,7 +331,15 @@
             color: rgb(55, 55, 55);
             margin-left: 10px;
         }
-
+        .active{
+            font-weight: bolder;
+            color: red;
+        }
+        .active2{
+            font-weight: bolder;
+            color: rgb(85, 255, 0);
+            background-color: aqua;
+        }
         /* Style the tab */
         @media only screen and (max-width:600px) {
             .main-box h1 {
@@ -425,7 +426,10 @@
             table tr {
                 font-size: 13px;
             }
-
+            
+            .hamburger #bx{
+                display: none;
+            }
         }
     </style>
 </head>
@@ -435,8 +439,8 @@
         <div class="top_grp_inn">
             <header>
                 <div class="login">
-                    <img src="{% static 'login.png' %}" alt="Login">
-                    <a target="_blank" class="t2">Login</a>
+                    <img src="{% static 'login2.png' %}" alt="Login">
+                    <a target="_blank" class="t2"></a>
                     <a href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access"
                         target="_blank" class="t2-1">Parents Login</a>
                     <a href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access"
@@ -448,6 +452,9 @@
                     <img src="{% static 'images/logo_jhps.png' %}" class="img-fluid" alt="Logo JHPS">
                 </div>
                 <h1 class="t1">Jubilee Hills Public School - Rampally</h1>
+                <div class="location">
+                   <a target="_blank" href="https://goo.gl/maps/ruK4JJvKDrJZwvwL6"> <img src="{% static '/la.gif' %}"  alt="Location JHPS" title="Location JHPS-Rampally"></a>
+                </div>
                 <div class="nav_menu">
                     <nav class="navbar navbar-expand-lg  shadow"
                         style="background-color:#ffcc00; font-size: 20px; font-weight: 400;">
@@ -456,7 +463,7 @@
                             <div class="mvr_admin badge">
                                 <li class="nav-item dropdown"
                                     style="border: 0; padding: 0; margin:-2px -25px 0 30px; list-style-type: none; background-color: transparent;">
-                                    <a style="padding: 7px;" class="nav-link dropdown-toggle blink_box2 "
+                                    <a style="padding: 7px;" class="nav-link actNav dropdown-toggle blink_box2 "
                                         href="{% url 'jhps_main_app:admissions' %}" data-bs-toggle="dropdown"
                                         data-bs-auto-close="outside"><i class="fa-solid fa-school"></i></a>
                                     <ul class="dropdown-menu shadow">
@@ -471,50 +478,47 @@
                                         <li><a class="dropdown-item"
                                                 href="{% url 'jhps_main_app:StudentEnquiry' %}">Admission Form
                                                 Online</a></li>
-                                        <li><a class="dropdown-item"
-                                                href="{% url 'jhps_main_app:ReferAStudent' %}">Refer a Student</a>
-                                        </li>
+                    
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="#" target="_blank">Download Application
+                                        <li><a class="dropdown-item" href="" target="_blank">Model Application
                                                 Form</a></li>
-
 
                                     </ul>
                                 </li>
                             </div>
 
 
-                            <a class="mvr-menu"
+                            <a class="mvr-menu" 
                                 href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access">
-                                <span style="color: maroon;" class="badge bg-warning">Parent Login</span></a>
-                            <a class="mvr-menu"
+                                <span  class="badge actNav bg-warning">Parent Login</span></a>
+                            <a class="mvr-menu " 
                                 href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DJGOO5I16FOHXLD62EPZS%26redirect_uri%3Dhttps%253A%252F%252Fjhps.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access">
-                                <span style="color: maroon;" class="badge bg-warning"><i
+                                <span  class="badge actNav bg-warning"><i
                                         class="fa-solid fa-person-chalkboard"></i></span></a>
-                            <a class="mvr-menu" href="{% url 'jhps_main_app:contactUs' %}"> <span style="color: maroon;"
-                                    class="badge bg-warning"><i class="fa-solid fa-address-book"></i></span></a>
-                            <a class="mvr-menu" href="/"> <span style="color: maroon;" class="badge bg-warning"><i
+                            <a class="mvr-menu" href="{% url 'jhps_main_app:contactUs' %}"> <span 
+                                    class="badge actNav bg-warning"><i class="fa-solid fa-address-book"></i></span></a>
+                            <a class="mvr-menu " href="/"> <span  class="badge actNav bg-warning"><i
                                         class="fa fa-home" aria-hidden="true"></i></span></a>
                             <button class="navbar-toggler collapsed"
                                 style="margin-top: -2px; border: 2px solid maroon; " type="button"
                                 data-bs-toggle="collapse" data-bs-target="#navbar-content">
                                 <div class="hamburger-toggle">
-                                    <div class="hamburger" style="color: maroon;">
-
-                                        <i class="fa fa-bars"></i>
+                                    <div onclick="b3Btn()" class="hamburger" style="color: maroon;">
+                                        <i id="b3" class="fa fa-bars"></i>
+                                        <i id="bx" class="fa-solid fa-xmark" style="color: red; padding: 0 2px; font-size: 21px;"></i>
                                     </div>
                                 </div>
                             </button>
                             <div class="collapse navbar-collapse" id="navbar-content">
                                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                                        <a onclick="setActive(this)" class="nav-link actNav" aria-current="page" href="/">Home</a>
                                     </li>
 
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="{% url 'jhps_main_app:aboutUs' %}"
+                                        <a onclick="setActive(this)" class="nav-link actNav dropdown-toggle" href="{% url 'jhps_main_app:aboutUs' %}"
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">About
                                             Us</a>
                                         <ul class="dropdown-menu shadow">
@@ -537,7 +541,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="{% url 'jhps_main_app:campus' %}"
+                                        <a onclick="setActive(this)" class="nav-link actNav dropdown-toggle" href="{% url 'jhps_main_app:campus' %}"
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">Campus</a>
                                         <ul class="dropdown-menu shadow">
                                             <li><a class="dropdown-item"
@@ -593,7 +597,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle blink_box"
+                                        <a onclick="setActive(this)" class="nav-link actNav dropdown-toggle blink_box"
                                             href="{% url 'jhps_main_app:admissions' %}" data-bs-toggle="dropdown"
                                             data-bs-auto-close="outside">Admission</a>
                                         <ul class="dropdown-menu shadow">
@@ -614,13 +618,13 @@
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>
-                                            <li><a class="dropdown-item" href="#">Download Application Form</a></li>
+                                            <li><a class="dropdown-item" href="#" >Download Application Form</a></li>
 
 
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="{% url 'jhps_main_app:academics' %}"
+                                        <a onclick="setActive(this)" class="nav-link actNav dropdown-toggle" href="{% url 'jhps_main_app:academics' %}"
                                             data-bs-toggle="dropdown" data-bs-auto-close="outside">Academics
                                         </a>
                                         <ul class="dropdown-menu shadow">
@@ -653,7 +657,7 @@
                                 </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="{% url 'jhps_main_app:sportsCSA' %}"
+                                    <a onclick="setActive(this)" class="nav-link actNav dropdown-toggle" href="{% url 'jhps_main_app:sportsCSA' %}"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Sports</a>
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item"
@@ -663,7 +667,7 @@
                                         </li>
                                         <li class="dropend">
                                             <a href="{% url 'jhps_main_app:TeacherWelfare' %}"
-                                                class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                                class="dropdown-item actNavS dropdown-toggle" data-bs-toggle="dropdown"
                                                 data-bs-auto-close="outside">Indoor Games</a>
                                             <ul class="dropdown-menu shadow">
 
@@ -677,10 +681,9 @@
                                         </li>
                                         <li class="dropend">
                                             <a href="{% url 'jhps_main_app:TeacherWelfare' %}"
-                                                class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                                class="dropdown-item actNavS dropdown-toggle" data-bs-toggle="dropdown"
                                                 data-bs-auto-close="outside">Outdoor Games</a>
                                             <ul class="dropdown-menu shadow">
-
                                                 <li><a class="dropdown-item" href="#">Foot Ball</a></li>
                                                 <li><a class="dropdown-item" href="#">Cricket</a></li>
                                                 <li><a class="dropdown-item" href="#">Throw Ball</a></li>
@@ -692,7 +695,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="{% url 'jhps_main_app:sportsCSA' %}"
+                                    <a onclick="setActive(this)" class="nav-link actNav dropdown-toggle" href="{% url 'jhps_main_app:sportsCSA' %}"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">CSA</a>
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item" href="{% url 'jhps_main_app:CSA' %}">CSA</a></li>
@@ -707,17 +710,17 @@
                                     </ul>
                                 </li>
                                 <!-- <li class="nav-item">
-                                        <a class="nav-link" href="#">Awards</a>
+                                        <a class="nav-link actNav" href="#">Awards</a>
                                     </li> -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'jhps_main_app:careers' %}">Careers</a>
+                                    <a onclick="setActive(this)" class="nav-link actNav" href="{% url 'jhps_main_app:careers' %}">Careers</a>
                                 </li>
                                 <li class="nav-item">
                             
-                                    <a class="nav-link" href="{% url 'jhps_main_app:transport' %}">Transport</a>
+                                    <a onclick="setActive(this)" class="nav-link actNav" href="{% url 'jhps_main_app:uc' %}">Transport</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'jhps_main_app:contactUs' %}">Contact Us</a>
+                                    <a onclick="setActive(this)" class="nav-link actNav" href="{% url 'jhps_main_app:contactUs' %}">Contact Us</a>
                                 </li>
 
 
@@ -734,7 +737,7 @@
 
 
     <div id="side_menu" class="mvr_sm">
-        <div class="gall"> <a href=""><i class="fa-solid fa-images"></i> Gallery</a>
+        <div class="gall"> <a><i class="fa-solid fa-images"></i> Gallery</a>
             <div class="iGall" ><a href="{% url 'jhps_main_app:gallery' %}"><i class="fa-solid fa-images"></i> Image Gallery</a></div>
             <div class="vGall" ><a href="{% url 'jhps_main_app:videogallery' %}"><i class="fa-solid fa-video"></i> Video Gallery</a></div>
         </div>
@@ -751,6 +754,38 @@
         function clsBtn(x) { x.style.display = 'none'; }
         function clsBtnCo() { document.getElementById('co_menu2').style.display = 'none'; }
 
+        function b3Btn(){
+            let b3b = document.getElementById('b3');
+            let bxb = document.getElementById('bx');
+            // alert('Hi')
+            if (b3b.style.display=='none'){
+                b3b.style.display='block';
+                bxb.style.display='none';
+            }else{
+                bxb.style.display='block';
+                b3b.style.display='none';
+            }
+        }
+
+        
+function setActive(x) {
+    let i;
+    let navDD = document.getElementsByClassName("actNav");
+    for (i = 0; i < navDD.length; i++) {
+        navDD[i].className = navDD[i].className.replace(" active", "");
+    }
+    x.className += " active";
+
+}
+       
+// function setActiveSi(x) {
+//   let i;
+//   let navDi = document.getElementsByClassName("dropdown-item");
+//   for (i = 0; i < navDi.length; i++) {
+//     navDi[i].className = navDi[i].className.replace(" active", "");
+//   }
+//   x.className += " active";
+// }
     </script>
 
     {% block content %}
@@ -802,15 +837,15 @@
             </div>
         </div>
         <div class="nav_foot" style="text-align: center;">
-            <a href="{% url 'jhps_main_app:transport' %}">Transport</a>
+            <a href="{% url 'jhps_main_app:uc' %}">Transport</a>
             <a href="{% url 'jhps_main_app:circulars' %}">Circular</a>
             <a href="{% url 'jhps_main_app:downloads' %}">Downloads</a>
-            <a href="{% url 'jhps_main_app:careers' %}">PTA</a>
+            <a href="{% url 'jhps_main_app:uc' %}">PTA</a>
             <a href="{% url 'jhps_main_app:careers' %}">Careers</a>
-            <a href="{% url 'jhps_main_app:careers' %}">School Magazines</a>
-            <a href="{% url 'jhps_main_app:careers' %}">Grievance Cell</a><br>
+            <a href="{% url 'jhps_main_app:uc' %}">School Magazines</a>
+            <a href="{% url 'jhps_main_app:uc' %}">Grievance Cell</a><br>
             <a href="{% static 'pdf/JHPS_Rampally_CBSE_Updation.pdf' %}">Mandatory Public Disclosure</a>
-            <a href="#">Alumni</a>
+            <a href="{% url 'jhps_main_app:uc' %}">Alumni</a>
         </div>
 
     </footer>

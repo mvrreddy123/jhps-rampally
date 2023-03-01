@@ -25,4 +25,18 @@
    {% endfor %}
    <img width="100%" src="{% static 'images/pres.png' %}"  alt="Logo JHPS">
 </div>
+
+<script>
+   let navDD = document.getElementsByClassName("actNav");
+   for (let i = 0; i < navDD.length; i++) {
+       navDD[i].className = navDD[i].className.replace(" active", "");
+   }
+   navDD[6].className += " active";
+   let navDi = document.getElementsByClassName("dropdown-item");
+   for (let i = 0; i < navDi.length; i++) {
+       navDi[i].className = navDi[i].className.replace(" active", "");
+   }
+   navDi[7].className += " active";
+
+</script>
 {% endblock %}
