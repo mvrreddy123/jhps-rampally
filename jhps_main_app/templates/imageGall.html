@@ -1,116 +1,80 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<style>
+    .contBox {
+        display: flex;
+    }
+
+    .imgCard {
+        margin: 10px;
+        width: 400px;
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #fff;
+        transition: 0.3s;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+    }
+
+    .imgCard:hover {
+        box-shadow: 2px 2px 2px 5px rgba(255, 0, 0, 0.5);
+    }
+
+    .imgCard .imgBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .imgCard .imgBox img {
+        /* position: absolute;
+        top: 0;
+        left: 0; */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .imgCard .imgBox .imgTitle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 217, 0, 0.472);
+        color: maroon;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    @media only screen and (max-width:600px) {
+        .contBox {
+            flex-direction: column;
+        }
+    }
+</style>
+<br>
 <div class="main-box">
     <div class="pgf-cont">
+        <h1>Image Gallery</h1>
+        <div class="contBox">
 
-    
-<h1>Image Gallery</h1>
-    <div class="img_gal" id="imgGal">
-
-    <div class="imgContainer" id="contId">
-        <span onclick="closeCont()" class="closebtn">&times;</span>
-        <img id="expandedImg" style="width:100%">
-    
-    </div>
-    <div class="imgRow" id="rowId">
-        <div class="column">
-            <img src="{% static 'images/our1.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our2.png' %}" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our3.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our4.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our5.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our6.png' %}" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our7.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our21.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our9.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our10.png' %}" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our11.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our12.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our13.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our14.png' %}" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our15.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our16.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our17.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our18.png' %}" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our19.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="{% static 'images/our20.png' %}" alt="" style="width:100%" onclick="myFunction(this);">
+            {% for event in events %}
+            <div class="imgCard">
+                <a href="{% url 'jhps_main_app:galleryDetail' event.id %}">
+                    <div class="imgBox">
+                        <img src="{{event.upload_image.url}}" alt="Eventimage">
+                        <div class="imgTitle">{{event.title}}</div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
         </div>
     </div>
+
 </div>
 
 
-
-<script>
- 
-    function closeCont(){
-        document.getElementById('contId').style.display = 'none';
-        document.getElementById('rowId').style.width = '100%';
-        let x = document.getElementsByClassName('column');
-            for (let i = 0; i < x.length; i++){
-                x[i].style.width = '20%';
-            }
-    }
-    function myFunction(imgs) {
-        // alert(window.innerWidth);
-        if (window.innerWidth < '1000'){
-            document.getElementById('imgGal').style.flexDirection = 'column';
-            document.getElementById('rowId').style.width = '100%';
-            document.getElementById('contId').style.width = '100%';
-        }else{
-            document.getElementById('imgGal').style.flexDirection = 'row';
-            document.getElementById('rowId').style.width = '44%';
-            document.getElementById('contId').style.width = '56%';
-            let x = document.getElementsByClassName('column');
-            for (let i = 0; i < x.length; i++){
-                x[i].style.width = '25%';
-            }
-        }
-        var expandImg = document.getElementById("expandedImg");
-    
-        expandImg.src = imgs.src;
-      
-        expandImg.parentElement.style.display = "block";
-    }
-</script>
-</div>
-</div>
 {% endblock %}

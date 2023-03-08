@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import About_us, Campus, Admission, Academics, Sports_CSA, Careers, Circulars, Downloads, Management
+from django.shortcuts import render, get_object_or_404
+from .models import About_us,Notice_Board, Campus, Admission, Academics,Events, EventImages, Sports_CSA, Careers, Circulars, Downloads, Management
 from .forms import AdmissionEnquiryForm, ReferAStudentForm, StudentEnquiryForm, ApplyJobForm
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
@@ -9,11 +9,72 @@ from django.conf import settings
 # from reportlab.pdfgen import canvas
 # Create your views here.
 toEmailId1 = 'mvr.9441088048@gmail.com'
+toEmailId2 = 'info@jhpsrampally.com'
+toEmailId3 = 'chairman@jhpsrampally.com'
 def index(request):
-    return render(request, 'index.html')
+    notice = Notice_Board.objects.all().order_by('-id')[:6]
+    events = Events.objects.all().order_by('-id')[:4]
+    event1 = {}
+    event2 = {}
+    event3 = {}
+    event4 = {}
+    evT1 = ''
+    evP1 = ''
+    evT2 = ''
+    evP2 = ''
+    evT3 = ''
+    evP3 = ''
+    evT4 = ''
+    evP4 = ''
+    
+    if len(events) > 3:
+        ids = []
+        i = 0
+        for d in events.values():
+            ids.append(d['id'])
+            if i == 0:
+                evT1 = d['title']
+                evP1 = d['paragraph_data']
+            elif i == 1:
+                evT2 = d['title']
+                evP2 = d['paragraph_data']
+            elif i == 2:
+                evT3 = d['title']
+                evP3 = d['paragraph_data']
+            elif i == 3:
+                evT4 = d['title']
+                evP4 = d['paragraph_data']
+
+            i += 1
+        event = get_object_or_404(Events, id=ids[0])
+        event1 = EventImages.objects.filter(event=event).order_by('-id')[:4]
+        print(evT1, evP1)
+        event = get_object_or_404(Events, id=ids[1])
+        event2 = EventImages.objects.filter(event=event).order_by('-id')[:4]
+        event = get_object_or_404(Events, id=ids[2])
+        event3 = EventImages.objects.filter(event=event).order_by('-id')[:4]
+        event = get_object_or_404(Events, id=ids[3])
+        event4 = EventImages.objects.filter(event=event).order_by('-id')[:4]
+       
+    return render(request, 'index.html', {
+        'notice':notice,
+        'evT1':evT1,
+        'evP1':evP1,
+        'evT2':evT2,
+        'evP2':evP2,
+        'evT3':evT3,
+        'evP3':evP3,
+        'evT4':evT4,
+        'evP4':evP4,
+        'event1':event1,
+        'event2':event2,
+        'event3':event3,
+        'event4':event4
+            })
+    # return render(request, 'index.html')
 
 def aboutUs(request):
-    aboutData = About_us.objects.all()
+    aboutData = About_us.objects.filter(select_page = 0)
     args = {'aboutData': aboutData}
     return render(request, 'aboutus.html', args)
 def vision_mission(request):
@@ -24,15 +85,10 @@ def awards(request):
     aboutDataAw = About_us.objects.filter(select_page = 2)
     args = {'aboutDataAw': aboutDataAw}
     return render(request, 'aboutusAw.html', args)
-def presidential_visit(request):
-    aboutDataPV = About_us.objects.filter(select_page = 3)
-    args = {'aboutDataPV': aboutDataPV}
-    return render(request, 'aboutusPV.html', args)
 def SMCommittee(request):
     SMCommittee = Management.objects.all()
     args = {'SMCommitteeData': SMCommittee}
     return render(request, 'SMCommittee.html', args)
-
 
 def campus(request):
     campusData = Campus.objects.all()
@@ -42,6 +98,10 @@ def ClassRoom(request):
     ClassRoomData = Campus.objects.filter(select_page = 1 )
     args = {'ClassRoomData': ClassRoomData}
     return render(request, 'ClassRoom.html', args)
+def Laboratories(request):
+    return render(request, 'Laboratories.html')
+def Safety(request):
+    return render(request, 'Safety.html')
 def Library(request):
     LibraryData = Campus.objects.filter(select_page = 2)
     args = {'LibraryData': LibraryData}
@@ -58,10 +118,6 @@ def Canteen(request):
     CanteenData = Campus.objects.filter(select_page = 5)
     args = {'CanteenData': CanteenData}
     return render(request, 'Canteen.html', args)
-def Stationary(request):
-    StationaryData = Campus.objects.filter(select_page = 6 )
-    args = {'StationaryData': StationaryData}
-    return render(request, 'Stationary.html', args)
 def TeacherWelfare(request):
     TeacherWelfareData = Campus.objects.filter(select_page = 7 )
     args = {'TeacherWelfareData': TeacherWelfareData}
@@ -97,9 +153,30 @@ def Faculty(request):
     return render(request, 'Faculty.html')
 
 def sportsCSA(request):
-    sportsCSAData = Sports_CSA.objects.all()
-    args = {'sportsCSAData': sportsCSAData}
-    return render(request, 'sportsCSA.html', args)
+    return render(request, 'sportsCSA.html')
+def CarromBoard(request):
+    return render(request, 'CarromBoard.html')
+def Chess(request):
+    return render(request, 'Chess.html')
+def Badminton(request):
+    return render(request, 'Badminton.html')
+def TableTennis(request):
+    return render(request, 'TableTennis.html')
+def FootBall(request):
+    return render(request, 'FootBall.html')
+def Cricket(request):
+    return render(request, 'Cricket.html')
+def ThrowBall(request):
+    return render(request, 'ThrowBall.html')
+def Tennis(request):
+    return render(request, 'Tennis.html')
+def VolleyBall(request):
+    return render(request, 'VolleyBall.html')
+def Kabaddi(request):
+    return render(request, 'Kabaddi.html')
+def KoKo(request):
+    return render(request, 'KoKo.html')
+
 def CSA(request):
     CSAData = Sports_CSA.objects.filter(select_page = 1 )
     args = {'CSAData': CSAData}
@@ -138,64 +215,49 @@ def transport(request):
     return render(request, 'transport.html')
 
 def gallery(request):
-    # download = Downloads.objects.all()
-    # args = {'download': download}
-    return render(request, 'imageGall.html')
+    events = Events.objects.all()
+    return render(request, 'imageGall.html', {'events':events})
+ 
+def galleryDetail(request, id):
+    event = get_object_or_404(Events, id=id)
+    photos = EventImages.objects.filter(event=event)
+    return render(request, 'imageGallDetail.html', {
+        'event':event,
+        'photos':photos
+    })
+ 
+    
 def videogallery(request):
     # download = Downloads.objects.all()
     # args = {'download': download}
     return render(request, 'videoGall.html')
 def noticeboard(request):
-    # download = Downloads.objects.all()
-    # args = {'download': download}
-    return render(request, 'noticeboard.html')
+    notice_board= Notice_Board.objects.all()
+    args = {'notice_board': notice_board}
+    return render(request, 'noticeboard.html', args)
+
+
 def events(request):
-    # download = Downloads.objects.all()
-    # args = {'download': download}
-    return render(request, 'events.html')
+    events = Events.objects.all()
+    return render(request, 'events.html', {'events':events})
+ 
+def eventDetail(request, id):
+    event = get_object_or_404(Events, id=id)
+    photos = EventImages.objects.filter(event=event)
+    return render(request, 'eventDetail.html', {
+        'event':event,
+        'photos':photos
+    })
+
+
 def uc(request):
     return render(request, 'uc.html')
 
 # start Forms
 def contactUs(request):
-    submitted = False
-    if request.method == 'POST':
-        form = AdmissionEnquiryForm(request.POST)
-        if form.is_valid():
-            enq_name = form['enq_name'].value()
-            mobile_No = form['mobile_No'].value()
-            email = form['email'].value()
-            message = form['message'].value()
-        
-            send_mail(
-                f'Enquiry from: {enq_name}, phone: {mobile_No}',
-                f'Enquiry from: {enq_name}, phone: {mobile_No}, \n{message}',
-                settings.EMAIL_HOST_USER,
-                [toEmailId1,],
-            )
-            form.save()
-            return HttpResponseRedirect('?submitted=True')
-    else:
-        form = AdmissionEnquiryForm
-        if 'submitted' in request.GET:
-            submitted = True
-    return render(request, 'contactUs.html', {'form':form, 'submitted':submitted })
+    return render(request, 'contactUs.html')
 
 
-def ReferAStudent(request):
-    # return HttpResponse('Hi JHPS')
-    submitted = False
-    if request.method == 'POST':
-        form = ReferAStudentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('?submitted=True')
-    else:
-        form = ReferAStudentForm
-        if 'submitted' in request.GET:
-            submitted = True
-    return render(request, 'ReferStudentForm.html', {'form':form, 'submitted':submitted })
-    
 
 def StudentEnquiry(request):
     submitted = False
@@ -270,7 +332,7 @@ def StudentEnquiry(request):
                 remarks : {remarks},
                 """,
                 settings.EMAIL_HOST_USER,
-                [toEmailId1,],
+                [toEmailId1, toEmailId2],
             )
             form.save()
             return HttpResponseRedirect('?submitted=True')
@@ -426,7 +488,7 @@ def Applyjob(request):
                 Expected_Salary : {Expected_Salary}
                 ''',
                 settings.EMAIL_HOST_USER,
-                [toEmailId1,],
+                [toEmailId1,toEmailId2,toEmailId3],
             )
             form.save()
             return HttpResponseRedirect('?submitted=True')

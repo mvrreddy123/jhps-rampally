@@ -183,8 +183,6 @@ class ApplyJob (models.Model):
     Ref2 = models.CharField(null=True, blank=True, max_length=255)
     upload_cv = models.FileField(null=True, blank=True, upload_to='cv/', validators=[validate_file_size]) 
 
-
-
 class Refer_A_Student (models.Model):
     child_name = models.CharField(max_length=100)
     parent_name = models.CharField(max_length=100)
@@ -249,8 +247,18 @@ class Faculty (models.Model):
 class Events (models.Model):
     title = models.CharField(null=True, blank=True, max_length=255)
     paragraph_data = RichTextField(null=True, blank=True)
-    upload_image = models.ImageField(null=True, blank=True, upload_to='events_images/') 
+    upload_image = models.FileField(blank=True) 
+    
+    def __str__(self):
+        return self.title
+    
+class EventImages (models.Model):
+    event = models.ForeignKey(Events, default=None, on_delete=models.CASCADE)
+    upload_image = models.FileField(upload_to='events_images/') 
 
+    def __str__(self):
+        return self.event.title
+    
 class Student_Events (models.Model):
     title = models.CharField(null=True, blank=True, max_length=255)
     date = models.DateField()
@@ -279,6 +287,7 @@ class Testimonials (models.Model):
 class Notice_Board (models.Model):
     title = models.CharField(null=True, blank=True, max_length=255)
     paragraph_data = RichTextField()
+    date = models.DateField()
 
 class Press_Media (models.Model):
     title = models.CharField(null=True, blank=True, max_length=255)

@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-box">
+    <h1>Safety</h1>
+
+    <div class="pgf-cont">
+
+        <h2>Safety Policy</h2>
+
+        <div class="pgf-inn">
+
+            <div class="pgf-txt">
+                <p>The school has an effective safety policy in place. Apart from ensuring that the school structure is designed by expert structural engineers to cater to the seismic zone requirements, proper ventilation, fire evacuation requirement, equipment for prevention and control of fire, supply of safe & hygienic water, appropriate seating, child friendly and hazard free furniture, clean and sanitised toilets, etc., have been put in place. </p>
+                <p>While utmost care is taken by school for the safety of the students and staff, there is always a chance for unforeseen incidents that may cause injury or other health problems. In case of any such unfortunate / unforeseen incident resulting in an injury, parents are requested to cooperate and try not to hold the school liable without properly ascertaining the facts. </p>
+                <p>As part of the school’s responsibility to ensure child healthy when at school or during field trips, immediate first-aid / emergency care will be provided / initiated by the school and the parents informed, forthwith. However, any expenditure for such care / treatment at hospital or diagnostics (Ex: First aid / X-ray, etc.) will be done by the school immediately, which has to be reimbursed later by the parents to the school. </p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="pgf-cont">
+        <h2>Fire</h2>
+        <div class="pgf-inn">
+            <div class="pgf-txt">
+                <p>The school is provided with a comprehensive fire protection system with fire alarm system. fire hydrants and fire extinguishers, placed at strategic points, all as per the direction of the fire department and as per the approved plans, conforming to the respective codes. Two external fire escape staircases and 4 internal stairs are also positioned as per the fire protection norms, which helps fast evacuation of the entire building. </p>
+                <p>Fire drills are conducted by the fire department at least 2 times per year, to train the children and staff on the best procedures of management during any fire hazard. One simulated exercise is also done at a random time, to ensure that children are sufficiently trained to adopt fire escape norms. </p>
+                <p>Teachers and all other staff of the school are also provided with training on how to use fire extinguishers during hazards. </p>
+            </div>
+        </div>
+    </div>
+    <div class="pgf-cont">
+        <h2>Drinking water</h2>
+        <div class="pgf-inn">
+            <div class="pgf-txt">
+                <p>The school provides mineral water for the students through the dispensers located in strategic points of the campus. Students need not carry water bottles from their homes except for their specific requirements if any. </p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="pgf-cont">
+        <h2>Medical Emergencies: </h2>
+        <div class="pgf-inn">
+            <div class="pgf-txt">
+                <p>Parents are requested to co-operate with the school and not send their children till the quarantine period is over. </p>
+                <p>Students, who require medical attention during school hours, will be sent to the school Infirmary by the teacher concerned, who will enter the nature of illness and sign the ‘School Infirmary Record’ of the School Diary. Students should not, except in emergency situations, visit the school infirmary, unless an entry has been made in the School Diary, by a teacher. </p>
+                <p>In the event of the illness being serious or an emergency situation arises, Parents are informed forthwith and may be requested to come to school to take their child home, if necessary. </p>
+                <p>In case where it becomes essential to admit any student to a hospital with immediate effect, due to medical exigencies, the Principal, in consultation with the School Nurse, shall get the child transported in the school ambulance and get admitted to the best known hospital within the vicinity of the School, based on the situation, the capabilities of the hospital and the time available for the emergency care. Parents are immediately notified and once they reach the hospital, all further decisions shall be left to the best judgement of the Parents. </p>
+                <p>Students suffering from the following diseases must observe the prescribed period of quarantine before returning to school: </p>
+                <table>
+                    <tr>
+                        <th>Diseases</th>
+                        <th>Prescribed Quarantine Period</th>
+                        <th>In any case NOT before</th>
+                    </tr>
+                    <tr>
+                        <td>Covid-19 </td>
+                        <td>Till the doctor certifies</td>
+                        <td>Not < 14 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Chicken Pox</td>
+                        <td>Till the scabs fall off completely</td>
+                        <td>Not < 15 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Cholera </td>
+                        <td>Till complete recovery</td>
+                        <td>Not < 15 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Measles </td>
+                        <td>Two weeks after the rash disappears</td>
+                        <td>Not < 20 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Mumps</td>
+                        <td>Until the swelling has gone</td>
+                        <td>Not < 15 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Whooping Cough </td>
+                        <td>Till the doctor certifies</td>
+                        <td>Not < 20 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Hepatitis, Swine Flu, etc. </td>
+                        <td>Till the doctor certifies</td>
+                        <td>Not < 20 Days</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+ 
+
+    <div class="pgf-cont">
+        <h2>Canteen Facility</h2>
+        <div class="pgf-inn">
+            <div class="pgf-txt">
+                <p>As part of a health safety plan, the school has provided for a well equipped kitchen and dining facilities. These facilities are outsourced to external agencies specialising in these activities and are ordained to provide basic, specified, healthy food items to students and staff, on advance order basis.</p>
+                <p>Students can avail the food based on prefixed menus at short break or at lunch break, based on advance information prior to or at least upon arriving at school, on the date of requirement. Weekly or Monthly coupons are also available to students upon request and advance purchase. </p>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+<script>
+    let navDD = document.getElementsByClassName("actNav");
+    for (let i = 0; i < navDD.length; i++) {
+        navDD[i].className = navDD[i].className.replace(" active", "");
+    }
+    navDD[7].className += " active";
+    let navDi = document.getElementsByClassName("dropdown-item");
+    for (let i = 0; i < navDi.length; i++) {
+        navDi[i].className = navDi[i].className.replace(" active", "");
+    }
+    navDi[12].className += " active";
+</script>
+{% endblock %}

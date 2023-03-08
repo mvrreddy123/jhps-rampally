@@ -2,9 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="main-box">
-<h1>House Activities</h1>
 
-<p>Inter House competitions are organized periodically in Sports, Debates, Quiz, Dance, Arts and Music.</p>
 
 
 {% for x in HOUSEACTIVITIESData %}
@@ -34,12 +32,12 @@
 	for (let i = 0; i < navDD.length; i++) {
 		navDD[i].className = navDD[i].className.replace(" active", "");
 	}
-	navDD[11].className += " active";
+	navDD[12].className += " active";
 	let navDi = document.getElementsByClassName("dropdown-item");
 	for (let i = 0; i < navDi.length; i++) {
 		navDi[i].className = navDi[i].className.replace(" active", "");
 	}
-	navDi[41].className += " active";
+	navDi[38].className += " active";
 	
  </script>
 {% endblock %}

@@ -16,14 +16,14 @@
          </div>
          <div class="pgf-img">
             {% if x.upload_image %}
-            <img width="450px" src="{{ x.upload_image }}" alt="image">
+            <img width="450px" src="{{ x.upload_image.url }}" alt="image">
             {% endif %}
          </div>
       </div>
    </div>
    
    {% endfor %}
-   <img width="100%" src="{% static 'images/pres.png' %}"  alt="Logo JHPS">
+  
 </div>
 
 

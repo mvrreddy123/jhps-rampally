@@ -3,20 +3,20 @@
 {% block content %}
 <div class="main-box">
    <h1>School Management Committee</h1>
-   <div class="pgf-cont">
+   
       {% for x in SMCommitteeData %}
-      <div class="pgf-cont">
+      <div class="pgf-cont" style="width: 60%; text-align: left; padding: 0;">
         
-         <h2>{{x.member_name}}</h2>
+         <h2 style="text-align: left; padding: 10px 20px;">{{x.member_name}}</h2>
                
-               <p>   
+               <p style="margin: 0;">   
                   {{x.designation}}</p>
             
             
          
       </div>
       {% endfor %}
-   </div>
+   
 </div>
 </div>
 
@@ -33,7 +33,7 @@
    for (let i = 0; i < navDi.length; i++) {
        navDi[i].className = navDi[i].className.replace(" active", "");
    }
-   navDi[8].className += " active";
+   navDi[7].className += " active";
 
 </script>
 {% endblock %}

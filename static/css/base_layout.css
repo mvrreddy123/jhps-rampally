@@ -21,7 +21,7 @@ body {
 
 header .t1 {
     font-family: 'Libre Baskerville', serif;
-    font-size: 3.7vw;
+    font-size: 2.8vw;
     color: red;
     text-shadow: 1px 1px 2px rgba(252, 118, 35, 0.725);
     position: absolute;
@@ -69,12 +69,13 @@ header .t1 {
     width: 60px;
     height: 75px;   
     position: absolute;
-    top: 50px;
+    top: 90px;
     right: 10px;
     z-index: 95;
-    /* overflow: hidden; */
+    overflow: hidden;
     cursor: pointer;
     box-shadow: 2 2 10px rgba(0, 0, 0, 0.3);
+    
 }
 .location img{
     width: 180px;
@@ -470,6 +471,38 @@ color: rgb(0, 0, 50);
 
 /* media cards1 end*/
 
+.goTop {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 130px;
+    right: 10px;
+    border-radius: 15px 15px 0 0;
+    z-index: 100;
+    color: rgb(26, 255, 0);
+   
+    cursor: pointer;
+    transition: .5s;
+    display: none;
+    
+}
+.goTop:hover{
+    color: rgb(255, 72, 0);
+}
+.goTop .gt{
+    transform: rotate(-90deg);
+    font-size: 80px;
+    margin: 0;
+    position: absolute;
+    top: -17px;
+    left: -10px;
+    animation: gtop 2s infinite ease-in-out;
+
+}
+@keyframes gtop{
+    from{top: -17px;}
+    to{top: -28px;}
+}
 .mvr_sm {
     width: 300px;
     height: 100px;
@@ -652,7 +685,9 @@ color: rgb(0, 0, 50);
     0% {transform: scale(1, 1);}
     100% {transform: scale(1.05, 1.05);}
 }
-
+.co_m2_box .co_m2_out:hover {
+    animation-play-state: paused;
+}
 .co_m2_box .co_m2_out .co_box {
     margin: 5px;
     border: 5px solid rgba(179, 0, 0, 0.2);
@@ -982,6 +1017,7 @@ color: rgb(0, 0, 50);
 
 .l6 .notice_box .row {
     width: 100%;
+    height: 235px;
     margin: 5px 0px;
     display: flex;
     justify-content: space-around;
@@ -1008,26 +1044,33 @@ color: rgb(0, 0, 50);
     left: 41%;
    
 }
-.l6 .notice_box .row .column h4 {
+.l6 .notice_box .row .column .pera1 {
    color: goldenrod;
    margin: 0;
    font-size: 25px;
 }
-.l6 .notice_box .row .column h5 {
+.l6 .notice_box .row .column .pera2 {
+    color: rgb(74, 53, 0);
+    margin: 0;
+    font-size: 10px;
+    height: 80px;
+    overflow: hidden;
+ }
+ .l6 .notice_box .row .column p {
+    color: rgb(74, 53, 0);
+ }
+.l6 .notice_box .row .column .pera21 {
+    font-size: 13px;
+ }
+.l6 .notice_box .row .column .pera3 {
    color: goldenrod;
-   margin: 3px 0 0 0;
-   font-size: 18px;
+   font-size: 14px;
 }
-.l6 .notice_box .row .column h6 {
+.l6 .notice_box .row .column .pera4 {
    color: goldenrod;
-   margin: 0;
-   font-size: 15px;
+   font-size: 11px;
 }
-.l6 .notice_box .row .column p {
-   color: rgb(74, 53, 0);
-   margin: 0;
-   font-size: 13px;
-}
+
 
 /* footer */
 
@@ -1152,15 +1195,15 @@ footer .f_us a:hover {
     }
 @media only screen and (max-width:600px) {
     .location {
-        width: 40px;
-        height: 55px;   
-        top: 50px;
-        left: -20px;
+        width: 60px;
+        height: 40px;   
+        top: 70px;
+        left: -10px;
     }
     .location img{
         width: 100px;
-        top: 0;
-        left: 0;
+        top: -15px;
+        left: -15px;
     }
     .mvr_admin li.nav-item{
        visibility: visible;}

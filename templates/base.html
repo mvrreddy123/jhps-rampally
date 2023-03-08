@@ -196,12 +196,12 @@
         }
 
         .pgf-cont {
-            width: 95%;
+            width: 99%;
             margin: 5px auto;
             border-radius: 10px;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
             overflow: hidden;
-
+         
         }
 
         .pgf-cont .pgf-inn {
@@ -340,8 +340,14 @@
             color: rgb(85, 255, 0);
             background-color: aqua;
         }
+        #adminBtn{
+                display: none;
+            }
         /* Style the tab */
         @media only screen and (max-width:600px) {
+            #adminBtn{
+                display: block;
+            }
             .main-box h1 {
                 padding: 10px;
                 font-size: 26px;
@@ -451,7 +457,7 @@
                 <div class="logo1">
                     <img src="{% static 'images/logo_jhps.png' %}" class="img-fluid" alt="Logo JHPS">
                 </div>
-                <h1 class="t1">Jubilee Hills Public School - Rampally</h1>
+                <h1 class="t1">JUBILEE HILLS PUBLIC SCHOOL - RAMPALLY</h1>
                 <div class="location">
                    <a target="_blank" href="https://goo.gl/maps/ruK4JJvKDrJZwvwL6"> <img src="{% static '/la.gif' %}"  alt="Location JHPS" title="Location JHPS-Rampally"></a>
                 </div>
@@ -460,7 +466,7 @@
                         style="background-color:#ffcc00; font-size: 20px; font-weight: 400;">
                         <div class="container-fluid">
 
-                            <div class="mvr_admin badge">
+                            <div class="mvr_admin badge" id="adminBtn">
                                 <li class="nav-item dropdown"
                                     style="border: 0; padding: 0; margin:-2px -25px 0 30px; list-style-type: none; background-color: transparent;">
                                     <a style="padding: 7px;" class="nav-link actNav dropdown-toggle blink_box2 "
@@ -528,11 +534,8 @@
                                                     href="{% url 'jhps_main_app:vision_mission' %}">Vision
                                                     & Mission</a></li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:awards' %}">Awards</a></li>
-                                            <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:presidential_visit' %}">Presidential
-                                                    Visit</a></li>
-                                            <li>
+                                                    href="{% url 'jhps_main_app:uc' %}">Awards</a></li>
+                                            
                                                 <hr class="dropdown-divider">
                                             </li>
                                             <li><a class="dropdown-item"
@@ -548,16 +551,19 @@
                                                     href="{% url 'jhps_main_app:ClassRoom' %}">Class
                                                     Rooms</a></li>
                                             <li><a class="dropdown-item"
+                                                    href="{% url 'jhps_main_app:Laboratories' %}">Laboratories</a></li>
+                                            <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:Auditorium' %}">Auditorium</a></li>
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:Library' %}">Library</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="{% url 'jhps_main_app:Safety' %}">Safety</a></li>
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:InformaryRoom' %}">Infirmary Room</a>
                                             </li>
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:Canteen' %}">Canteen</a></li>
-                                            <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:Stationary' %}">Stationery</a></li>
+                                           
 
                                             <!-- <li>
                                                 <hr class="dropdown-divider">
@@ -596,29 +602,30 @@
 
                                         </ul>
                                     </li>
+                                    <li class="nav-item">
+                                        <a onclick="setActive(this)" class="nav-link actNav" href="{% url 'jhps_main_app:FeeStructure' %}">Fee Structure</a>
+                                    </li>
                                     <li class="nav-item dropdown">
                                         <a onclick="setActive(this)" class="nav-link actNav dropdown-toggle blink_box"
                                             href="{% url 'jhps_main_app:admissions' %}" data-bs-toggle="dropdown"
                                             data-bs-auto-close="outside">Admission</a>
                                         <ul class="dropdown-menu shadow">
+                                            
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:admissions' %}">Admission Policy &
                                                     Procedure</a></li>
-                                            <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:FeeStructure' %}">Fee
-                                                    Structure</a></li>
+                                           
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>
                                             <li><a class="dropdown-item"
-                                                    href="{% url 'jhps_main_app:StudentEnquiry' %}">Online Admission
-                                                    Enquiry Form
+                                                    href="{% url 'jhps_main_app:StudentEnquiry' %}">Online Enquiry Form
                                                 </a></li>
 
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>
-                                            <li><a class="dropdown-item" href="#" >Download Application Form</a></li>
+                                            <li><a class="dropdown-item" href="{% static 'pdf/JHPS_Application_ModelForm.pdf' %}" >Download Model Application Form  <i class="fa-solid fa-file-arrow-down"></i></a></li>
 
 
                                         </ul>
@@ -637,8 +644,7 @@
                                                     href="{% url 'jhps_main_app:LearningProcess' %}">Learning
                                                     Process</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="{% url 'jhps_main_app:ELearning' %}">E
-                                                    Learning</a></li>
+                                         
                                             <li><a class="dropdown-item"
                                                     href="{% url 'jhps_main_app:CurriculumSyllabus' %}">Curriculum
                                                     Syllabus</a>
@@ -650,10 +656,7 @@
                                                     href="{% url 'jhps_main_app:SchoolTimings' %}">School
                                                     Timings</a>
                                             </li>
-                                            <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="{% url 'jhps_main_app:Faculty' %}">Faculty</a>
-                                    </li>
+                                           
                                 </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -671,10 +674,10 @@
                                                 data-bs-auto-close="outside">Indoor Games</a>
                                             <ul class="dropdown-menu shadow">
 
-                                                <li><a class="dropdown-item" href="#">Carrom Board</a></li>
-                                                <li><a class="dropdown-item" href="#">Chess</a></li>
-                                                <li><a class="dropdown-item" href="#">Badminton</a></li>
-                                                <li><a class="dropdown-item" href="#">Table Tennis</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Carrom Board</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Chess</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Badminton</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Table Tennis</a></li>
                                             </ul>
                                         <li>
                                             <hr class="dropdown-divider">
@@ -684,13 +687,13 @@
                                                 class="dropdown-item actNavS dropdown-toggle" data-bs-toggle="dropdown"
                                                 data-bs-auto-close="outside">Outdoor Games</a>
                                             <ul class="dropdown-menu shadow">
-                                                <li><a class="dropdown-item" href="#">Foot Ball</a></li>
-                                                <li><a class="dropdown-item" href="#">Cricket</a></li>
-                                                <li><a class="dropdown-item" href="#">Throw Ball</a></li>
-                                                <li><a class="dropdown-item" href="#">Tennis</a></li>
-                                                <li><a class="dropdown-item" href="#">Volleyball</a></li>
-                                                <li><a class="dropdown-item" href="#">Kabaddi</a></li>
-                                                <li><a class="dropdown-item" href="#">Ko Ko</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Foot Ball</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Cricket</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Throw Ball</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Tennis</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Volleyball</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Kabaddi</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'jhps_main_app:uc' %}">Ko Ko</a></li>
                                             </ul>
                                     </ul>
                                 </li>
@@ -701,7 +704,7 @@
                                         <li><a class="dropdown-item" href="{% url 'jhps_main_app:CSA' %}">CSA</a></li>
                                         <li><a class="dropdown-item" href="{% url 'jhps_main_app:ECA' %}">ECA</a></li>
                                         <li><a class="dropdown-item"
-                                                href="{% url 'jhps_main_app:HouseAactivities' %}">House Activities</a>
+                                                href="{% url 'jhps_main_app:HouseAactivities' %}">CCA</a>
                                         </li>
                                         <li><a class="dropdown-item"
                                                 href="{% url 'jhps_main_app:EducationalTours' %}">Educational Tour</a>
@@ -717,7 +720,7 @@
                                 </li>
                                 <li class="nav-item">
                             
-                                    <a onclick="setActive(this)" class="nav-link actNav" href="{% url 'jhps_main_app:uc' %}">Transport</a>
+                                    <a onclick="setActive(this)" class="nav-link actNav" href="{% url 'jhps_main_app:transport' %}">Transport</a>
                                 </li>
                                 <li class="nav-item">
                                     <a onclick="setActive(this)" class="nav-link actNav" href="{% url 'jhps_main_app:contactUs' %}">Contact Us</a>
@@ -735,7 +738,28 @@
         </div>
     </div>
 
-
+    <div onclick="topFunction()" title="Go to top" id="gotop" class="goTop">
+        <h1 class="gt">&#187;</h1>
+    </div>
+    
+<script>
+    let mybutton = document.getElementById("gotop");
+    
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+</script>
     <div id="side_menu" class="mvr_sm">
         <div class="gall"> <a><i class="fa-solid fa-images"></i> Gallery</a>
             <div class="iGall" ><a href="{% url 'jhps_main_app:gallery' %}"><i class="fa-solid fa-images"></i> Image Gallery</a></div>
@@ -837,7 +861,7 @@ function setActive(x) {
             </div>
         </div>
         <div class="nav_foot" style="text-align: center;">
-            <a href="{% url 'jhps_main_app:uc' %}">Transport</a>
+            <a href="{% url 'jhps_main_app:transport' %}">Transport</a>
             <a href="{% url 'jhps_main_app:circulars' %}">Circular</a>
             <a href="{% url 'jhps_main_app:downloads' %}">Downloads</a>
             <a href="{% url 'jhps_main_app:uc' %}">PTA</a>
@@ -852,7 +876,6 @@ function setActive(x) {
     <!-- Optional JavaScript -->
     <script src="{% static 'js/all.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-
     <script src="{% static 'js/jquery-3.3.1.min2.js' %}"></script>
     <script src="{% static 'js/popper.min2.js' %}"></script>
     <script src="{% static 'js/bootstrap.min2.js' %}"></script>

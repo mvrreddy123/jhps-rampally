@@ -3,35 +3,36 @@
 {% block content %}
 <div class="main-box">
 
-{% for x in sportsCSAData %}
+
    <div class="pgf-cont">
-      <h2>{{x.title}}</h2>
+      <h2>Sports and Games</h2>
       <div class="pgf-inn">
 
-          <div class="pgf-img">
-              {% if x.upload_image %}
-              <img  src="{{ x.upload_image }}" alt="image">
-              {% endif %}
-            </div>
             <div class="pgf-txt">
-               <p>{{x.paragraph_data|safe}}</p>
+               <p>
+                  The playground of about 4,000 sq. mts. is the prime attraction. Football, athletics and other Field Sports can be played in the vast grounds. The synthetic Tennis court of International Standards and a Volleyball ground, the Kindergarten play area are special feature of JHPS Rampally. Children are encouraged to use the facilities to the maximum and the grounds are kept open even beyond school hours, for children to practice.  
+                 </p> 
+                 <p> JHPS Rampally has a facility to sponsor its talented sporting students, in major leagues and championships if they show sufficient promise and interest.
+               </p> 
+               <p>The other Outdoor Games will soon include Cricket Net Pitches with bowling machine and Half Basket Ball court for practice, Archery, Javelin and Shotput. For the Indoor Games, JHPS already has Synthetic Badminton courts of International Standards, Table Tennis, Carrom and Chess, while we will soon be adding Gymnastics, Aerobics and Trampoline.
+                  </p>
             </div>
       </div>
    </div>
   
-   {% endfor %}
+  
 </div>
 <script>
 	let navDD = document.getElementsByClassName("actNav");
 	for (let i = 0; i < navDD.length; i++) {
 		navDD[i].className = navDD[i].className.replace(" active", "");
 	}
-	navDD[10].className += " active";
+	navDD[11].className += " active";
 	let navDi = document.getElementsByClassName("dropdown-item");
 	for (let i = 0; i < navDi.length; i++) {
 		navDi[i].className = navDi[i].className.replace(" active", "");
 	}
-	navDi[25].className += " active";
+	navDi[22].className += " active";
 	
  </script>
 {% endblock %}

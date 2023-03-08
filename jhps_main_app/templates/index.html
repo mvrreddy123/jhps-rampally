@@ -165,7 +165,7 @@
                         progress
                     </a></div>
 
-                <div class="sm2"> <a href="{% url 'jhps_main_app:StudentEnquiry' %}" target="_blank">Online Admission Enquiry Form </a></div>
+                <div class="sm2"> <a href="{% static 'pdf/JHPS_Application_ModelForm.pdf' %}" target="_blank">Download Model Admission Form </a></div>
             </div>
 
         </div>
@@ -225,188 +225,67 @@
 </div>
 
 <div class="l6">
-    
     <div class="notice_box">
         <h2>Notice Board</h2>
-        <a href="{% url 'jhps_main_app:noticeboard' %}">
-            <div class="row">
-
-                <div class="column">
-                    <h4>1</h4>
-                    <p>Dear Parents,</p>
-                    <p>
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin3.png' %}" alt="" style="width: 15px;">
-                </div>
-                <div class="column">
-                    <h4>2</h4>
-                    <p>Dear Parents,</p>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin1.png' %}" style="width: 15px">
-                </div>
-                <div class="column">
-                    <h4>3</h4>
-                    <p>Dear Parents,</p>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin2.png' %}" alt="" style="width: 15px;">
-                </div>
-                <div class="column">
-                    <h4>4</h4>
-                    <p>Dear Parents,</p>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin2.png' %}" alt="" style="width: 15px;">
-                </div>
-                <div class="column">
-                    <h4>5</h4>
-                    <p>Dear Parents,</p>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
+        <div class="row">
+            {% for note in notice %}
+            <div class="column">
+                <a href="{% url 'jhps_main_app:noticeboard' %}">
+                    <span class="pera1">{{ forloop.counter }}</span>
+                    <div class="pera2">
+                        <span class="pera21">{{note.title}} <br>{{note.paragraph_data|safe}}</span>
+                    </div>
+                        <span class="pera3">JHPS, Rampally</span><br>
+                    <span class="pera4">{{note.date}}</span>
                     <img src="{% static 'images/pin1.png' %}" alt="" style="width: 15px;">
+                </a>
                 </div>
-                <div class="column">
-                    <h4>6</h4>
-                    <p>Dear Parents,</p>
-                    <p>
-
-                        Fees will be charged as per the last year’s class wise structure, in order to comply with
-                        the recent Govt.
-
-                    </p>
-                    <h5>JHPS, Rampally</h5>
-                    <h6>July 01, 2021</h6>
-                    <img src="{% static 'images/pin3.png' %}" style="width: 15px;">
-                </div>
-
-            </div>
-        </a>
+                {% endfor %}
+             </div>
     </div>
 </div>
+
 <div class="l3">
     <h3>Recent Events</h3>
     <div class="owl-carousel owl-2">
-        <div style="background-color: rgb(250, 200, 119);" class="media-29101">
-            <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 10px 0 0 0;" src="{% static 'images/our1.png' %}" alt="Image"
+        <div style="background-color: rgb(250, 200, 119); overflow: hidden;" class="media-29101">
+            {% for event in event1 %}
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{{event.upload_image.url}}" alt="Image"
                     class="img-fluid"></a>
-            <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 0 10px 0 0;" src="{% static 'images/our2.png' %}" alt="Image"
-                    class="img-fluid"></a>
-            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
-                    class="img-fluid"></a>
-            <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
-                    class="img-fluid"></a>
-            
-            <h3><a href="{% url 'jhps_main_app:events' %}">Events-1</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
-                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
-                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
-            </p>
+            {% endfor %}
+            <h3><a href="{% url 'jhps_main_app:events' %}">{{evT1}}</a></h3>
+            {{evP1|safe}}
         </div>
-        <div style="background-color: rgb(138, 185, 255);" class="media-29101">
-            <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 10px 0 0 0;" src="{% static 'images/our2.png' %}" alt="Image"
+     
+        <div style="background-color: rgb(147, 250, 119); overflow: hidden;" class="media-29101">
+            {% for event in event2 %}
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{{event.upload_image.url}}" alt="Image"
                     class="img-fluid"></a>
-                    <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 0 10px 0 0;" src="{% static 'images/our2.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
-                        class="img-fluid"></a>
-            <h3><a href="{% url 'jhps_main_app:events' %}">Events-2</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
-                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
-                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
-            </p>
+            {% endfor %}
+            <h3><a href="{% url 'jhps_main_app:events' %}">{{evT2}}</a></h3>
+            {{evP2|safe}}
         </div>
-        <div style="background-color: rgb(150, 254, 142);" class="media-29101">
-            <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 10px 0 0 0;" src="{% static 'images/our3.png' %}" alt="Image"
+     
+        <div style="background-color: rgb(119, 226, 250); overflow: hidden;" class="media-29101">
+            {% for event in event3 %}
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{{event.upload_image.url}}" alt="Image"
                     class="img-fluid"></a>
-                    <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 0 10px 0 0;" src="{% static 'images/our2.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
-                        class="img-fluid"></a>
-            <h3><a href="{% url 'jhps_main_app:events' %}">Events-3</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
-                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
-                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
-            </p>
+            {% endfor %}
+            <h3><a href="{% url 'jhps_main_app:events' %}">{{evT3}}</a></h3>
+            {{evP3|safe}}
         </div>
-        <div style="background-color: rgb(251, 159, 190);" class="media-29101">
-            <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 10px 0 0 0;" src="{% static 'images/our4.png' %}" alt="Image"
+     
+        <div style="background-color: rgb(249, 154, 154); overflow: hidden;" class="media-29101">
+            {% for event in event4 %}
+            <a href="{% url 'jhps_main_app:events' %}"><img src="{{event.upload_image.url}}" alt="Image"
                     class="img-fluid"></a>
-                    <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 0 10px 0 0;" src="{% static 'images/our2.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
-                        class="img-fluid"></a>
-            <h3><a href="{% url 'jhps_main_app:events' %}">Events-4</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
-                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
-                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
-            </p>
+            {% endfor %}
+            <h3><a href="{% url 'jhps_main_app:events' %}">{{evT4}}</a></h3>
+            {{evP4|safe}}
         </div>
-        <div style="background-color: rgb(255, 249, 142);" class="media-29101">
-            <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 10px 0 0 0;" src="{% static 'images/our5.png' %}" alt="Image"
-                    class="img-fluid"></a>
-                    <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 0 10px 0 0;" src="{% static 'images/our2.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
-                        class="img-fluid"></a>
-            <h3><a href="{% url 'jhps_main_app:events' %}">Events-5</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
-                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
-                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
-            </p>
-        </div>
-        <div style="background-color: rgb(240, 146, 255);" class="media-29101">
-            <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 10px 0 0 0;" src="{% static 'images/our6.png' %}" alt="Image"
-                    class="img-fluid"></a>
-                    <a href="{% url 'jhps_main_app:events' %}"><img style="border-radius: 0 10px 0 0;" src="{% static 'images/our2.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our3.png' %}" alt="Image"
-                        class="img-fluid"></a>
-                <a href="{% url 'jhps_main_app:events' %}"><img src="{% static 'images/our4.png' %}" alt="Image"
-                        class="img-fluid"></a>
-            <h3><a href="{% url 'jhps_main_app:events' %}">Event-6</a></h3>
-            <p>Jubilee Hills Public School conducted 7th Orientation day on Tuesday, the 5thApril, 2022. The event began
-                with a positive note, byAnvika with Lakshmi Pradeeksha of middle school with the welcome song.This was
-                followed by a welcome dance by KruthiKajjam and Nitya of class 7 describing the features of Lord Ganesha
-            </p>
-        </div>
+     
+     
+
     </div>
 </div>
 

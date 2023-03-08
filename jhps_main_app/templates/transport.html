@@ -1,12 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<style>
+    ol li{
+       background-color: rgb(255, 246, 127);
+       width: 400px; 
+       list-style-position: inside;
+       margin-left: 50px;
+       border: 1px solid rgb(255, 217, 0);
+       cursor: pointer;
+    }
+    ol li:hover{
+        background-color: rgb(255, 225, 0);
+    }
+</style>
 <div class="main-box">
     <h1>Transport: Proposed Bus routes for the year 2023-24</h1>
 
-    <div class="pgf-cont">
-        <img src="{% static 'images/tr1.jpg' %}" class="img-fluid" alt="Image Transport">
-        <img src="{% static 'images/tr2.jpg' %}" class="img-fluid" alt="Image Transport">
+    <div class="pgf-cont" style="padding: 20px;">
+        <p>The School runs a transport facility for the Students, through transport contractors. The charges are currently being subsidized to the extent that depreciation and replacement of vehicles is excluded from the costing.</p>
+        <p>The buses being owned by the School, it is usually not possible to provide School transport to all the Students. Hence, School transport facility is only an optional facility provided on first come first served basis. It may be withdrawn in case of non-cooperation of parents in maintaining the code of conduct in terms of picking and dropping a child, making additional demands or any sort of student misbehaviour.</p>
+        <p>Transport Fee has to be paid in full, at the beginning of the year. The Last Date for payment of School transport fee without Late Fee is up to 30th April. Rs. 100/- per day will be charged as Late Fee from 1st May to 10th May. Allotment of School transport facility will be cancelled if the payment is not received by the 10th May.</p>
+        <h3>At present School Buses ply on routes starting from:</h3>
+        <ol>
+            <li>Rampally</li>
+            <li>Dammaiguda</li>
+            <li>Anand Bhag / Old Safilguda</li>
+            <li>NFC Nagar Ghatkesar</li>
+            <li>Chowdharyguda / Narapally</li>
+            <li>Bits Campus</li>
+            <li>Nagaram</li>
+            <li>Bommalaramaram /  Keesara</li>
+            <li>Maruthi Gradens / Mallikarjuna Nagar</li>
+            <li>Gowrelli Village / Taramathipet</li>
+            <li>Annojiguda</li>
+            <li>Singapore Township</li>
+            <li>Elephant Enclave</li>
+            <li>Ismailkhanguda</li>
+
+        </ol>
+        <p>Additional routes will be considered only if sufficient number of students opt for school transport, to ensure full occupancy.</p>
+        <img width="100%" src="{% static 'images/tr1.png' %}" class="img-fluid" alt="Image Transport">
     </div>
 
 </div>
@@ -15,7 +49,7 @@
 	for (let i = 0; i < navDD.length; i++) {
 		navDD[i].className = navDD[i].className.replace(" active", "");
 	}
-	navDD[13].className += " active";
+	navDD[14].className += " active";
 
 </script>
 {% endblock %}

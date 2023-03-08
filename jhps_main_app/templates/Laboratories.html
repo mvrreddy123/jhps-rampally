@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-box">
+    <h1>Laboratories</h1>
+
+    <div class="pgf-cont">
+
+        <h2>Laboratories</h2>
+
+        <div class="pgf-inn">
+
+            <div class="pgf-txt">
+                <p> Learning in the laboratories at JHPS Rampally is programmed to be an experience, its students will
+                    cherish. They are organized to provide reinforcement to a large number of curricular concepts to the
+                    children, through hands on and real time visual experiences. The labs are technology enabled for
+                    experiential learning in its true sense and also with the help of software, 3-D animation, video
+                    projections, etc. </p>
+                <p> The Laboratory Complex, in about 20,000 Sq Ft floor area, is almost the best as it comes and
+                    includes Physics, Chemistry, Biology, Mathematic, Geography and Social Science Labs which not only
+                    cater to the Secondary classes but are also programmed to be extensively used for explaining the
+                    course content to the Primary and Middle School classes also. These subject based independent
+                    International Standard Labs are also equipped with required apparatus and appropriate tools for
+                    imparting practical and application based knowledge to the students. </p>
+                <p> A special 3 D printer lab is equipped with 2 very large sized 3 D printers and 4 standard sized
+                    printers, which cater to the requirement of the project activities of and by the students. Students
+                    may request for any design printing contemplated by them for their project activities, which will be
+                    provided based on availability of suitable software and /or design, on a first come first served
+                    basis. </p>
+                <p> An exclusive Ideation Room for generating group creative projects and other creative activities is
+                    also provided. Supporting this activity the school also has a Photography Hobby center clubbed with
+                    a journalism den. </p>
+                <p> Familiarizing students with the knowledge of where their food comes from and the various facets of
+                    farming practices is an added incentive for the children to explore their academic zeal out in the
+                    open at the 2 acre farm plots unit, where over 40 types of crops, vegetables, fruits, tubers,
+                    creepers, leafy vegetables are grown in small plots, every year. </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="pgf-cont">
+
+        <h2>Activity Rooms: </h2>
+
+        <div class="pgf-inn">
+
+            <div class="pgf-txt">
+                <p>Activity rooms at JHPS – Rampally JHPS – Rampally include the various subject Labs, computer lab, 3-D
+                    Lab, the farm plots, music, art, dance, craft rooms, the huge auditorium, library, etc., which
+                    provide reinforcement to the areas of the learning processes of the students. Hands on activities
+                    are performed for the lessons learnt in different subjects. The entire campus is networked with
+                    INTRANET facility and 24/7 INTERNET connectivity for the benefit of students and staff in the
+                    instructional process.</p>
+                <p>An exclusive Kindergarten Activity center helps the Tiny-Tots enjoy their time with all their dream
+                    activities such as tree houses, play house, indoor lawns, etc.</p>
+                <p>Training is provided in the areas of Fine Arts, Dance, Music and Various Co-Scholastic Activities
+                    (CSA) and the various intra-disciplinary activities is organized by the regular teaching faculty in
+                    providing the additional curricular support needed for the comprehensive learning of the subject
+                    matter content through the medium of Dance, Music and Art within the various special activity rooms.
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let navDD = document.getElementsByClassName("actNav");
+    for (let i = 0; i < navDD.length; i++) {
+        navDD[i].className = navDD[i].className.replace(" active", "");
+    }
+    navDD[6].className += " active";
+    let navDi = document.getElementsByClassName("dropdown-item");
+    for (let i = 0; i < navDi.length; i++) {
+        navDi[i].className = navDi[i].className.replace(" active", "");
+    }
+    navDi[9].className += " active";
+</script>
+{% endblock %}

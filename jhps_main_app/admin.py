@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Admission_Enquiry, Student_Enquiry, Refer_A_Student, About_us, Campus, Admission, Academics, Sports_CSA, Management, Faculty,Events, Student_Events, Staff_Events, Staff_Video_Events, Student_Video_Events, Testimonials, Circulars, Press_Media, Careers, Notice_Board, Downloads, School_Magazines, Scroll_text, ApplyJob
+from .models import Admission_Enquiry, Student_Enquiry,Notice_Board, Refer_A_Student, About_us, Campus, Admission, Academics, Sports_CSA, Management, Faculty,Events, EventImages, Student_Events, Staff_Events, Staff_Video_Events, Student_Video_Events, Testimonials, Circulars, Press_Media, Careers, Downloads, School_Magazines, Scroll_text, ApplyJob
 
 # Register your models here.
 class Admission_EnquiryAdmin(admin.ModelAdmin):
@@ -22,8 +22,21 @@ class ManagementAdmin(admin.ModelAdmin):
     list_display = ('member_name','designation')
 class FacultyAdmin(admin.ModelAdmin):
     list_display = ('staff_name','staff_designation')
+    
+class EventImagesAdmin(admin.StackedInline):
+    model = EventImages
+    # list_display = ('title','paragraph_data','upload_image')
+@admin.register(Events)
 class EventsAdmin(admin.ModelAdmin):
-    list_display = ('title','paragraph_data','upload_image')
+    inlines = [EventImagesAdmin]
+ 
+    class Meta:
+       model = Events
+    # list_display = ('title','paragraph_data','upload_image')
+@admin.register(EventImages)
+class EventImagesAdmin(admin.ModelAdmin):
+    pass
+ 
 class Student_EventsAdmin(admin.ModelAdmin):
     list_display = ('title','date','upload_image')
 class Staff_EventsAdmin(admin.ModelAdmin):
@@ -65,7 +78,7 @@ admin.site.register(Academics, AcademicsAdmin)
 admin.site.register(Sports_CSA, Sports_CSAAdmin)
 admin.site.register(Management, ManagementAdmin)
 admin.site.register(Faculty, FacultyAdmin)
-admin.site.register(Events, EventsAdmin)
+# admin.site.register(Events, EventsAdmin)
 admin.site.register(Student_Events, Student_EventsAdmin)
 admin.site.register(Staff_Events, Staff_EventsAdmin)
 admin.site.register(Staff_Video_Events, Staff_Video_EventsAdmin)

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+
+</style>
+<div class="main-box">
+    <div class="pgf-cont">
+
+
+        <h1>{{event.title}} Image Gallery</h1>
+        <div class="img_gal" id="imgGal">
+
+            <div class="imgContainer" id="contId">
+                <span onclick="closeCont()" class="closebtn">&times;</span>
+                <img id="expandedImg" style="width:100%">
+
+            </div>
+            <div class="imgRow" id="rowId">
+                {% for photo in photos %}
+                <div class="column">
+                    <img src="{{photo.upload_image.url}}" alt="" style="width:100%" onclick="myFunction(this);">
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+
+        <script>
+
+            function closeCont() {
+                document.getElementById('contId').style.display = 'none';
+                document.getElementById('rowId').style.width = '100%';
+                let x = document.getElementsByClassName('column');
+                for (let i = 0; i < x.length; i++) {
+                    x[i].style.width = '20%';
+                }
+            }
+            function myFunction(imgs) {
+                // alert(window.innerWidth);
+                if (window.innerWidth < '1000') {
+                    document.getElementById('imgGal').style.flexDirection = 'column';
+                    document.getElementById('rowId').style.width = '100%';
+                    document.getElementById('contId').style.width = '100%';
+                } else {
+                    document.getElementById('imgGal').style.flexDirection = 'row';
+                    document.getElementById('rowId').style.width = '44%';
+                    document.getElementById('contId').style.width = '56%';
+                    let x = document.getElementsByClassName('column');
+                    for (let i = 0; i < x.length; i++) {
+                        x[i].style.width = '25%';
+                    }
+                }
+                var expandImg = document.getElementById("expandedImg");
+
+                expandImg.src = imgs.src;
+
+                expandImg.parentElement.style.display = "block";
+            }
+        </script>
+    </div>
+</div>
+{% endblock %}
